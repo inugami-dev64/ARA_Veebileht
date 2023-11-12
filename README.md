@@ -1,10 +1,11 @@
 # Arvuti riistvara ja arhitektuuri konspektide veebilehe lähtekood
 
-Antud repositoorium sisaldab ARA veebilehe 
+Antud repositoorium sisaldab ARA veebilehe lähtekoodi.
 
 ## Mis see on?
 
-Antud veebileht on loodud Tartu Ülikooli õppeaine *Arvuti riistvara ja arhitektuur (LOFY.03.079)* kokkuvõtlike õppematerjalide jagamiseks. 
+Veebileht on loodud Tartu Ülikooli õppeaine *Arvuti riistvara ja arhitektuur (LOFY.03.079)* kokkuvõtlike 
+õppematerjalide jagamiseks, kuid veebileht ise on tehtud õppeaine *Sissejuhatus Erialasse (LTAT.03.002)* raames.
 Veebileht on üles ehitatud programmiga `hugo`, mis eeldab artiklite kirjutamist Markdownis.
 
 ## Staatiliste HTML failide genereerimine

@@ -1,28 +1,20 @@
-name = 'Theme name'
-license = 'MIT'
-licenselink = 'https://github.com/owner/repo/LICENSE'
+name = 'ARA_Veebileht'
 description = 'Theme description'
 
 # The home page of the theme, where the source can be found
-homepage = 'https://github.com/owner/repo'
+homepage = 'https://github.com/inugami-dev64/ARA_Veebileht'
 
 # If you have a running demo of the theme
-demosite = 'https://owner.github.io/repo'
+demosite = 'https://kodu.ut.ee/~karl-mih'
 
-# Taxonomy terms
-tags = ['blog', 'company']
-features = ['some', 'awesome', 'features']
+tags = ['Riistvara', 'Arhitektuur']
+features = []
 
 # If the theme has multiple authors
 authors = [
-  {name = 'Name of author', homepage = 'Website of author'},
-  {name = 'Name of author', homepage = 'Website of author'}
+  {name = 'Karl-Mihkel Ott', homepage = 'https://karlott.net'},
+  {name = 'Richard Leover', homepage = 'https://github.com/richardleoverr'}
 ]
-
-# If the theme has a single author
-[author]
-  name = 'Your name'
-  homepage = 'Your website'
 
 # If porting an existing theme
 [original]

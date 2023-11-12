@@ -1,6 +1,6 @@
 # Arvuti riistvara ja arhitektuuri konspektide veebilehe lähtekood
 
-Antud repositoorium sisaldab 
+Antud repositoorium sisaldab ARA veebilehe 
 
 ## Mis see on?
 
@@ -14,6 +14,7 @@ Peale seda on lehtede genereerimine lihtne ning teostatav järgneva käsuga:
 ```bash
 $ hugo
 ```
+Peale käsu täitmist genereerib hugo kausta `public`, mis sisaldab valmis HTML lehti ja ka staatilisi faile.
 
 ## Artiklite lisamine
 

@@ -33,3 +33,4 @@ näiteks artikkel `RISC Protsessori tööpõhimõtteskeem` oleks failinimelt `ri
 ## Kontribuutorid
 
 * Karl-Mihkel Ott
+* Richard Leover

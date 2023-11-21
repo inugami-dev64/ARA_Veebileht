@@ -22,10 +22,14 @@ header {
   position: relative;
 }
 
+header .home-wrapper {
+  width: 100%;
+}
+
 @media(min-width: 900px) {
-  header {
+  header .home-wrapper {
     background-image: url('/~karl-mih/img/computer.png');
-    background-size: auto 80%;
+    background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: right bottom;
   }

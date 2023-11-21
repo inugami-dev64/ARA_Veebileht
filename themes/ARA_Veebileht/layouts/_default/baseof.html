@@ -11,12 +11,14 @@
       </nav>
     </div>
     {{ if .IsHome }}
+    <div class="home-wrapper">
       <div class="base-container">
         <div class="header-content">
           <h1>{{ .Title }}</h1>
           {{ .Content }}
         </div>
       </div>
+    </div>
     {{ end }}
   </header>
   <main>

@@ -1,9 +1,9 @@
 +++
-title = 'Home'
+title = 'Arvuti riistvara ja arhitektuur'
 date = 2023-01-01T08:00:00-07:00
 draft = false
 +++
 
-Laborum voluptate pariatur ex culpa magna nostrud est incididunt fugiat
-pariatur do dolor ipsum enim. Consequat tempor do dolor eu. Non id id anim anim
-excepteur excepteur pariatur nostrud qui irure ullamco.
+Arvuti riistvara ja arhitektuur (LOFY.03.079) on Tartu Ülikooli õppeaine, mis paljude esmakursuslaste jaoks võib tunduda võimatult raske.
+Õnneks eksisteerib siin lehekülg, kust on võimalik leida lihtsaid ja ülevaatlikke konspekte selleks, et õppimine sujuks ladusalt. Kui teil
+on soov ise artikleid kirjutada, siis lugege artiklite lisamise kohta [siit](/~karl-mih/lisa-artikleid).

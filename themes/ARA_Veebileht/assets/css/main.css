@@ -1,98 +1,85 @@
+/* Import Inter font family */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+
 body {
   color: #222;
   font-family: sans-serif;
   line-height: 1.5;
   margin: 0 auto;
-  width: calc(100% - 80px);
+  width: 100%;
+}
+
+.base-container {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 800px;
+}
+
+header {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #d0ddfe;
+  position: relative;
+}
+
+@media(min-width: 900px) {
+  header {
+    background-image: url('/~karl-mih/img/computer.png');
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+  }
+
+  header .header-content {
+    max-width: 50%;
+  }
 }
 
 /* Navbar styling */
 nav {
+  padding: 20px 0;
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  border-bottom: 2px solid gray;
 }
 
-nav .flex-left a img {
-  max-width: 128px;
+header img {
+  position: absolute;
+  width: 35%;
   height: auto;
+  right: 10px;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: 0;
 }
 
-nav .flex-right {
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  height: 100%;
+/* Navbar link styling */
+nav a {
+  display: inline-block;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 1.5em;
+  color: #ffffff;
+
+  box-shadow: inset 0 0 0 0;
+  color: #ffffff;
+  margin: 0 -.25rem;
+  padding: 0 .25rem;
+  transition: color .4s ease-in-out, box-shadow .4s ease-in-out;
 }
+
+nav a:hover {
+  box-shadow: inset 200px 0 0 0 #ffffff;
+  color: black;
+}
+
 
 nav .flex-right a, nav .flex-right label {
   margin: 5px;
 }
 
-/* Toggle switch styling */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #2196f3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
 
 footer {
   border-top: 1px solid #222;

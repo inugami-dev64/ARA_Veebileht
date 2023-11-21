@@ -27,14 +27,14 @@ header .wrapper {
 }
 
 .content-wrapper {
-  height: fit-content;
-  width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  height: fit-content;
+  align-items: space-between;
 }
 
 .banner {
+  margin-bottom: auto;
+  margin-top: 0;
   width: 200px;
   height: 750px;
   background-image: url('/~karl-mih/img/conn.png');
@@ -45,7 +45,9 @@ header .wrapper {
 }
 
 .rotated {
-  transform: scaleX(-1) scaleY(-1) !important;
+  transform: scaleX(-1) scaleY(-1);
+  margin-bottom: 0;
+  margin-top: auto;
 }
 
 @media(max-width: calc(900px + 200px + 200px)) {

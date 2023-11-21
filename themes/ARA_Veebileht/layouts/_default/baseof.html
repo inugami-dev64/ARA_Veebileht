@@ -6,12 +6,10 @@
 <body>
   <header>
     <div class="base-container">
-      <nav>
-        {{ partial "nav.html" . }}
-      </nav>
+      {{ partial "nav.html" . }}
     </div>
     {{ if .IsHome }}
-    <div class="home-wrapper">
+    <div class="wrapper home-wrapper">
       <div class="base-container">
         <div class="header-content">
           <h1>{{ .Title }}</h1>
@@ -22,8 +20,12 @@
     {{ end }}
   </header>
   <main>
-    <div class="base-container">
-    {{ block "main" . }}{{ end }}
+    <div class="wrapper content-wrapper">
+      <div class="banner"></div>
+      <div class="base-container">
+        {{ block "main" . }}{{ end }}
+      </div>
+      <div class="banner rotated"></div>
     </div>
   </main>
   <footer>

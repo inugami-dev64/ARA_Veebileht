@@ -11,7 +11,7 @@ body {
 
 .base-container {
   margin: 0 auto;
-  width: 80%;
+  width: 80vw;
   max-width: 800px;
 }
 
@@ -22,12 +22,40 @@ header {
   position: relative;
 }
 
-header .home-wrapper {
+header .wrapper {
   width: 100%;
 }
 
+.content-wrapper {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.banner {
+  width: 200px;
+  height: 750px;
+  background-image: url('/~karl-mih/img/conn.png');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: bottom right;
+}
+
+.rotated {
+  transform: scaleX(-1) scaleY(-1) !important;
+}
+
+@media(max-width: calc(900px + 200px + 200px)) {
+  .banner {
+    display: none;
+  }
+}
+
 @media(min-width: 900px) {
-  header .home-wrapper {
+  .home-wrapper {
     background-image: url('/~karl-mih/img/computer.png');
     background-size: auto 100%;
     background-repeat: no-repeat;

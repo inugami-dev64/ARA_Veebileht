@@ -1,11 +1,13 @@
 /* Import Inter font family */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
 
+/*Import Monda font family */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Monda&family=Sumana&display=swap');
+
 body {
   color: #222;
-  font-family: sans-serif;
-  line-height: 1.5;
   margin: 0 auto;
+  line-height: 1.5;
   width: 100%;
 }
 
@@ -26,6 +28,79 @@ header .wrapper {
   width: 100%;
 }
 
+/* Footer styling */
+footer {
+  padding: 10px;
+  font-family: 'Monda', sans-serif;
+  background-color: #d0ddfe;
+  border-top: 1px solid #222;
+}
+
+.footer-content {
+  display: flex;
+}
+
+/* Showcase container styling */
+.showcase-container {
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 2em;
+}
+
+.showcase-container .decorations {
+  white-space: nowrap;
+  width: 100%;
+  height: 18vh;
+}
+
+.showcase-container .decorations .decoration {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  height: 100%;
+}
+
+.hw .decoration {
+  width: 25%;
+}
+
+.arch .decoration {
+  width: 14%;
+}
+
+.decoration img {
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: auto 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+nav a {
+  font-family: 'Inter', sans-serif !important;
+  text-transform: uppercase;
+}
+
+.article-showcase {
+  background-color: #E7E7E7
+}
+
+.article-showcase .title {
+  padding: 1.5em;
+  background-image: url('/~karl-mih/img/curve.svg');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.article-showcase .content {
+  padding: 1.5em;
+}
+
 .content-wrapper {
   display: flex;
   height: fit-content;
@@ -42,6 +117,7 @@ header .wrapper {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: bottom right;
+  pointer-events: none;
 }
 
 .rotated {
@@ -114,13 +190,7 @@ nav .flex-right a, nav .flex-right label {
   margin: 5px;
 }
 
-
-footer {
-  border-top: 1px solid #222;
-  margin-top: 1rem;
-}
-
 a {
-  color: #00e;
+  color: #287eff;
   text-decoration: none;
 }

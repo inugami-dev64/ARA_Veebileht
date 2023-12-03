@@ -1,0 +1,196 @@
+/* Import Inter font family */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+
+/*Import Monda font family */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Monda&family=Sumana&display=swap');
+
+body {
+  color: #222;
+  margin: 0 auto;
+  line-height: 1.5;
+  width: 100%;
+}
+
+.base-container {
+  margin: 0 auto;
+  width: 80vw;
+  max-width: 800px;
+}
+
+header {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #d0ddfe;
+  position: relative;
+}
+
+header .wrapper {
+  width: 100%;
+}
+
+/* Footer styling */
+footer {
+  padding: 10px;
+  font-family: 'Monda', sans-serif;
+  background-color: #d0ddfe;
+  border-top: 1px solid #222;
+}
+
+.footer-content {
+  display: flex;
+}
+
+/* Showcase container styling */
+.showcase-container {
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 2em;
+}
+
+.showcase-container .decorations {
+  white-space: nowrap;
+  width: 100%;
+  height: 18vh;
+}
+
+.showcase-container .decorations .decoration {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  height: 100%;
+}
+
+.hw .decoration {
+  width: 25%;
+}
+
+.arch .decoration {
+  width: 14%;
+}
+
+.decoration img {
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: auto 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+nav a {
+  font-family: 'Inter', sans-serif !important;
+  text-transform: uppercase;
+}
+
+.article-showcase {
+  background-color: #E7E7E7
+}
+
+.article-showcase .title {
+  padding: 1.5em;
+  background-image: url('/~karl-mih/img/curve.svg');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.article-showcase .content {
+  padding: 1.5em;
+}
+
+.content-wrapper {
+  display: flex;
+  height: fit-content;
+  align-items: space-between;
+}
+
+.banner {
+  margin-bottom: auto;
+  margin-top: 0;
+  width: 200px;
+  height: 750px;
+  background-image: url('/~karl-mih/img/conn.png');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: bottom right;
+  pointer-events: none;
+}
+
+.rotated {
+  transform: scaleX(-1) scaleY(-1);
+  margin-bottom: 0;
+  margin-top: auto;
+}
+
+@media(max-width: calc(900px + 200px + 200px)) {
+  .banner {
+    display: none;
+  }
+}
+
+@media(min-width: 900px) {
+  .home-wrapper {
+    background-image: url('/~karl-mih/img/computer.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+  }
+
+  header .header-content {
+    max-width: 50%;
+  }
+}
+
+/* Navbar styling */
+nav {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+header img {
+  position: absolute;
+  width: 35%;
+  height: auto;
+  right: 10px;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* Navbar link styling */
+nav a {
+  display: inline-block;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 1.5em;
+  color: #ffffff;
+
+  box-shadow: inset 0 0 0 0;
+  color: #ffffff;
+  margin: 0 -.25rem;
+  padding: 0 .25rem;
+  transition: color .4s ease-in-out, box-shadow .4s ease-in-out;
+}
+
+nav a:hover {
+  box-shadow: inset 200px 0 0 0 #ffffff;
+  color: black;
+}
+
+
+nav .flex-right a, nav .flex-right label {
+  margin: 5px;
+}
+
+a {
+  color: #287eff;
+  text-decoration: none;
+}

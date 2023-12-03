@@ -1,0 +1,51 @@
+{{ define "main" }}
+
+  {{ with .Site.GetPage "section" "riistvara"}}
+  <div class="showcase-container">
+    <div class="decorations hw">
+      <div class="decoration"><img src="{{ .Site.BaseURL }}img/hw_deco/cpu.png" alt="cpu.png"></div>
+      <div class="decoration"><img src="{{ .Site.BaseURL }}img/hw_deco/hard-drive.png" alt="hard-drive.png"></div>
+      <div class="decoration"><img src="{{ .Site.BaseURL }}img/hw_deco/ram.png" alt="ram.png"></div>
+      <div class="decoration"><img src="{{ .Site.BaseURL }}img/hw_deco/graphic-card-icon.png" alt="graphic-card-icon.png"></div>
+    </div>
+    <div class="article-showcase">
+      <div class="title">
+        <h2>Arvuti riistvara</h2>
+      </div>
+      <div class="content">
+        <ul>
+        {{ range first 7 .Pages }}
+          <li><a href="{{ .RelPermalink }}">{{ .Date.Format "2006-01-02" }} - {{ .LinkTitle }}</a></li>
+        {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+
+  {{ with .Site.GetPage "section" "arhitektuur" }}
+  <div class="showcase-container">
+    <div class="decorations arch">
+      <div class="decoration"><img src="{{ .Site.BaseURL }}img/arch_deco/not.png" alt="not.png"></div>
+      <div class="decoration"><img src="{{ .Site.BaseURL }}img/arch_deco/and.png" alt="and.png"></div>
+      <div class="decoration"><img src="{{ .Site.BaseURL }}img/arch_deco/or.png" alt="or.png"></div>
+      <div class="decoration"><img src="{{ .Site.BaseURL }}img/arch_deco/transistor.png" alt="transistor.png"></div>
+      <div class="decoration"><img src="{{ .Site.BaseURL }}img/arch_deco/or.png" alt="or.png"></div>
+      <div class="decoration"><img src="{{ .Site.BaseURL }}img/arch_deco/and.png" alt="and.png"></div>
+      <div class="decoration"><img src="{{ .Site.BaseURL }}img/arch_deco/not.png" alt="not.png"></div>
+    </div>
+    <div class="article-showcase">
+      <div class="title">
+        <h2>Arvuti arhitektuur</h2>
+      </div>
+      <div class="content">
+        <ul>
+        {{ range first 7 .Pages }}
+          <li><a href="{{ .RelPermalink }}">{{ .Date.Format "2006-01-02" }} - {{ .LinkTitle }}</a></li>
+        {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+{{ end }}

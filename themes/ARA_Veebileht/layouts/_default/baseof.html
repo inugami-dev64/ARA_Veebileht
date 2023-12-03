@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ or site.LanguageCode site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <header>
+    <div class="base-container">
+      {{ partial "nav.html" . }}
+    </div>
+    {{ if .IsHome }}
+    <div class="wrapper home-wrapper">
+      <div class="base-container">
+        <div class="header-content">
+          <h1>{{ .Title }}</h1>
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </header>
+  <main>
+    <div class="wrapper content-wrapper">
+      <div class="banner"></div>
+      <div class="base-container">
+        {{ block "main" . }}{{ end }}
+      </div>
+      <div class="banner rotated"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="base-container">
+    {{ partial "footer.html" . }}
+    </div>
+  </footer>
+</body>
+</html>

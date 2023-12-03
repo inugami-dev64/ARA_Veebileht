@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="et-ee" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="icon" type="image/x-icon" href="/~karl-mih/img/favicon.ico">
+<title>Artikkel | Arvuti riistvara ja arhitektuur (LOFY.03.079)</title>
+
+      <link rel="stylesheet" href="/~karl-mih/css/main.min.6a2de49899efd32023c4944599fd3318185f986c86113c093e5736df23c1c1ed.css" integrity="sha256-ai3kmJnv0yAjxJRFmf0zGBhfmGyGETwJPlc23yPBwe0=" crossorigin="anonymous">
+
+
+      <script src="/~karl-mih/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  <header>
+    <div class="base-container">
+      <nav>
+    <a href="/~karl-mih">Kodu</a>
+    <a href="/~karl-mih/riistvara">Riistvara</a>
+    <a href="/~karl-mih/arhitektuur">Arhitektuur</a>
+    <a href="/~karl-mih/otsi">Otsi artikleid</a>
+    <a href="/~karl-mih/teemad">Teemad</a>
+    <a href="/~karl-mih/otsi">Otsi</a>
+</nav>
+    </div>
+    
+  </header>
+  <main>
+    <div class="wrapper content-wrapper">
+      <div class="banner"></div>
+      <div class="base-container">
+        
+  <h1>Artikkel</h1>
+
+  
+  
+  <time datetime="2023-11-29T14:11:44&#43;02:00">November 29, 2023</time>
+
+  <h1 id="an-h1-header">An h1 header</h1>
+<p>Paragraphs are separated by a blank line.</p>
+<p>2nd paragraph. <em>Italic</em>, <strong>bold</strong>, and <code>monospace</code>. Itemized lists
+look like:</p>
+<ul>
+<li>this one</li>
+<li>that one</li>
+<li>the other one</li>
+</ul>
+<p>Note that &mdash; not considering the asterisk &mdash; the actual text
+content starts at 4-columns in.</p>
+<blockquote>
+<p>Block quotes are
+written like so.</p>
+<p>They can span multiple paragraphs,
+if you like.</p>
+</blockquote>
+<p>Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., &ldquo;it&rsquo;s all
+in chapters 12&ndash;14&rdquo;). Three dots &hellip; will be converted to an ellipsis.
+Unicode is supported. ☺</p>
+<h2 id="an-h2-header">An h2 header</h2>
+<p>Here&rsquo;s a numbered list:</p>
+<ol>
+<li>first item</li>
+<li>second item</li>
+<li>third item</li>
+</ol>
+<p>Note again how the actual text starts at 4 columns in (4 characters
+from the left side). Here&rsquo;s a code sample:</p>
+<pre><code># Let me re-iterate ...
+for i in 1 .. 10 { do-something(i) }
+</code></pre>
+<p>As you probably guessed, indented 4 spaces. By the way, instead of
+indenting the block, you can use delimited blocks, if you like:</p>
+<pre tabindex="0"><code>define foobar() {
+    print &#34;Welcome to flavor country!&#34;;
+}
+</code></pre><p>(which makes copying &amp; pasting easier). You can optionally mark the
+delimited block for Pandoc to syntax highlight it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Quick, count to ten!</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># (but not *too* quick)</span>
+</span></span><span style="display:flex;"><span>    time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>    print i
+</span></span></code></pre></div><h3 id="an-h3-header">An h3 header</h3>
+<p>Now a nested list:</p>
+<ol>
+<li>
+<p>First, get these ingredients:</p>
+<ul>
+<li>carrots</li>
+<li>celery</li>
+<li>lentils</li>
+</ul>
+</li>
+<li>
+<p>Boil some water.</p>
+</li>
+<li>
+<p>Dump everything in the pot and follow
+this algorithm:</p>
+<pre><code>find wooden spoon
+uncover pot
+stir
+cover pot
+balance wooden spoon precariously on pot handle
+wait 10 minutes
+goto first step (or shut off burner when done)
+</code></pre>
+<p>Do not bump wooden spoon or it will fall.</p>
+</li>
+</ol>
+<p>Notice again how text always lines up on 4-space indents (including
+that last line which continues item 3 above).</p>
+<p>Here&rsquo;s a link to <a href="http://foo.bar">a website</a>, to a <a href="local-doc.html">local
+doc</a>, and to a <a href="#an-h2-header">section heading in the current
+doc</a>. Here&rsquo;s a footnote <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<p>Tables can look like this:</p>
+<p>size  material      color</p>
+<hr>
+<p>9     leather       brown
+10    hemp canvas   natural
+11    glass         transparent</p>
+<p>Table: Shoes, their sizes, and what they&rsquo;re made of</p>
+<p>(The above is the caption for the table.) Pandoc also supports
+multi-line tables:</p>
+<hr>
+<p>keyword   text</p>
+<hr>
+<p>red       Sunsets, apples, and
+other red or reddish
+things.</p>
+<p>green     Leaves, grass, frogs
+and other things it&rsquo;s
+not easy being.</p>
+<hr>
+<p>A horizontal rule follows.</p>
+<hr>
+<p>Here&rsquo;s a definition list:</p>
+<p>apples
+: Good for making applesauce.
+oranges
+: Citrus!
+tomatoes
+: There&rsquo;s no &ldquo;e&rdquo; in tomatoe.</p>
+<p>Again, text is indented 4 spaces. (Put a blank line between each
+term/definition pair to spread things out more.)</p>
+<p>Here&rsquo;s a &ldquo;line block&rdquo;:</p>
+<p>| Line one
+|   Line too
+| Line tree</p>
+<p>and images can be specified like so:</p>
+<p><img src="example-image.jpg" alt="example image" title="An exemplary image"></p>
+<p>Inline math equations go in like so: $\omega = d\phi / dt$. Display
+math should get its own line and be put in in double-dollarsigns:</p>
+<p>$$I = \int \rho R^{2} dV$$</p>
+<p>And note that you can backslash-escape any punctuation characters
+which you wish to be displayed literally, ex.: `foo`, *bar*, etc.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Footnote text goes here.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+  
+
+
+      </div>
+      <div class="banner rotated"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="base-container">
+    <div class="footer-content">
+    <div class="github">
+        <a href="https://github.com/inugami-dev64/ARA_Veebileht">
+            <img width="100" src="https://kodu.ut.ee/~karl-mih/img/github.png" alt="github.png">
+        </a>
+    </div>
+    <div class="contributors">
+        <ul>
+            <li>Richard Leover (<a href="https://github.com/richardleoverr" target="blank">Github</a>)</li>
+            <li>Karl-Mihkel Ott (<a href="https://github.com/inugami-dev64" target="blank">Github</a>)</li>
+            <li>Kaspar Tugevus</li>
+        </ul>
+    </div>
+</div>
+    </div>
+  </footer>
+</body>
+</html>

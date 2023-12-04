@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="et-ee" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="icon" type="image/x-icon" href="/~karl-mih/img/favicon.ico">
+<title>RISC protsessorid | Arvuti riistvara ja arhitektuur (LOFY.03.079)</title>
+
+  <link rel="stylesheet" href="/~karl-mih/css/main.css">
+
+
+</head>
+<body>
+  <header>
+    <div class="base-container">
+      <nav class="desktop">
+    <a href="/~karl-mih">Kodu</a>
+    <a href="/~karl-mih/riistvara">Riistvara</a>
+    <a href="/~karl-mih/arhitektuur">Arhitektuur</a>
+    <a href="/~karl-mih/teemad">Teemad</a>
+</nav>
+
+<nav class="mobile">
+    <div>
+        <svg id="hamburger-btn" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+            <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path>
+        </svg>
+    </div>
+
+    <div class="mobile-overlay-container" id="mobile-overlay">
+        <div class="mobile-overlay">
+            <div class="close">
+                <button id="overlay-close-btn">X</button>
+            </div>
+            <div class="mobile-links">
+                <a href="/~karl-mih">Kodu</a><br>
+                <a href="/~karl-mih/riistvara">Riistvara</a><br>
+                <a href="/~karl-mih/arhitektuur">Arhitektuur</a><br>
+                <a href="/~karl-mih/teemad">Teemad</a><br>
+            </div>
+        </div>
+    </div>
+</nav>
+    </div>
+    
+  </header>
+  <main>
+    <div class="wrapper content-wrapper">
+      <div class="banner"></div>
+      <div class="base-container">
+        
+  <h1>RISC protsessorid</h1>
+
+  
+  
+  <time datetime="2023-11-29T14:11:44&#43;02:00">29. november 2023</time><br>
+  <p>Autor(id): 
+  
+  Richard Leover 
+  
+  </p>
+  
+  <div class="taxonomies">
+    <p>Teemad:
+      <a href="/~karl-mih/teemad/protsessor/">Protsessor</a>
+    </p>
+  </div>
+
+
+  <p>Kärbitud käsustikuga arvuti (ingl reduced instruction set computer, RISC) on mikroprotsessor, mis on välja töötatud nii, et see saavutab suurema töökiiruse läbi täidetavate käskude arvu minimeerimise. Käskude täitmise kiirust mõõdetakse selle järgi, et mitu miljonit operatsiooni sekundis suudab arvuti sooritada (MIPS – millions of instructions per second). Seda põhjusel, et iga lisanduv käsutüüp nõuab rohkem transistoreid ning suuremat ja keerulisemat protsessorit. Suurem hulk käsutüüpe ja käske tähendab paratamatult suuremat, keerukamat, aeglasemat ja ka kallimat mikroprotsessorit.</p>
+<p>Sõna &ldquo;kärbitud&rdquo; (reduced) ei viita siin tarbetute käskude kustutamisele, vaid ühe käsu täitmise kiirendamisele. Kõige tavalisemalt teostatakse see ühe suure ja mahuka operatsiooni jagamisega mitmeks osaks (RISC protsessori puhul neljaks) ja iga taktiga täidetakse üks operatsioon. See erineb CISC-protsessorist, kus mahukas operatsioon sooritatakse tervikuna korraga.</p>
+<h2 id="protsessor---basic-processing-unit">Protsessor - Basic Processing Unit</h2>
+<ul>
+<li>Protsessor käivitab masinkoodi käske ja koordineerib arvuti teiste üksuste tööd</li>
+<li>Instruction Set Processor (ISP) või lihtsalt processor</li>
+<li>Tavapäraselt kutsutakse protsessorit ka Central Processing Unit (CPU)</li>
+<li>Suure jõudlusega tänapäevastes protsessorites täidetakse käske paralleelselt</li>
+<li>Variant üks – käsud aetakse torusse (pipeline)
+<ul>
+<li>Järgneva käsu täitmist alustatakse veel enne kui eelmine käsk on täidetud</li>
+</ul>
+</li>
+<li>Alternatiivne variant – superskalaarne arvuti
+<ul>
+<li>Mitu käsku tuuakse korraga protsessorisse ja täidetakse üheaegselt</li>
+</ul>
+</li>
+</ul>
+<h2 id="põhitõed">Põhitõed</h2>
+<ul>
+<li>Programmi käivitamisel
+<ul>
+<li>loetakse käsud ükshaaval protsessori registrisse ja seejärel</li>
+<li>tehakse seda mis käsk käsib</li>
+</ul>
+</li>
+<li>Käsud on enamasti mälus üksteise järel
+<ul>
+<li>v.a hargnemise (branch) või hüppe (jump) korral</li>
+</ul>
+</li>
+<li>Protsessor peab meeles, kus kohal mälus asub järgmine käsk (programmiloendur, program counter)
+<ul>
+<li>Peale käsu sisselugemist uuendatakse programmiloendurit</li>
+</ul>
+</li>
+<li>Käsuregister, instruction register</li>
+</ul>
+<h2 id="load-r1xr2">Load R1,X(R2)</h2>
+<ul>
+<li>Loe mälust käsuinfo ja suurenda programmiloenduri väärtus
+ühe astme võrra</li>
+<li>Dekodeeri käsk ja loe registri R2 sisu</li>
+<li>Arvuta efektiivne aadress X + [R2]</li>
+<li>Loe mälust aadressilt X+[R2] lähteargumendi väärtus</li>
+<li>Salvesta see registrisse R1</li>
+</ul>
+<h2 id="add-r1r2r3">Add R1,R2,R3</h2>
+<ul>
+<li>Loe mälust käsuinfo ja suurenda programmiloenduri
+väärtus ühe astme võrra</li>
+<li>Dekodeeri käsk ja loe registrite R2 ja R3 sisu</li>
+<li>Arvuta summa [R2] + [R3]</li>
+<li>Oota! Ära tee midagi Salvesta see registrisse R1</li>
+</ul>
+<h2 id="add-r1r210000">Add R1,R2,#10000</h2>
+<ul>
+<li>Loe mälust käsuinfo ja suurenda programmiloenduri
+väärtus ühe astme võrra</li>
+<li>Dekodeeri käsk ja loe registri R2 sisu</li>
+<li>Arvuta summa [R2] + 10000</li>
+<li>Oota! Ära tee midagi</li>
+<li>Salvesta see registrisse R1</li>
+</ul>
+<h2 id="store-r1xr2">Store R1,X(R2)</h2>
+<ul>
+<li>Loe mälust käsuinfo ja suurenda programmiloenduri väärtus ühe astme võrra</li>
+<li>Dekodeeri käsk ja loe registrite R1 ja R2 sisu</li>
+<li>Arvuta efektiivne aadress X + [R2]</li>
+<li>Salvesta mällu aadressile X+[R2] lähteargumendi väärtus</li>
+<li>Oota! Ära tee midagi</li>
+</ul>
+<h2 id="viieastmeline-tegevuste-järjekord">Viieastmeline tegevuste järjekord</h2>
+<ul>
+<li>Loe mälust käsuinfo ja suurenda programmiloenduri väärtus ühe astme võrra</li>
+<li>Dekodeeri käsk ja loe registri(te) sisu</li>
+<li>Arvuta, mida tarvis</li>
+<li>Loe mälust või salvesta mällu, kui tarvis</li>
+<li>Salvesta tulemus registrisse, kui tarvis</li>
+</ul>
+<h2 id="käsu-laadimine-ja-käivitamine">Käsu laadimine ja käivitamine</h2>
+<p>Add R1,R2,R3</p>
+<ol>
+<li>Mälu aadressï[PC], Loe mälust, IRïMälu andmed, PCï[PC]+4,</li>
+<li>Dekodeeri käsk, RAï[R2], RBï[R3]</li>
+<li>Arvuta summa RZï[RA]+[RB]</li>
+<li>RYï[RZ]</li>
+<li>Salvesta registrisse R1ï[RY]</li>
+</ol>
+<p>Load R1,X(R2)</p>
+<ol>
+<li>Mälu aadressï[PC], Loe mälust, IRïMälu andmed, PCï[PC]+4,</li>
+<li>Dekodeeri käsk, RAï[R2]</li>
+<li>Arvuta aadress RZï[RA]+X</li>
+<li>Mälu aadressï[RZ], Loe mälust, RYïMälu andmed</li>
+<li>Salvesta registrisse R1ï[RY]</li>
+</ol>
+<p>Store R1,X(R2)</p>
+<ol>
+<li>Mälu aadressï[PC], Loe mälust, IRïMälu andmed, PCï[PC]+4,</li>
+<li>Dekodeeri käsk, RAï[R2], RBï[R1]</li>
+<li>Arvuta aadress RZï[RA]+X, RMï[RB]</li>
+<li>Mälu aadressï[RZ], Mälu andmedï[RM], Salvesta mällu</li>
+<li>Oota! Ära tee midagi</li>
+</ol>
+<p>Branch BranchOffset</p>
+<ol>
+<li>Mälu aadressï[PC], Loe mälust, IRïMälu andmed, PCï[PC]+4,</li>
+<li>Dekodeeri käsk</li>
+<li>Arvuta aadress PCï[PC]+Hargnemise nihe</li>
+<li>Oota! Ära tee midagi</li>
+<li>Oota! Ära tee midagi</li>
+</ol>
+<p>Branch_if_[R1]=[R2] BranchOffset</p>
+<ol>
+<li>Mälu aadressï[PC], Loe mälust, IRïMälu andmed, PCï[PC]+4,</li>
+<li>Dekodeeri käsk, RAï[R1], RBï[R2]</li>
+<li>Võrdle [RA] ja [RB], Kui [RA]=[RB], siis arvuta aadress PCï[PC]+Hargnemise nihe</li>
+<li>Oota! Ära tee midagi</li>
+<li>Oota! Ära tee midagi</li>
+</ol>
+<p>Call R1</p>
+<ol>
+<li>Mälu aadressï[PC], Loe mälust, IRïMälu andmed, PCï[PC]+4,</li>
+<li>Dekodeeri käsk, RAï[R1]</li>
+<li>Ajutine-PCï[PC], Arvuta aadress PCï[RA]</li>
+<li>RYï[Ajutine-PC]</li>
+<li>RegisterLINKï[RY]</li>
+</ol>
+<h2 id="mälu-järel-ootamine">Mälu järel ootamine</h2>
+<p>Load R1,X(R2)</p>
+<ol>
+<li>Mälu aadressï[PC], Loe mälust, Oota MFC, IRïMälu andmed, PCï[PC]+4,</li>
+<li>Dekodeeri käsk, RAï[R2]</li>
+<li>Arvuta aadress RZï[RA]+X</li>
+<li>Mälu aadressï[RZ], Loe mälust, Oota MFC, RYïMälu andmed</li>
+<li>Salvesta registrisse R1ï[RY]</li>
+</ol>
+<h2 id="juhtsignaalide-genereerimine">Juhtsignaalide genereerimine</h2>
+<ul>
+<li>Programmide käivitamiseks peab protsessor suutma genereerida juhtsignaale
+<ul>
+<li>Hardwired</li>
+<li>Microprogrammed</li>
+</ul>
+</li>
+<li>Juhtsignaalide vajaduse määravad
+<ul>
+<li>Sammuloenduri sisu</li>
+<li>Käsuregistri sisu</li>
+<li>Arvutuste tulemused, võrdlemiste tulemused</li>
+<li>Välised sisendsignaalid, nagu MFC ja IRQ</li>
+</ul>
+</li>
+</ul>
+<h2 id="hardwired-control">Hardwired control</h2>
+<ul>
+<li>Programmide käivitamiseks peab protsessor suutma
+genereerida juhtsignaale</li>
+</ul>
+<h2 id="juhtsignaalid">Juhtsignaalid</h2>
+<ul>
+<li>Kirjuta_Reg = T5 * (ALU + Load + Call)</li>
+<li>Vali_B = Otsene</li>
+<li>Luba_loendur = WMFC + MFC
+<ul>
+<li>Loendur töötab alati siis, kui WMFC pole aktiveeritud</li>
+<li>Kui on aktiveeritud, siis vaja saada MFC aktiivseks, enne edasi ei lähe</li>
+</ul>
+</li>
+<li>Luba_PC = T1* MFC + T3 * BR</li>
+</ul>
+
+
+      </div>
+      <div class="banner rotated"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="base-container">
+    <div class="footer-content">
+    <div class="github">
+        <a href="https://github.com/inugami-dev64/ARA_Veebileht">
+            <img width="100" src="https://kodu.ut.ee/~karl-mih/img/github.png" alt="github.png">
+        </a>
+    </div>
+    <div class="contributors">
+        <ul>
+            <li>Richard Leover (<a href="https://github.com/richardleoverr" target="blank">Github</a>)</li>
+            <li>Karl-Mihkel Ott (<a href="https://github.com/inugami-dev64" target="blank">Github</a>)</li>
+            <li>Kaspar Tugevus</li>
+        </ul>
+    </div>
+</div>
+    </div>
+  </footer>
+  
+  <script src="/~karl-mih/js/jquery-3.7.1.min.js"></script>
+  <script src="/~karl-mih/js/main.js"></script>
+
+</body>
+</html>

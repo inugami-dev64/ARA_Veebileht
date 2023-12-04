@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="et-ee" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="icon" type="image/x-icon" href="/~karl-mih/img/favicon.ico">
+<title>Toru RISC Protsessoris | Arvuti riistvara ja arhitektuur (LOFY.03.079)</title>
+
+  <link rel="stylesheet" href="/~karl-mih/css/main.css">
+
+
+</head>
+<body>
+  <header>
+    <div class="base-container">
+      <nav class="desktop">
+    <a href="/~karl-mih">Kodu</a>
+    <a href="/~karl-mih/riistvara">Riistvara</a>
+    <a href="/~karl-mih/arhitektuur">Arhitektuur</a>
+    <a href="/~karl-mih/teemad">Teemad</a>
+</nav>
+
+<nav class="mobile">
+    <div>
+        <svg id="hamburger-btn" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+            <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path>
+        </svg>
+    </div>
+
+    <div class="mobile-overlay-container" id="mobile-overlay">
+        <div class="mobile-overlay">
+            <div class="close">
+                <button id="overlay-close-btn">X</button>
+            </div>
+            <div class="mobile-links">
+                <a href="/~karl-mih">Kodu</a><br>
+                <a href="/~karl-mih/riistvara">Riistvara</a><br>
+                <a href="/~karl-mih/arhitektuur">Arhitektuur</a><br>
+                <a href="/~karl-mih/teemad">Teemad</a><br>
+            </div>
+        </div>
+    </div>
+</nav>
+    </div>
+    
+  </header>
+  <main>
+    <div class="wrapper content-wrapper">
+      <div class="banner"></div>
+      <div class="base-container">
+        
+  <h1>Toru RISC Protsessoris</h1>
+
+  
+  
+  <time datetime="2023-11-29T14:11:44&#43;02:00">29. november 2023</time><br>
+  <p>Autor(id): 
+  
+  Richard Leover 
+  
+  </p>
+  
+
+
+  <p>Toru ehk konveier (inglise keeles pipeline) on kogum jadamisi ühendatud andmete töötlemise elemente, kus ühe elemendi väljund on järgmise elemendi sisendiks. Tihti tehakse sealjuures operatsioone samaaegselt.
+Konveierite kasutamine on tänapäeva maailmas laialdaselt levinud. Kõige lihtsamaks näiteks võib siia tuua autotööstuse, kus konveierliini peal tehakse iga protsess oma tööjaama juures. Ühes kohas lisatakse juurde mootor, sealt edasi lisatakse rattad jne. Selle eeliseks on see, et kui ühele autole saab mingi detail lisatud saab selle mööda liini edasi saata ning asuda tööle uue auto kallal.</p>
+<h2 id="põhitõed">Põhitõed</h2>
+<ul>
+<li>Arvuti töökiirust saab tõsta, kui
+<ul>
+<li>Kasutame kiiremaid ahelaid protsessori ja mälu tegemiseks</li>
+<li>Teeme osa operatsioone ära samaaegselt</li>
+</ul>
+</li>
+<li>Sisend-väljund operatsioonid ja arvutused protsessoris</li>
+<li>Analoogia tehase konveieriga</li>
+<li>Konveier e toru, ingl pipeline</li>
+</ul>
+<h2 id="vahemälu-tähtsus">Vahemälu tähtsus</h2>
+<ul>
+<li>Iga etapp täidetakse ära ühe takti jooksul</li>
+<li>Erinevate etappide täitmisele kuluv aeg on erinev</li>
+<li>Kui mõne etapiga saadakse kiiremini ühele poole, on
+seade ülejäänud aja ooterežiimis</li>
+<li>Seega on toru efektiivne ligikaudu ühepikkuste etappide korral</li>
+</ul>
+<h2 id="vahekokkuvõte">Vahekokkuvõte</h2>
+<ul>
+<li>Toru ei tee üksiku käsu täitmist kiiremaks</li>
+<li>Suureneb täidetud käskude arv ajaühikus</li>
+<li>Tulemus “üks käsk iga sammu ajal” on teoreetiliseks ülempiiriks, praktikas alati väiksem käskude arv ajaühikus</li>
+</ul>
+<h2 id="andmeriskid">Andmeriskid</h2>
+<ul>
+<li>Kahe järjestikuse käsu puhul, mida torus täidetakse, pole esimese käsu tulemus veel kättesaadav enne järgmise käsu alustamist</li>
+<li>Näide:
+<ul>
+<li>A ← 5 + B</li>
+<li>C ← 6 + A</li>
+</ul>
+</li>
+<li>Näide:
+<ul>
+<li>A ← 5 + B</li>
+<li>C ← 6 + B</li>
+</ul>
+</li>
+</ul>
+<h2 id="argumendi-edastamine-operand-forwarding">Argumendi edastamine (operand forwarding)</h2>
+<ul>
+<li>Kahe järjestikuse käsu puhul, mida torus täidetakse, pole
+esimese käsu tulemus veel kättesaadav enne järgmise
+käsu alustamist</li>
+<li>Siiski on tulemus enne registrisse kirjutamist ALU väljundis
+olemas</li>
+<li>Kui korraldame nende andmete kiirema edastamise,
+saame seisakut lühendada</li>
+</ul>
+<h2 id="mäluga-suhtlemine">Mäluga suhtlemine</h2>
+<ul>
+<li>Vahemälu tähtsus</li>
+<li>Kriitiline operatsioon on mälust lugemine:
+<ul>
+<li>Põhimälust lugemine on tavaliselt ca 10 korda aegavõtvam kui protsessorisisesed operatsioonid</li>
+<li>Protsessoriga samal kiibil paiknev vahemälu suudab töötada enamvähem sama kiirusega kui protsessor ise</li>
+</ul>
+</li>
+</ul>
+<h2 id="hargnemise-aadressi-edastamine">Hargnemise aadressi edastamine</h2>
+<ul>
+<li>Hargnemiskäsu dekodeerimise faasi lõpuks on hargnemisaadress meil juba teada</li>
+<li>Korraldame protsessori töö nii, et saaksime kohe alustada juba hargnemise sihtmärgi-käsu sisselugemist</li>
+<li>Vajalik lisariistvara – üks summaator dekodeerimise faasilisaks
+<ul>
+<li>Lähenemine analoogiline registrist kahe väärtuse lugemisele iga käsu puhul</li>
+</ul>
+</li>
+</ul>
+<h2 id="hargnemise-ajatamine-delayed-branch">Hargnemise ajatamine (delayed branch)</h2>
+<ul>
+<li>Ajatuspesa (Branch delay slot) – aadress, mis asub vahetult hargnemiskäsu järel</li>
+<li>Neid võib olla rohkem kui üks</li>
+<li>Hargnemisele järgnevad käsud loetakse alati protsessorisse
+<ul>
+<li>kuna sel hetkel veel ei ole veel teada, et hargnemine aset leiab</li>
+</ul>
+</li>
+<li>Nende täitmine ei põhjusta protsessorile täiendavat ajakulu
+<ul>
+<li>sest sel ajal nagunii midagi muud teha ei saa</li>
+</ul>
+</li>
+<li>Siit idee: panna ajatuspesadesse sellised käsud, mida ka tegelikult täita tuleb</li>
+</ul>
+<h2 id="tingimuslik-hargnemine">Tingimuslik hargnemine</h2>
+<ul>
+<li>Siin sõltub hargnemine või mitte-hargnemine tingimuslippude väärtusest, mida me ei pruugi enne teiste käskude täitmise lõpetamist teada</li>
+<li>Variant, et üritame tulemust ennustada</li>
+<li>Lihtsaim variant: eeldame, et hargnemist ei toimu</li>
+<li>Variant, et otsustame hargnemise märgi järgi
+<ul>
+<li>Ettepoole siirded toimuvad sagedamine</li>
+<li>Tahapoole siirded toimuvad harvemini</li>
+</ul>
+</li>
+<li>Variant, et lisame käsule hargnemise vaikimisi-otsuse. Selleks vaja ühte lisabitti.</li>
+</ul>
+<h2 id="branch-target-buffer">Branch target buffer</h2>
+<ul>
+<li>Hargnemiskäsu aadress</li>
+<li>Üks-kaks bitti hargnemise ennustamise jaoks</li>
+<li>Hargnemise aadress</li>
+<li>Tabeli tüüpiline suurusjärk – 1024 kirjet</li>
+</ul>
+<h2 id="resource-limitations">Resource limitations</h2>
+<p>Näiteks käskude ja andmete ühine vahemälu:</p>
+<ul>
+<li>Kui nii Fetch kui ka Memory samm soovivad samaaegselt temaga suhelda</li>
+</ul>
+<h2 id="arvuti-jõudlus">Arvuti jõudlus</h2>
+<ul>
+<li>Kursuse esimeses videoloengus esitasime jõudlusvõrrandi, kus
+<ul>
+<li>N on masinkoodi käskude arv</li>
+<li>F on taktsagedus</li>
+<li>S on ühe masinkoodi käsu täitmiseks vajalik (keskmiselt) sammude arv.</li>
+</ul>
+</li>
+<li>Käskude läbilaskevõime (instruction throughput) järjestikuse käsutäitmise korral</li>
+</ul>
+<h2 id="mitmeastmeline-toru">Mitmeastmeline toru</h2>
+<ul>
+<li>Üldiselt n-astmeline toru võiks teoreetiliselt suurendada käskude läbilaskevõimet n korda</li>
+<li>Reaalselt see päris nii ilus ei ole:
+<ul>
+<li>Kui torus tekib seisak, siis käskude läbilaskevõime langeb</li>
+</ul>
+</li>
+<li>Milline on praktiliselt parim toru astmete arv n?</li>
+</ul>
+<h2 id="cisc-protsessoris-kõrvalmõjud-side-effects">CISC protsessoris: Kõrvalmõjud (side effects)</h2>
+<ul>
+<li>Sõltuvus varasema tehte tulemusest võib olla nii
+<ul>
+<li>ilmutatud kujul kui ka</li>
+<li>ilmutamata kujul</li>
+</ul>
+</li>
+<li>Viimasel juhul öeldakse, et käsul on kõrvalmõjud</li>
+<li>Näiteks pinu käsud stack ja pop, adresseerimise autoincrement, autodecrement moodid</li>
+<li>tingimuslipud</li>
+</ul>
+<h2 id="terminoloogia">Terminoloogia</h2>
+<ul>
+<li>Seisak – processor stalls</li>
+<li>Risk – hazard
+<ul>
+<li>data hazard</li>
+<li>instruction hazard, control hazard</li>
+<li>structural hazard</li>
+</ul>
+</li>
+</ul>
+
+
+      </div>
+      <div class="banner rotated"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="base-container">
+    <div class="footer-content">
+    <div class="github">
+        <a href="https://github.com/inugami-dev64/ARA_Veebileht">
+            <img width="100" src="https://kodu.ut.ee/~karl-mih/img/github.png" alt="github.png">
+        </a>
+    </div>
+    <div class="contributors">
+        <ul>
+            <li>Richard Leover (<a href="https://github.com/richardleoverr" target="blank">Github</a>)</li>
+            <li>Karl-Mihkel Ott (<a href="https://github.com/inugami-dev64" target="blank">Github</a>)</li>
+            <li>Kaspar Tugevus</li>
+        </ul>
+    </div>
+</div>
+    </div>
+  </footer>
+  
+  <script src="/~karl-mih/js/jquery-3.7.1.min.js"></script>
+  <script src="/~karl-mih/js/main.js"></script>
+
+</body>
+</html>

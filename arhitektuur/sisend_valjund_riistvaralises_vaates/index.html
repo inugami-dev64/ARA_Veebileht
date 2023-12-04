@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="et-ee" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="icon" type="image/x-icon" href="/~karl-mih/img/favicon.ico">
+<title>Sisend-väljund riistvaralises vaates | Arvuti riistvara ja arhitektuur (LOFY.03.079)</title>
+
+  <link rel="stylesheet" href="/~karl-mih/css/main.css">
+
+
+</head>
+<body>
+  <header>
+    <div class="base-container">
+      <nav class="desktop">
+    <a href="/~karl-mih">Kodu</a>
+    <a href="/~karl-mih/riistvara">Riistvara</a>
+    <a href="/~karl-mih/arhitektuur">Arhitektuur</a>
+    <a href="/~karl-mih/teemad">Teemad</a>
+</nav>
+
+<nav class="mobile">
+    <div>
+        <svg id="hamburger-btn" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+            <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path>
+        </svg>
+    </div>
+
+    <div class="mobile-overlay-container" id="mobile-overlay">
+        <div class="mobile-overlay">
+            <div class="close">
+                <button id="overlay-close-btn">X</button>
+            </div>
+            <div class="mobile-links">
+                <a href="/~karl-mih">Kodu</a><br>
+                <a href="/~karl-mih/riistvara">Riistvara</a><br>
+                <a href="/~karl-mih/arhitektuur">Arhitektuur</a><br>
+                <a href="/~karl-mih/teemad">Teemad</a><br>
+            </div>
+        </div>
+    </div>
+</nav>
+    </div>
+    
+  </header>
+  <main>
+    <div class="wrapper content-wrapper">
+      <div class="banner"></div>
+      <div class="base-container">
+        
+  <h1>Sisend-väljund riistvaralises vaates</h1>
+
+  
+  
+  <time datetime="2023-11-29T14:11:44&#43;02:00">29. november 2023</time><br>
+  <p>Autor(id): 
+  
+  Richard Leover 
+  
+  </p>
+  
+  <div class="taxonomies">
+    <p>Teemad:
+      <a href="/~karl-mih/teemad/sisend-v%C3%A4ljund/">Sisend-Väljund</a>
+    </p>
+  </div>
+
+
+  <p>Riistvaraline sisend-väljund viitab arvuti riistvara komponentidele, mis võimaldavad andmete liikumist arvuti ja välismaailma vahel. See hõlmab kõike, mis on seotud andmete sisestamise ja väljastamisega arvutisüsteemis.</p>
+<h2 id="siinid">Siinid</h2>
+<ul>
+<li>Protsessor, mälu ja I/O seadmed ühendatakse omavahel siini(de)ga.</li>
+<li>Siini esmaseks ülesandeks on andmete edastamiseks vajaliku tee loomine</li>
+<li>Bus protocol – reeglite kogum, mille alusel korraldatakse erinevate seadmete suhtlus siinil
+<ul>
+<li>millal saata infot siinile</li>
+<li>siini kasutusjärjekorra jagamine</li>
+<li>juhtsignaalidest arusaamine</li>
+</ul>
+</li>
+<li>Siini liinid jagatakse kolme gruppi:
+<ul>
+<li>andmed</li>
+<li>aadress</li>
+<li>juhtimine</li>
+</ul>
+</li>
+</ul>
+<h2 id="juhtimisliinid">Juhtimisliinid</h2>
+<ul>
+<li>Juhtimisliini vahendusel tuleb seadmele öelda, kas täitmisele läheb lugemise või kirjutamise käsk
+<ul>
+<li>seda saaks korraldada ühe R/W liini abil, mis olles seisus 1 viitaks lugemisele ja seisus 0 kirjutamisele</li>
+</ul>
+</li>
+<li>Täpsustada on vaja andmete suurus (byte, word, long word jne)</li>
+<li>Ajastusinfo – millal on õige aeg seadmel andmeid siinile saata ja millal on siinil kvaliteetsed andmed lugemiseks</li>
+<li>Master – initsiaator</li>
+<li>Slave – sihtmärk, target</li>
+</ul>
+<h2 id="sünkroonne-andmeedastus">Sünkroonne andmeedastus</h2>
+<ul>
+<li>Kõik seadmed saavad ajastusinfo taktsignaalist</li>
+<li>Ajavahemik t1-t0 peab olema piisavalt pikk, et info jõuaks siini teise otsa kohale ja et seade jõuaks aadressi dekodeerida</li>
+<li>Slave ei tohiks enne ajahetke t1 ja Master enne ajahetke t2 toimetama hakata kuna andmed siinil pole veel usaldusväärsed!</li>
+<li>Ajavahemik t2-t1 peab olema piisavalt pikk, et info jõuaks siini teise otsa kohale ja et puhverregister jõuaks andmed salvestada (Set-up time)</li>
+</ul>
+<h2 id="sünkroonne-andmeülekanne-mitme-taktitsükli-jooksul">Sünkroonne andmeülekanne mitme taktitsükli jooksul</h2>
+<ul>
+<li>Eelmisel slaidil kujutet andmeedastus peab arvestama kõige aeglasema seadme vajadustega</li>
+<li>Teisisõnu: kõik seadmed suhtlevad aeglaseima seadme kiirusega</li>
+<li>Protsessor ei saa tagasisidet selle kohta, kas seade sai oma asjadega hakkama</li>
+<li>Lisatakse täiendav tagasisidesignaal
+<ul>
+<li>nüüd saab master teada, kui slave on aadressist aru saanud ja valmis osalema andmeedastuses</li>
+<li>lisandub võimalus kohandada andmeedastusele kuluvat aega, kui seade pole valmis</li>
+</ul>
+</li>
+</ul>
+<h2 id="asünkroonne-andmeedastus">Asünkroonne andmeedastus</h2>
+<ul>
+<li>Käepigistuse (handshake) kasutamine master ja slave seadme vahel</li>
+<li>Taktisignaali asendab siin kaks juhtsignaali
+<ul>
+<li>master ready</li>
+<li>slave ready</li>
+</ul>
+</li>
+<li>Master ready seatakse aktiivseks mõningase viivise järel peale andmete siiniletoomist</li>
+<li>Põhjus: samast allikast pärit signaalid jõuavad erinevaid ahelaid läbides sihtkohta eri aegadel</li>
+<li>Inglise keeles nimetatakse seda nähtust skew</li>
+</ul>
+<h2 id="plussid-miinused">Plussid-miinused</h2>
+<ul>
+<li>Asünkroonse andmeedastuse eeliseks on
+<ul>
+<li>pole vaja kellasid sünkroniseerida</li>
+<li>seega lihtsam ehitada</li>
+</ul>
+</li>
+<li>Asünkroonse andmeedastuse puudusteks on
+<ul>
+<li>topelt teekonnaga signaalid võtavad rohkem aega kui ühekordsekinnitusega signaalid</li>
+<li>seega aeglasem kui sünkroonne andmeedastus</li>
+</ul>
+</li>
+</ul>
+<h2 id="bus-arbitration">Bus arbitration</h2>
+<ul>
+<li>Bus master – seade, mis saab igal ajal algatadaandmevahetuse</li>
+<li>Need seadmed vahetuvad töö käigus</li>
+<li>Centralized arbitration – üks seade (bus arbiter) otsustab, kes on järgmine bus master</li>
+<li>Distributed arbitration – kõik seadmed osalevad uue bus master’i valimises</li>
+</ul>
+<h2 id="asünkroonne-jadaühendus">Asünkroonne jadaühendus</h2>
+<ul>
+<li>Saatja ja vastuvõtja kellad pole sünkroniseeritud</li>
+<li>Info sõna saabumise kohta on sõnas endas
+<ul>
+<li>start-bitt</li>
+<li>stopp-bit(t/id) sõna lõpus</li>
+<li>viimased aitavad kaasa, et uue sõna start-bitt õigeaegselt tuvastatakse</li>
+</ul>
+</li>
+</ul>
+<h2 id="sünkroonne-andmeedastus-1">Sünkroonne andmeedastus</h2>
+<ul>
+<li>Vajalik kiirema ühenduse jaoks</li>
+<li>Saatjal-vastuvõtjal mõlemal kellad</li>
+<li>Neid kooskõlastatakse 1-0 ja 0-1 üleminekute juures
+<ul>
+<li>neid peab olema piisavalt tihti</li>
+<li>seda korraldatakse erinevate kodeerimisskeemidega</li>
+</ul>
+</li>
+<li>Kui kellad paigas, saab saata suuri andmeblokke</li>
+</ul>
+
+
+      </div>
+      <div class="banner rotated"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="base-container">
+    <div class="footer-content">
+    <div class="github">
+        <a href="https://github.com/inugami-dev64/ARA_Veebileht">
+            <img width="100" src="https://kodu.ut.ee/~karl-mih/img/github.png" alt="github.png">
+        </a>
+    </div>
+    <div class="contributors">
+        <ul>
+            <li>Richard Leover (<a href="https://github.com/richardleoverr" target="blank">Github</a>)</li>
+            <li>Karl-Mihkel Ott (<a href="https://github.com/inugami-dev64" target="blank">Github</a>)</li>
+            <li>Kaspar Tugevus</li>
+        </ul>
+    </div>
+</div>
+    </div>
+  </footer>
+  
+  <script src="/~karl-mih/js/jquery-3.7.1.min.js"></script>
+  <script src="/~karl-mih/js/main.js"></script>
+
+</body>
+</html>

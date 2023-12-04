@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="et-ee" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="icon" type="image/x-icon" href="/~karl-mih/img/favicon.ico">
+<title>Arvuti mälukasutus | Arvuti riistvara ja arhitektuur (LOFY.03.079)</title>
+
+  <link rel="stylesheet" href="/~karl-mih/css/main.css">
+
+
+</head>
+<body>
+  <header>
+    <div class="base-container">
+      <nav class="desktop">
+    <a href="/~karl-mih">Kodu</a>
+    <a href="/~karl-mih/riistvara">Riistvara</a>
+    <a href="/~karl-mih/arhitektuur">Arhitektuur</a>
+    <a href="/~karl-mih/teemad">Teemad</a>
+</nav>
+
+<nav class="mobile">
+    <div>
+        <svg id="hamburger-btn" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+            <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path>
+        </svg>
+    </div>
+
+    <div class="mobile-overlay-container" id="mobile-overlay">
+        <div class="mobile-overlay">
+            <div class="close">
+                <button id="overlay-close-btn">X</button>
+            </div>
+            <div class="mobile-links">
+                <a href="/~karl-mih">Kodu</a><br>
+                <a href="/~karl-mih/riistvara">Riistvara</a><br>
+                <a href="/~karl-mih/arhitektuur">Arhitektuur</a><br>
+                <a href="/~karl-mih/teemad">Teemad</a><br>
+            </div>
+        </div>
+    </div>
+</nav>
+    </div>
+    
+  </header>
+  <main>
+    <div class="wrapper content-wrapper">
+      <div class="banner"></div>
+      <div class="base-container">
+        
+  <h1>Arvuti mälukasutus</h1>
+
+  
+  
+  <time datetime="2023-11-29T14:11:44&#43;02:00">29. november 2023</time><br>
+  <p>Autor(id): 
+  
+  Richard Leover 
+  
+  </p>
+  
+  <div class="taxonomies">
+    <p>Teemad:
+      <a href="/~karl-mih/teemad/m%C3%A4lu/">Mälu</a>
+    </p>
+  </div>
+
+
+  <p>Arvuti mälu vajavad nii programm ise kui tema poolt töödeldavad andmed – muutujad ja konstandid. Programmi masinkoodidele mälu eraldamise osas ei pea programmeerija üldjuhul muret tundma. Küll aga peab ta teadma, millal eraldatakse mälu andmetele ja kuidas seda toimingut vajadusel ise juhtida saab.</p>
+<h2 id="x86-arhitektuurid-ja-töörežiimid">x86 arhitektuurid ja töörežiimid</h2>
+<ul>
+<li>Reaalrežiim – 16 bitine (Real mode)</li>
+<li>IA-32 arhitektuur
+<ul>
+<li>Kaitstud režiim – 32 bitine (Protected mode)</li>
+<li>Virtuaalne reaalrežiim – 16 bitine (Virtual real mode)</li>
+</ul>
+</li>
+<li>IA-32e arhitektuur (tuntud ka AMD64, x86-64, EM64T või Intel64)
+<ul>
+<li>64 bitine režiim</li>
+<li>Ühilduvusrežiim – 32 bitine (Compatibility mode)</li>
+</ul>
+</li>
+<li>IA-64 arhitektuur</li>
+</ul>
+<h2 id="mälu-organiseerimine">Mälu organiseerimine</h2>
+<ul>
+<li>Mälu, mille poole protsessor saab pöörduda oma siinide kaudu
+nimetatakse füüsiliseks mäluks (physical memory)</li>
+<li>Füüsiline mälu on jagatud 8-bitisteks (bait) pesadeks.</li>
+<li>Iga mälupesa omab füüsilist aadressi (physical address)</li>
+<li>Füüsiline aadressiruum (physical address space) või mälu aadressiruum (memory address space) on
+<ul>
+<li>32-bitistel protsessoritel vahemikus 0…236 -1 (64GB)</li>
+<li>64-bitistel protsessoritel vahemikus 0…264 -1 (16EB)</li>
+</ul>
+</li>
+<li>Tänastel protsessoritel on see enamasti piiratud 35-41biti ehk 32GB-2TB peale</li>
+</ul>
+<h2 id="sisendväljund-aadressiruum">Sisend/väljund aadressiruum</h2>
+<ul>
+<li>Lisaks füüsilisele aadressiruumile on x86 arhitektuuris kasutusel ka:</li>
+<li>Sisend/väljund aadressiruum (I/O address space)
+<ul>
+<li>On mälu aadressiruumist eraldiseisev</li>
+<li>Sisaldab 2 16 (64K) eraldi adresseeritavat 8-bitist I/O porti</li>
+<li>Kahte või nelja järjest asetsevat I/O porti saab kombineerida vastavalt 16- ja 32-bitiseks</li>
+<li>I/O portide poole pöördumiseks on protsessoril eraldi käsud</li>
+</ul>
+</li>
+</ul>
+<h2 id="sisendväljundseadmed--inputoutput-devices">Sisend/väljundseadmed – Input/Output devices</h2>
+<ul>
+<li>Sisend/väljundseadmed (I/O devices) saavad olla:
+<ul>
+<li>Mälu vastendusega (Memory-Mapped I/O või MMIO)</li>
+</ul>
+</li>
+<li>Seadmete poole pöördutakse füüsilise aadressiruumi kaudu
+<ul>
+<li>Port vastendusega (Port-Mapped I/O või PMIO)</li>
+</ul>
+</li>
+<li>Seadmete poole pöördutakse sisend-/väljund aadressiruumi kaudu</li>
+</ul>
+
+
+      </div>
+      <div class="banner rotated"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="base-container">
+    <div class="footer-content">
+    <div class="github">
+        <a href="https://github.com/inugami-dev64/ARA_Veebileht">
+            <img width="100" src="https://kodu.ut.ee/~karl-mih/img/github.png" alt="github.png">
+        </a>
+    </div>
+    <div class="contributors">
+        <ul>
+            <li>Richard Leover (<a href="https://github.com/richardleoverr" target="blank">Github</a>)</li>
+            <li>Karl-Mihkel Ott (<a href="https://github.com/inugami-dev64" target="blank">Github</a>)</li>
+            <li>Kaspar Tugevus</li>
+        </ul>
+    </div>
+</div>
+    </div>
+  </footer>
+  
+  <script src="/~karl-mih/js/jquery-3.7.1.min.js"></script>
+  <script src="/~karl-mih/js/main.js"></script>
+
+</body>
+</html>

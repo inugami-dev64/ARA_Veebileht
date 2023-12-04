@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="et-ee" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="icon" type="image/x-icon" href="/~karl-mih/img/favicon.ico">
+<title>Liidesesiinid | Arvuti riistvara ja arhitektuur (LOFY.03.079)</title>
+
+  <link rel="stylesheet" href="/~karl-mih/css/main.css">
+
+
+</head>
+<body>
+  <header>
+    <div class="base-container">
+      <nav class="desktop">
+    <a href="/~karl-mih">Kodu</a>
+    <a href="/~karl-mih/riistvara">Riistvara</a>
+    <a href="/~karl-mih/arhitektuur">Arhitektuur</a>
+    <a href="/~karl-mih/teemad">Teemad</a>
+</nav>
+
+<nav class="mobile">
+    <div>
+        <svg id="hamburger-btn" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+            <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path>
+        </svg>
+    </div>
+
+    <div class="mobile-overlay-container" id="mobile-overlay">
+        <div class="mobile-overlay">
+            <div class="close">
+                <button id="overlay-close-btn">X</button>
+            </div>
+            <div class="mobile-links">
+                <a href="/~karl-mih">Kodu</a><br>
+                <a href="/~karl-mih/riistvara">Riistvara</a><br>
+                <a href="/~karl-mih/arhitektuur">Arhitektuur</a><br>
+                <a href="/~karl-mih/teemad">Teemad</a><br>
+            </div>
+        </div>
+    </div>
+</nav>
+    </div>
+    
+  </header>
+  <main>
+    <div class="wrapper content-wrapper">
+      <div class="banner"></div>
+      <div class="base-container">
+        
+  <h1>Liidesesiinid</h1>
+
+  
+  
+  <time datetime="2023-11-29T14:11:44&#43;02:00">29. november 2023</time><br>
+  <p>Autor(id): 
+  
+  Richard Leover 
+  
+  </p>
+  
+  <div class="taxonomies">
+    <p>Teemad:
+      <a href="/~karl-mih/teemad/sisend-v%C3%A4ljund/">Sisend-Väljund</a>
+    </p>
+  </div>
+
+
+  <h2 id="liidesesiinid">Liidesesiinid</h2>
+<ul>
+<li>PC (8 bitine andmesiin, 20 bitine aadressisiin)</li>
+<li>ISA (16 bitine andmesiin, 24 bitine aadressisiin)</li>
+<li>EISA (32 bitine andmesiin, 32 bitine aadressisiin)</li>
+<li>MCA (32 bitine andmesiin, 32 bitine aadressisiin)</li>
+<li>VL bus (32 bitine andmesiin, 32 bitine aadressisiin)</li>
+<li>PCI/PCI-X (32/64 bitine andmesiin, 32 bitine aadressisiin)</li>
+<li>PCMCIA (16/32 bitine andmesiin, 26 bitine aadress)</li>
+<li>AGP (32 bitine andmesiin, 32 bitine aadressisiin)</li>
+<li>PCIe (1-32x jadasiin)</li>
+</ul>
+<h2 id="pci-ja-pci-x">PCI ja PCI-X</h2>
+<ul>
+<li>PCI (Peripheral Component Interconnect)
+<ul>
+<li>Töötatud välja 1990. aastate algul</li>
+<li>Põhimotivaatoriks ületada seni kasutusel olnud liidesesiinide probleemid ja piirangud</li>
+<li>Erinevalt varasematest liidesesiinide standarditest arendati seda kohe avatud standardina</li>
+<li>Standardi arendamiseks moodustati PC tüüpi arvutite tootjate poolt grupeering nimega PCISIG (PCI Special Interest Group)</li>
+</ul>
+</li>
+<li>PCI-X (PCI-eXtended)
+<ul>
+<li>Arendati välja mõned aastad hiljem PCI laiendusena suuremate andmemahtude ja - edastuskiiruste saavutamiseks</li>
+<li>Avaldati ka PCI-X 2.0 maksimaalse andmeedastuskiirusega 4 GB/s</li>
+<li>Nii riist- kui tarkvaraliselt PCI’ga tagasiühilduv</li>
+</ul>
+</li>
+<li>Mõlemad on paralleelsed liidesesiinid</li>
+</ul>
+<h2 id="pci-siin">PCI siin</h2>
+<ul>
+<li>PCI (Peripheral Component Interconnect)
+<ul>
+<li>arhitektuurselt 32 seadet ühel siinil</li>
+<li>praktikas 4-5 välimist seadet</li>
+<li>praktikas 10-12 sisemist</li>
+<li>47 (49 masteringi puhul) kontakti</li>
+<li>Viike multipleksitakse</li>
+<li>Toetab 5V ja 3,3V seadmeid</li>
+<li>Toetab Plug and Play’d</li>
+</ul>
+</li>
+</ul>
+<h2 id="plug-and-play">Plug and Play</h2>
+<ul>
+<li>Plug and Play tööks on vaja
+<ul>
+<li>PnP BIOS</li>
+<li>ESCD (Extended System Configutarion Data)</li>
+<li>PnP operatsioonisüsteemi</li>
+</ul>
+</li>
+<li>Plug and Play automatiseerib
+<ul>
+<li>IRQ katkestuste jagamise</li>
+<li>DMA (Direct Memory Access)</li>
+<li>Mälu aadressid</li>
+<li>I/O pordid</li>
+</ul>
+</li>
+<li>Esialgse suure ebakindluse tõttu tulid käibele terminid
+<ul>
+<li>Plug and Pray</li>
+<li>Plug and Play, Play, Play…</li>
+</ul>
+</li>
+</ul>
+<h2 id="pci-x">PCI-X</h2>
+<ul>
+<li>PCI-X 2.0 (PCI-X 266 ja PCI-X 533)
+<ul>
+<li>100% tagasiühilduv</li>
+<li>Andmeedastuskiirused kuni 2,13 ja 4,26GB/s</li>
+<li>ECC ja bitivigade korrektsioon</li>
+</ul>
+</li>
+<li>PCI-X 3.0 (PCI-X 1066 ja PCI-X 2133)
+<ul>
+<li>Andmete pakkimine</li>
+<li>Automaatne energiasäästmine (ilma tarkvara osaluseta)</li>
+<li>Automaatne rikketuvastus (Automatic Fail-over)</li>
+</ul>
+</li>
+</ul>
+<h2 id="agp">AGP</h2>
+<ul>
+<li>Graafika „kaart“ võib olla
+<ul>
+<li>Emaplaadile integreeritud</li>
+<li>PCI siinil</li>
+<li>AGP siinil</li>
+<li>Kõike seda korraga</li>
+</ul>
+</li>
+<li>AGP (Accelerated Graphics Port)
+<ul>
+<li>Suurem kiirus</li>
+<li>Võimalus suhelda otse mäluga</li>
+<li>Kasutada RAM mälust osa tekstuurimäluna</li>
+<li>Täna enam ei kasutata, aga suurt osa AGP puhul kasutusele tulnud lahendusi kasutatakse ka tänaste graafikamootorite juures</li>
+<li>32 bitine andmesiin</li>
+<li>Kiirus 66MHz</li>
+<li>AGP1x 266MB/s AGP2x 528MB/s AGP4x 1GB/s AGP8x 2,1GB/s</li>
+<li>Kasutab pipeline’sid (nn. torusid)</li>
+<li>Kasutab sideband addressing’ut</li>
+</ul>
+</li>
+</ul>
+
+
+      </div>
+      <div class="banner rotated"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="base-container">
+    <div class="footer-content">
+    <div class="github">
+        <a href="https://github.com/inugami-dev64/ARA_Veebileht">
+            <img width="100" src="https://kodu.ut.ee/~karl-mih/img/github.png" alt="github.png">
+        </a>
+    </div>
+    <div class="contributors">
+        <ul>
+            <li>Richard Leover (<a href="https://github.com/richardleoverr" target="blank">Github</a>)</li>
+            <li>Karl-Mihkel Ott (<a href="https://github.com/inugami-dev64" target="blank">Github</a>)</li>
+            <li>Kaspar Tugevus</li>
+        </ul>
+    </div>
+</div>
+    </div>
+  </footer>
+  
+  <script src="/~karl-mih/js/jquery-3.7.1.min.js"></script>
+  <script src="/~karl-mih/js/main.js"></script>
+
+</body>
+</html>

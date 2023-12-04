@@ -2,6 +2,7 @@
 title = 'Toru RISC Protsessoris'
 date = 2023-11-29T14:11:44+02:00
 draft = false
+authors = ['Richard Leover']
 tags = ['Protsessor', 'Käsustik']
 +++
 

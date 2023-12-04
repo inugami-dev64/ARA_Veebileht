@@ -1,523 +1,431 @@
 <!DOCTYPE html>
 <html lang="et-ee" dir="ltr">
 <head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.6.0">
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<link rel="icon" type="image/x-icon" href="/~karl-mih/img/favicon.ico">
-<title>Käsustiku arhitektuur | Arvuti riistvara ja arhitektuur (LOFY.03.079)</title>
-
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/x-icon" href="/~karl-mih/img/favicon.ico">
+  <title>Käsustiku arhitektuur | Arvuti riistvara ja arhitektuur (LOFY.03.079)</title>
   <link rel="stylesheet" href="/~karl-mih/css/main.css">
-
-
 </head>
 <body>
   <header>
     <div class="base-container">
       <nav class="desktop">
-    <a href="/~karl-mih">Kodu</a>
-    <a href="/~karl-mih/riistvara">Riistvara</a>
-    <a href="/~karl-mih/arhitektuur">Arhitektuur</a>
-    <a href="/~karl-mih/teemad">Teemad</a>
-</nav>
-
-<nav class="mobile">
-    <div>
-        <svg id="hamburger-btn" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
-            <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path>
-        </svg>
-    </div>
-
-    <div class="mobile-overlay-container" id="mobile-overlay">
-        <div class="mobile-overlay">
+        <a href="/~karl-mih">Kodu</a> <a href="/~karl-mih/riistvara">Riistvara</a> <a href="/~karl-mih/arhitektuur">Arhitektuur</a> <a href="/~karl-mih/teemad">Teemad</a>
+      </nav>
+      <nav class="mobile">
+        <div>
+          <svg id="hamburger-btn" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="24px" height="24px">
+          <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path></svg>
+        </div>
+        <div class="mobile-overlay-container" id="mobile-overlay">
+          <div class="mobile-overlay">
             <div class="close">
-                <button id="overlay-close-btn">X</button>
+              <button id="overlay-close-btn">X</button>
             </div>
             <div class="mobile-links">
-                <a href="/~karl-mih">Kodu</a><br>
-                <a href="/~karl-mih/riistvara">Riistvara</a><br>
-                <a href="/~karl-mih/arhitektuur">Arhitektuur</a><br>
-                <a href="/~karl-mih/teemad">Teemad</a><br>
+              <a href="/~karl-mih">Kodu</a><br>
+              <a href="/~karl-mih/riistvara">Riistvara</a><br>
+              <a href="/~karl-mih/arhitektuur">Arhitektuur</a><br>
+              <a href="/~karl-mih/teemad">Teemad</a><br>
             </div>
+          </div>
         </div>
+      </nav>
     </div>
-</nav>
-    </div>
-    
   </header>
   <main>
     <div class="wrapper content-wrapper">
       <div class="banner"></div>
       <div class="base-container">
-        
-  <h1>Käsustiku arhitektuur</h1>
-
-  
-  
-  <time datetime="2023-11-29T14:11:44&#43;02:00">29. november 2023</time><br>
-  <p>Autor(id): 
-  
-  Richard Leover 
-  
-  </p>
-  
-  <div class="taxonomies">
-    <p>Teemad:
-      <a href="/~karl-mih/teemad/m%C3%A4lu/">Mälu</a>
-      <a href="/~karl-mih/teemad/protsessor/">Protsessor</a>
-      <a href="/~karl-mih/teemad/k%C3%A4sustik/">Käsustik</a>
-    </p>
-  </div>
-
-
-  <p>Arvuti arhitektuur määrab arvuti loogikalise struktuuri ja tööviisi, sealhulgas riistvara ja tarkvara komponentide omavahelised seosed.
-Käsustiku arhitektuur (ingl instruction set architecture, lühend ISA) on arvuti arhitektuuri see osa, mis liidestab tarkvara riistvaraga.</p>
-<h2 id="mälu">Mälu</h2>
-<ul>
-<li>Mälu koosneb miljonitest rakkudest</li>
-<li>Igas rakus saame salvestada ühe biti infot
-<ul>
-<li>ehk siis võimalikud olekud on 0 ja 1</li>
-</ul>
-</li>
-<li>Tavaliselt loetakse-kirjutatakse infot n biti kaupa</li>
-<li>andmeühikuks on sõna, ingl word, kus n on sõna pikkus</li>
-<li>Tänapäevastes arvutites on sõna pikkuseks 16 – 64 bitti</li>
-</ul>
-<h2 id="mälu-on-sõnade-kogum">Mälu on sõnade kogum</h2>
-<ul>
-<li>Igal mälupesal on oma kindel nimi –
-aadress</li>
-<li>Tavaliselt on selleks arvud
-0 … 2k
--1</li>
-<li>Seega 2k võimalikku adresseeritavat
-asukohta</li>
-<li>Näiteks 232 = 4 Gi = 4 294 967 296</li>
-</ul>
-<h2 id="sõna">Sõna</h2>
-<ul>
-<li>Selline nummerdamine on kõige loomulikum viis numbrite
-kirjapanemiseks</li>
-<li>8-bitist andmeühikut kutsutakse baidiks (byte)</li>
-<li>Sama skeemi kasutatakse ka baidi sees bittide nummerdamiseks</li>
-<li>Neli ASCII koodis tähte</li>
-</ul>
-<h2 id="mälu-operatsioonid">Mälu operatsioonid</h2>
-<ul>
-<li>Programmi käsud tuleb tuua mälust protsessorisse</li>
-<li>Parameetrid ja andmed tuleb samuti tuua mälust
-protsessorisse</li>
-<li>Vastus tuleb salvestada protsessorist mällu</li>
-<li>Load, Read, Fetch
-<ul>
-<li>Ütleme, mis aadressil paikneb meid huvitav info</li>
-<li>Loeme sealt aadressil info protsessorisse</li>
-</ul>
-</li>
-<li>Store, Write
-<ul>
-<li>Ütleme, millisesse mälupesasse tahame andmeid kirjutada</li>
-<li>Kirjutame andmed viidatud aadressiga mälupesasse</li>
-</ul>
-</li>
-</ul>
-<h2 id="arvuti-ülesanded">Arvuti ülesanded</h2>
-<ul>
-<li>Andmete liigutamine protsessori registrite ja mälu vahel</li>
-<li>Aritmeetika ja loogikaoperatsioonide tegemine andmetega</li>
-<li>Programmi käskude järjestamine ja juhtimine</li>
-<li>Sisend/väljund operatsioonid</li>
-</ul>
-<h2 id="risc-ja-cisc-käsustikud">RISC ja CISC käsustikud</h2>
-<ul>
-<li>Reduced Instruction Set Computer
-<ul>
-<li>Kõik käsud koos argumentidega mahuvad ühte sõnasse</li>
-<li>Kasutatakse Load/Store arhitektuuri</li>
-<li>Näiteks: Altera Nios II, ARM (pole tegelikult päris puhas RISC)</li>
-</ul>
-</li>
-<li>Complex Instruction Set Computer
-<ul>
-<li>Käsud võivad olla pikemad kui üks sõna</li>
-<li>Argumendid ka näiteks mälupesades</li>
-<li>Näiteks: ColdFire, Intel IA-32 (pole tegelikult päris puhas CISC)</li>
-</ul>
-</li>
-</ul>
-<h2 id="risc">RISC</h2>
-<ul>
-<li>Reduced Instruction Set Computer
-<ul>
-<li>Kasutatakse lihtsaid ja lühikesi käske</li>
-<li>Load R3,LOC1</li>
-<li>Add R3,R2,R0</li>
-<li>Store R0,LOC1</li>
-</ul>
-</li>
-<li>Kõik käsud peavad mahtuma ühe sõna sisse</li>
-<li>Kasutatakse Load/Store arhitektuuri, st mäluga suhtlemine käib ainult Load/Store
-käskudega
-<ul>
-<li>Näiteks käsk Add LOC1,R0 pole siin lubatud</li>
-<li>Selle asemel Load R1,LOC1</li>
-<li>Add R1,R1,R0</li>
-<li>Store R1,LOC1</li>
-</ul>
-</li>
-<li>ja kõik aritmeetika/loogika operandid peavad olema kas
-<ul>
-<li>protsessori registrites</li>
-<li>või siis antud otseselt käsus endas</li>
-</ul>
-</li>
-</ul>
-<h2 id="põhilised-käsu-tüübid">Põhilised käsu tüübid</h2>
-<ul>
-<li>Load destination, source</li>
-<li>Load processor register, memory_location</li>
-<li>Add destination, source1, source2
-<ul>
-<li>R0←[R1]+[R2]</li>
-<li>Add R0,R1,R2</li>
-<li>Lähteandmed R1 ja R2</li>
-<li>Tulemus R0</li>
-</ul>
-</li>
-<li>Store source, destination</li>
-<li>Store processor register, memory_location</li>
-</ul>
-<h2 id="muutujate-kirjeldamine">Muutujate kirjeldamine</h2>
-<ul>
-<li>Registri mood – operandiks on protsessori registri sisu, käsus
-antakse registri aadress (nimi)</li>
-<li>Absoluutne (otsene) mood – operandiks on mälupesa sisu,
-käsus antakse selle aadress</li>
-<li>Näide:
-<ul>
-<li>Käsuga int arv1, arv2; kirjeldame C-keeles täisarvulised muutujad
-arv1 ja arv2. Neile vastavad konkreetsed mälupesad/registrid,
-millele saab absoluutses/registri moodis viidata</li>
-<li>Käsus load R5,LOC on esimene operand esitatud registri moodis,
-teine aga absoluutses moodis</li>
-<li>esimese operandi väärtuseks on registri R5 sisu, teise
-operandi väärtuseks mälupesa LOC sisu</li>
-</ul>
-</li>
-</ul>
-<h2 id="konstantide-kirjeldamine">Konstantide kirjeldamine</h2>
-<ul>
-<li>Immediate mood – operandi väärtus antakse juba käsus
-endas</li>
-<li>Näide:
-<ul>
-<li>Käsus Move R5,#500 on esimese operandi väärtuseks registri R5
-sisu, teise operandi väärtuseks aga 500</li>
-<li>Näiteks tehte arv1 = arv2 + 8; saame kirja panna
-Load R1,arv2
-Add R1,R1,#8
-Store R1,arv1</li>
-<li>arv1 ja arv2 tuleb loomulikult eelnevalt muutujatena deklareerida
-ja mälupesaga seostada</li>
-</ul>
-</li>
-</ul>
-<h2 id="suunamine-ja-viidad-argumendile">Suunamine ja viidad argumendile</h2>
-<ul>
-<li>Kaudne mood – operandi efektiivne aadress antakse registri
-aadressina kus operandi aadress kirjas on</li>
-<li>Näide:
-<ul>
-<li>Käsus Load R5,(R1) on esimese operandi väärtuseks registri R5
-sisu, teise operandi väärtuseks aga registris R1 viidatud aadressil
-asuva mälupesa sisu</li>
-<li>Käsus Load R2,(R4) on esimese operandi väärtuseks registri R2
-sisu, teise operandi väärtuseks aga registris R4 viidatud aadressil
-asuva mälupesa sisu</li>
-<li>registrit, kus efektiivne aadress kirjas on kutsutakse viidaks e
-pointer’iks</li>
-</ul>
-</li>
-</ul>
-<h2 id="cisc">CISC</h2>
-<ul>
-<li>Complex Instruction Set Computer</li>
-<li>Lubab kasutada erineva pikkusega käske
-<ul>
-<li>St käsk võib olla pikem kui üks sõna</li>
-</ul>
-</li>
-<li>Operand võib olla ka mälupesa</li>
-<li>Sellised käsud on reeglina juba küllaltki keerulised</li>
-</ul>
-<h2 id="põhilised-käsu-tüübid-1">Põhilised käsu tüübid</h2>
-<ul>
-<li>Store R0,LOC1
-<ul>
-<li>Võtame kasutusele kahesõnalise käsu</li>
-</ul>
-</li>
-<li>Move LOC2,LOC1
-<ul>
-<li>Võtame kasutusele kolmesõnalise käsu</li>
-</ul>
-</li>
-</ul>
-<h2 id="cisc-arvuti-adresseerimise-näited">CISC arvuti adresseerimise näited</h2>
-<p>Autoincrement mood &ndash; väga sarnane kaudse moodiga.
-Operandi efektiivne aadress antakse mälu või registri aadressina kus operandi
-aadress kirjas on. Peale operandi kättesaamist suurendatakse registri sisu ühe
-ühiku võrra.</p>
-<ul>
-<li>
-<p>ühik valitakse selline, et aadress viitaks järgmisele elememendile</p>
-</li>
-<li>
-<p>1 baidisuuruse operandi puhul,</p>
-</li>
-<li>
-<p>2, kui operand on 16 bitti</p>
-</li>
-<li>
-<p>4, kui operand on 32 bitti</p>
-</li>
-<li>
-<p>Tähis (Ri)+</p>
-</li>
-<li>
-<p>Autodecrement mood – Enne operandi kättesaamist vähendatakse registri sisu
-ühe ühiku võrra. Operandi efektiivne aadress antakse mälu või registri aadressina
-kus operandi aadress kirjas on.</p>
-</li>
-<li>
-<p>Tähis –(Ri)</p>
-</li>
-<li>
-<p>Indeks moodiga väga sarnane mood on baas koos indeksiga
-– (Ri
-, Rj
-)</p>
-<ul>
-<li>Viidatakse aadressile Ri + Rj</li>
-</ul>
-</li>
-<li>
-<p>ja baas koos indeksi ja nihkega</p>
-<ul>
-<li>X(Ri
-, Rj
-)</li>
-<li>Viidatakse aadressile X + Ri + Rj</li>
-<li>Seda kasutatakse kolmemõõtmelise massiivi kirjeldamisel</li>
-</ul>
-</li>
-<li>
-<p>Suhteline mood – sisuliselt indeks mood, aga registriks on PC
-(Program Counter)</p>
-<ul>
-<li>tüüpiline kasutus Branch&gt;0 LOOP käsu sihtkoha kirjeldamiseks.
-Näiteks kujul –16(PC)</li>
-</ul>
-</li>
-</ul>
-<h2 id="staatus-register">Staatus-register</h2>
-<ul>
-<li>Condition code register või status register</li>
-<li>Vastavalt tulemusele seatakse lipud kas
-0 või 1
-<ul>
-<li>N (negatiivne) – kui tulemus on negatiivne siis 1; muidu 0</li>
-<li>Z (null) – kui tulemus on null siis 1; muidu 0</li>
-<li>V (ületäitumine) – kui leidis aset aritmeetiline ületäitumine siis 1; muidu 0</li>
-<li>C (ülekanne) – kui leidis aset ülekanne (carry-out) siis 1; muidu 0</li>
-</ul>
-</li>
-<li>Mõnedes protsessorites muutuvad lipud automaatselt, teistes on eraldi käsud,
-millega lippude muutmine kaasneb
-<ul>
-<li>Add (ei muuda lippe)</li>
-<li>AddSetCC (muudab lippe)</li>
-</ul>
-</li>
-</ul>
-<h2 id="pinu-stack">Pinu (stack)</h2>
-<p>Andmete kogum (tavaliselt baidid või sõnad), mille puhul saab
-elemente lugeda/kirjutada ainult ühest andmekogumi otsast
-(ülemisest)</p>
-<ul>
-<li>Analoog: söökla kandikute virn</li>
-<li>LIFO (last-in-first-out)</li>
-<li>Spetsiaalne register (stack pointer) peab meeles, millisel
-aadressil asub pinu kõige värskem element</li>
-<li>Pinu kasvab tavaliselt väiksemate aadresside suunas</li>
-</ul>
-<h2 id="alamprogrammid">Alamprogrammid</h2>
-<ul>
-<li>Sageli on tarvis mingit kindlat ülesannet teha palju kordi</li>
-<li>Üks võimalus on kirjutada alamprogramm</li>
-<li>See kutsutakse välja (call) iga kord, kui seda ülesannet teha
-vaja on</li>
-<li>Peale alamprogrammi täitmist on vaja endisesse kohta tagasi
-jõuda (return)
-<ul>
-<li>kuna alamprogrammi kutsutakse välja erinevatest kohtadest, siis on
-ka potentsiaalseid naasmiskohti palju</li>
-<li>teine keerukus on selles, et peale naasmist peab
-programmiloenduri sisu vastama uuele/vanale/ olukorrale (ehk siis
-call käsk peab
-selle info kuskil talletama)</li>
-</ul>
-</li>
-</ul>
-<h2 id="subroutine-linkage-method">Subroutine linkage method</h2>
-<ul>
-<li>Link-registris salvestatakse tagasipöördumise aadress (sisuliselt
-PC sisu)</li>
-<li>Tagasipöördumisel viidatakse kaudselt sellele registrile</li>
-<li>Probleem</li>
-<li>sageli juhtub nii, et alamprogrammi sees on tarvis kasutada
-teist alamprogrammi</li>
-<li>ka selle alamprogrammi jaoks on vaja link-registris salvestada
-tagasipöördumise aadress</li>
-<li>Lahendus: kasutatakse pinu</li>
-</ul>
-<h2 id="parameetrite-edastamine">Parameetrite edastamine</h2>
-<ul>
-<li>Alamprogrammi väljakutsumisel tuleb saata sinna ka teatav
-hulk parameetreid</li>
-<li>Alamprogrammist naastes on vaja põhiprogrammi tuua
-rehkenduse tulemus(ed)
-<ul>
-<li>Üks võimalus on kasutada registreid või mälu</li>
-<li>Teine võimalus on panna parameetrid/andmed pinusse</li>
-</ul>
-</li>
-<li>Väikese arvu parameetrite korral on esimene variant lihtsam</li>
-<li>Pinu kasutamine on paindlikum lahendus – saab edastada palju
-parameetreid/andmeid</li>
-</ul>
-<h2 id="stack-pointer-ja-frame-pointer">Stack pointer ja Frame pointer</h2>
-<p>Lisaks Stack pointer’ile on kasulik sisse tuua veel teine pointer</p>
-<ul>
-<li>frame pointer</li>
-<li>Frame pointer võimaldab mugavalt viidata muutujatele pinus</li>
-<li>Stack pointeriga seda teha ei saa, kuna SP ei seisa ühe koha
-peal (muutuja lisamisel/kustutamisel SP väärtus muutub)</li>
-<li>Tavaks on, et FP viitab vahetult tagasipöördumise aadressi
-peal olevale väljale</li>
-<li>Sellel väljal salvestatakse FP senine väärtus</li>
-</ul>
-<h2 id="loogikakäsud">Loogikakäsud</h2>
-<ul>
-<li>Loogikaahelate ülesehitamisel on ehituskivideks NING (AND), VÕI (OR) ja EI (NOT)
-ahelad</li>
-<li>Mõnikord on kasulik suuta teha neid operatsioone ka tarkvaraliselt</li>
-<li>Näide 1: Positiivsest täisarvust negatiivse saamine. Olgu arvuks +5 (0101) registris
-R1
-<ul>
-<li>Not R1 annab meile -6 (1010)</li>
-<li>Add R1,R1,#1 annab meile -5 (1011)</li>
-</ul>
-</li>
-<li>Näide 2: Olgu meil tarvis kindlaks teha, kas registris R1 oleva 32-bitise sõna
-parempoolseim täht on X. ASCII koodis on täht X: 01011000 ehk 0x58
-<ul>
-<li>And R1,0xFF</li>
-<li>Compare R1,0x58</li>
-<li>Branch_if_[R1]=0 …</li>
-</ul>
-</li>
-</ul>
-<h2 id="korrutamine-ja-jagamine">Korrutamine ja jagamine</h2>
-<p>Enamuses käsustikke võimaldavad teha korrutamistehet:
-Rk←[Ri]´[Rj]</p>
-<ul>
-<li>Multiply Rk,Ri,Rj
-<ul>
-<li>kui sisendsuurused on n-bitised, siis vastus võib olla kuni 2n-bitine</li>
-<li>seega võib tulemuse salvestamiseks vaja minna kahte registrit</li>
-</ul>
-</li>
-<li>Mõned käsustikud võimaldavad teha ka jagamistehet:
-Rk←[Ri]/[Rj]</li>
-<li>Divide Rk,Ri,Rj
-<ul>
-<li>siin on vaja salvestada nii täisosa kui ka jääk</li>
-<li>seega võib tulemuse salvestamiseks vaja minna kahte registrit</li>
-<li>mõnikord jäetakse jääk ka arvestamata</li>
-</ul>
-</li>
-</ul>
-<h2 id="nihe">Nihe</h2>
-<p>Paljudes rakendustes on tarvis nihutada operandi bitte
-paremale või vasakule etteantud arvu kohtade võrra</p>
-<ul>
-<li>Loogiline nihe
-<ul>
-<li>LShiftL asukoht,arv</li>
-<li>LShiftR asukoht,arv</li>
-</ul>
-</li>
-<li>Aritmeetiline nihe
-<ul>
-<li>AShiftR asukoht,arv</li>
-</ul>
-</li>
-</ul>
-<h2 id="pööre">Pööre</h2>
-<ul>
-<li>Nihke puhul lähevad osad bitid kaotsi</li>
-<li>Pöörde korral saame kogu info siiski säilitada</li>
-<li>Pööre ilma ülekannet (Carry) kasutamata
-<ul>
-<li>RotateL asukoht,arv</li>
-<li>RotateR asukoht,arv</li>
-</ul>
-</li>
-<li>Pööre ülekannet (Carry) kasutades
-<ul>
-<li>RotateLC asukoht,arv</li>
-<li>RotateRC asukoht,arv</li>
-</ul>
-</li>
-</ul>
-<h2 id="masinkood">Masinkood</h2>
-<ul>
-<li>Protsessoris käivitamiseks tuleb kõik käsud kodeerida
-<ul>
-<li>see ei ole enam assemblerkeel (Assembly language)</li>
-<li>vaid binaarkood</li>
-<li>seda binaarkoodi kutsutakse masinkoodiks</li>
-</ul>
-</li>
-</ul>
-
-
+        <h1>Käsustiku arhitektuur</h1><time datetime="2023-11-29T14:11:44+02:00">29. november 2023</time><br>
+        <p>Autor(id): Richard Leover</p>
+        <div class="taxonomies">
+          <p>Teemad: <a href="/~karl-mih/teemad/m%C3%A4lu/">Mälu</a> <a href="/~karl-mih/teemad/protsessor/">Protsessor</a> <a href="/~karl-mih/teemad/k%C3%A4sustik/">Käsustik</a></p>
+        </div>
+        <p>Arvuti arhitektuur määrab arvuti loogikalise struktuuri ja tööviisi, sealhulgas riistvara ja tarkvara komponentide omavahelised seosed. Käsustiku arhitektuur (ingl instruction set architecture, lühend ISA) on arvuti arhitektuuri see osa, mis liidestab tarkvara riistvaraga.</p>
+        <h2 id="mälu">Mälu</h2>
+        <ul>
+          <li>Mälu koosneb miljonitest rakkudest</li>
+          <li>Igas rakus saame salvestada ühe biti infot
+            <ul>
+              <li>ehk siis võimalikud olekud on 0 ja 1</li>
+            </ul>
+          </li>
+          <li>Tavaliselt loetakse-kirjutatakse infot n biti kaupa</li>
+          <li>andmeühikuks on sõna, ingl word, kus n on sõna pikkus</li>
+          <li>Tänapäevastes arvutites on sõna pikkuseks 16 – 64 bitti</li>
+        </ul>
+        <h2 id="mälu-on-sõnade-kogum">Mälu on sõnade kogum</h2>
+        <ul>
+          <li>Igal mälupesal on oma kindel nimi – aadress</li>
+          <li>Tavaliselt on selleks arvud 0 … 2k -1</li>
+          <li>Seega 2k võimalikku adresseeritavat asukohta</li>
+          <li>Näiteks 232 = 4 Gi = 4 294 967 296</li>
+        </ul>
+        <h2 id="sõna">Sõna</h2>
+        <ul>
+          <li>Selline nummerdamine on kõige loomulikum viis numbrite kirjapanemiseks</li>
+          <li>8-bitist andmeühikut kutsutakse baidiks (byte)</li>
+          <li>Sama skeemi kasutatakse ka baidi sees bittide nummerdamiseks</li>
+          <li>Neli ASCII koodis tähte</li>
+        </ul>
+        <h2 id="mälu-operatsioonid">Mälu operatsioonid</h2>
+        <ul>
+          <li>Programmi käsud tuleb tuua mälust protsessorisse</li>
+          <li>Parameetrid ja andmed tuleb samuti tuua mälust protsessorisse</li>
+          <li>Vastus tuleb salvestada protsessorist mällu</li>
+          <li>Load, Read, Fetch
+            <ul>
+              <li>Ütleme, mis aadressil paikneb meid huvitav info</li>
+              <li>Loeme sealt aadressil info protsessorisse</li>
+            </ul>
+          </li>
+          <li>Store, Write
+            <ul>
+              <li>Ütleme, millisesse mälupesasse tahame andmeid kirjutada</li>
+              <li>Kirjutame andmed viidatud aadressiga mälupesasse</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="arvuti-ülesanded">Arvuti ülesanded</h2>
+        <ul>
+          <li>Andmete liigutamine protsessori registrite ja mälu vahel</li>
+          <li>Aritmeetika ja loogikaoperatsioonide tegemine andmetega</li>
+          <li>Programmi käskude järjestamine ja juhtimine</li>
+          <li>Sisend/väljund operatsioonid</li>
+        </ul>
+        <h2 id="risc-ja-cisc-käsustikud">RISC ja CISC käsustikud</h2>
+        <ul>
+          <li>Reduced Instruction Set Computer
+            <ul>
+              <li>Kõik käsud koos argumentidega mahuvad ühte sõnasse</li>
+              <li>Kasutatakse Load/Store arhitektuuri</li>
+              <li>Näiteks: Altera Nios II, ARM (pole tegelikult päris puhas RISC)</li>
+            </ul>
+          </li>
+          <li>Complex Instruction Set Computer
+            <ul>
+              <li>Käsud võivad olla pikemad kui üks sõna</li>
+              <li>Argumendid ka näiteks mälupesades</li>
+              <li>Näiteks: ColdFire, Intel IA-32 (pole tegelikult päris puhas CISC)</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="risc">RISC</h2>
+        <ul>
+          <li>Reduced Instruction Set Computer
+            <ul>
+              <li>Kasutatakse lihtsaid ja lühikesi käske</li>
+              <li>Load R3,LOC1</li>
+              <li>Add R3,R2,R0</li>
+              <li>Store R0,LOC1</li>
+            </ul>
+          </li>
+          <li>Kõik käsud peavad mahtuma ühe sõna sisse</li>
+          <li>Kasutatakse Load/Store arhitektuuri, st mäluga suhtlemine käib ainult Load/Store käskudega
+            <ul>
+              <li>Näiteks käsk Add LOC1,R0 pole siin lubatud</li>
+              <li>Selle asemel Load R1,LOC1</li>
+              <li>Add R1,R1,R0</li>
+              <li>Store R1,LOC1</li>
+            </ul>
+          </li>
+          <li>ja kõik aritmeetika/loogika operandid peavad olema kas
+            <ul>
+              <li>protsessori registrites</li>
+              <li>või siis antud otseselt käsus endas</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="põhilised-käsu-tüübid">Põhilised käsu tüübid</h2>
+        <ul>
+          <li>Load destination, source</li>
+          <li>Load processor register, memory_location</li>
+          <li>Add destination, source1, source2
+            <ul>
+              <li>R0←[R1]+[R2]</li>
+              <li>Add R0,R1,R2</li>
+              <li>Lähteandmed R1 ja R2</li>
+              <li>Tulemus R0</li>
+            </ul>
+          </li>
+          <li>Store source, destination</li>
+          <li>Store processor register, memory_location</li>
+        </ul>
+        <h2 id="muutujate-kirjeldamine">Muutujate kirjeldamine</h2>
+        <ul>
+          <li>Registri mood – operandiks on protsessori registri sisu, käsus antakse registri aadress (nimi)</li>
+          <li>Absoluutne (otsene) mood – operandiks on mälupesa sisu, käsus antakse selle aadress</li>
+          <li>Näide:
+            <ul>
+              <li>Käsuga int arv1, arv2; kirjeldame C-keeles täisarvulised muutujad arv1 ja arv2. Neile vastavad konkreetsed mälupesad/registrid, millele saab absoluutses/registri moodis viidata</li>
+              <li>Käsus load R5,LOC on esimene operand esitatud registri moodis, teine aga absoluutses moodis</li>
+              <li>esimese operandi väärtuseks on registri R5 sisu, teise operandi väärtuseks mälupesa LOC sisu</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="konstantide-kirjeldamine">Konstantide kirjeldamine</h2>
+        <ul>
+          <li>Immediate mood – operandi väärtus antakse juba käsus endas</li>
+          <li>Näide:
+            <ul>
+              <li>Käsus Move R5,#500 on esimese operandi väärtuseks registri R5 sisu, teise operandi väärtuseks aga 500</li>
+              <li>Näiteks tehte arv1 = arv2 + 8; saame kirja panna Load R1,arv2 Add R1,R1,#8 Store R1,arv1</li>
+              <li>arv1 ja arv2 tuleb loomulikult eelnevalt muutujatena deklareerida ja mälupesaga seostada</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="suunamine-ja-viidad-argumendile">Suunamine ja viidad argumendile</h2>
+        <ul>
+          <li>Kaudne mood – operandi efektiivne aadress antakse registri aadressina kus operandi aadress kirjas on</li>
+          <li>Näide:
+            <ul>
+              <li>Käsus Load R5,(R1) on esimese operandi väärtuseks registri R5 sisu, teise operandi väärtuseks aga registris R1 viidatud aadressil asuva mälupesa sisu</li>
+              <li>Käsus Load R2,(R4) on esimese operandi väärtuseks registri R2 sisu, teise operandi väärtuseks aga registris R4 viidatud aadressil asuva mälupesa sisu</li>
+              <li>registrit, kus efektiivne aadress kirjas on kutsutakse viidaks e pointer’iks</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="cisc">CISC</h2>
+        <ul>
+          <li>Complex Instruction Set Computer</li>
+          <li>Lubab kasutada erineva pikkusega käske
+            <ul>
+              <li>St käsk võib olla pikem kui üks sõna</li>
+            </ul>
+          </li>
+          <li>Operand võib olla ka mälupesa</li>
+          <li>Sellised käsud on reeglina juba küllaltki keerulised</li>
+        </ul>
+        <h2 id="põhilised-käsu-tüübid-1">Põhilised käsu tüübid</h2>
+        <ul>
+          <li>Store R0,LOC1
+            <ul>
+              <li>Võtame kasutusele kahesõnalise käsu</li>
+            </ul>
+          </li>
+          <li>Move LOC2,LOC1
+            <ul>
+              <li>Võtame kasutusele kolmesõnalise käsu</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="cisc-arvuti-adresseerimise-näited">CISC arvuti adresseerimise näited</h2>
+        <p>Autoincrement mood – väga sarnane kaudse moodiga. Operandi efektiivne aadress antakse mälu või registri aadressina kus operandi aadress kirjas on. Peale operandi kättesaamist suurendatakse registri sisu ühe ühiku võrra.</p>
+        <ul>
+          <li>
+            <p>ühik valitakse selline, et aadress viitaks järgmisele elememendile</p>
+          </li>
+          <li>
+            <p>1 baidisuuruse operandi puhul,</p>
+          </li>
+          <li>
+            <p>2, kui operand on 16 bitti</p>
+          </li>
+          <li>
+            <p>4, kui operand on 32 bitti</p>
+          </li>
+          <li>
+            <p>Tähis (Ri)+</p>
+          </li>
+          <li>
+            <p>Autodecrement mood – Enne operandi kättesaamist vähendatakse registri sisu ühe ühiku võrra. Operandi efektiivne aadress antakse mälu või registri aadressina kus operandi aadress kirjas on.</p>
+          </li>
+          <li>
+            <p>Tähis –(Ri)</p>
+          </li>
+          <li>
+            <p>Indeks moodiga väga sarnane mood on baas koos indeksiga – (Ri , Rj )</p>
+            <ul>
+              <li>Viidatakse aadressile Ri + Rj</li>
+            </ul>
+          </li>
+          <li>
+            <p>ja baas koos indeksi ja nihkega</p>
+            <ul>
+              <li>X(Ri , Rj )</li>
+              <li>Viidatakse aadressile X + Ri + Rj</li>
+              <li>Seda kasutatakse kolmemõõtmelise massiivi kirjeldamisel</li>
+            </ul>
+          </li>
+          <li>
+            <p>Suhteline mood – sisuliselt indeks mood, aga registriks on PC (Program Counter)</p>
+            <ul>
+              <li>tüüpiline kasutus Branch&gt;0 LOOP käsu sihtkoha kirjeldamiseks. Näiteks kujul –16(PC)</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="staatus-register">Staatus-register</h2>
+        <ul>
+          <li>Condition code register või status register</li>
+          <li>Vastavalt tulemusele seatakse lipud kas 0 või 1
+            <ul>
+              <li>N (negatiivne) – kui tulemus on negatiivne siis 1; muidu 0</li>
+              <li>Z (null) – kui tulemus on null siis 1; muidu 0</li>
+              <li>V (ületäitumine) – kui leidis aset aritmeetiline ületäitumine siis 1; muidu 0</li>
+              <li>C (ülekanne) – kui leidis aset ülekanne (carry-out) siis 1; muidu 0</li>
+            </ul>
+          </li>
+          <li>Mõnedes protsessorites muutuvad lipud automaatselt, teistes on eraldi käsud, millega lippude muutmine kaasneb
+            <ul>
+              <li>Add (ei muuda lippe)</li>
+              <li>AddSetCC (muudab lippe)</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="pinu-stack">Pinu (stack)</h2>
+        <p>Andmete kogum (tavaliselt baidid või sõnad), mille puhul saab elemente lugeda/kirjutada ainult ühest andmekogumi otsast (ülemisest)</p>
+        <ul>
+          <li>Analoog: söökla kandikute virn</li>
+          <li>LIFO (last-in-first-out)</li>
+          <li>Spetsiaalne register (stack pointer) peab meeles, millisel aadressil asub pinu kõige värskem element</li>
+          <li>Pinu kasvab tavaliselt väiksemate aadresside suunas</li>
+        </ul>
+        <h2 id="alamprogrammid">Alamprogrammid</h2>
+        <ul>
+          <li>Sageli on tarvis mingit kindlat ülesannet teha palju kordi</li>
+          <li>Üks võimalus on kirjutada alamprogramm</li>
+          <li>See kutsutakse välja (call) iga kord, kui seda ülesannet teha vaja on</li>
+          <li>Peale alamprogrammi täitmist on vaja endisesse kohta tagasi jõuda (return)
+            <ul>
+              <li>kuna alamprogrammi kutsutakse välja erinevatest kohtadest, siis on ka potentsiaalseid naasmiskohti palju</li>
+              <li>teine keerukus on selles, et peale naasmist peab programmiloenduri sisu vastama uuele/vanale/ olukorrale (ehk siis call käsk peab selle info kuskil talletama)</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="subroutine-linkage-method">Subroutine linkage method</h2>
+        <ul>
+          <li>Link-registris salvestatakse tagasipöördumise aadress (sisuliselt PC sisu)</li>
+          <li>Tagasipöördumisel viidatakse kaudselt sellele registrile</li>
+          <li>Probleem</li>
+          <li>sageli juhtub nii, et alamprogrammi sees on tarvis kasutada teist alamprogrammi</li>
+          <li>ka selle alamprogrammi jaoks on vaja link-registris salvestada tagasipöördumise aadress</li>
+          <li>Lahendus: kasutatakse pinu</li>
+        </ul>
+        <h2 id="parameetrite-edastamine">Parameetrite edastamine</h2>
+        <ul>
+          <li>Alamprogrammi väljakutsumisel tuleb saata sinna ka teatav hulk parameetreid</li>
+          <li>Alamprogrammist naastes on vaja põhiprogrammi tuua rehkenduse tulemus(ed)
+            <ul>
+              <li>Üks võimalus on kasutada registreid või mälu</li>
+              <li>Teine võimalus on panna parameetrid/andmed pinusse</li>
+            </ul>
+          </li>
+          <li>Väikese arvu parameetrite korral on esimene variant lihtsam</li>
+          <li>Pinu kasutamine on paindlikum lahendus – saab edastada palju parameetreid/andmeid</li>
+        </ul>
+        <h2 id="stack-pointer-ja-frame-pointer">Stack pointer ja Frame pointer</h2>
+        <p>Lisaks Stack pointer’ile on kasulik sisse tuua veel teine pointer</p>
+        <ul>
+          <li>frame pointer</li>
+          <li>Frame pointer võimaldab mugavalt viidata muutujatele pinus</li>
+          <li>Stack pointeriga seda teha ei saa, kuna SP ei seisa ühe koha peal (muutuja lisamisel/kustutamisel SP väärtus muutub)</li>
+          <li>Tavaks on, et FP viitab vahetult tagasipöördumise aadressi peal olevale väljale</li>
+          <li>Sellel väljal salvestatakse FP senine väärtus</li>
+        </ul>
+        <h2 id="loogikakäsud">Loogikakäsud</h2>
+        <ul>
+          <li>Loogikaahelate ülesehitamisel on ehituskivideks NING (AND), VÕI (OR) ja EI (NOT) ahelad</li>
+          <li>Mõnikord on kasulik suuta teha neid operatsioone ka tarkvaraliselt</li>
+          <li>Näide 1: Positiivsest täisarvust negatiivse saamine. Olgu arvuks +5 (0101) registris R1
+            <ul>
+              <li>Not R1 annab meile -6 (1010)</li>
+              <li>Add R1,R1,#1 annab meile -5 (1011)</li>
+            </ul>
+          </li>
+          <li>Näide 2: Olgu meil tarvis kindlaks teha, kas registris R1 oleva 32-bitise sõna parempoolseim täht on X. ASCII koodis on täht X: 01011000 ehk 0x58
+            <ul>
+              <li>And R1,0xFF</li>
+              <li>Compare R1,0x58</li>
+              <li>Branch_if_[R1]=0 …</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="korrutamine-ja-jagamine">Korrutamine ja jagamine</h2>
+        <p>Enamuses käsustikke võimaldavad teha korrutamistehet: Rk←[Ri]´[Rj]</p>
+        <ul>
+          <li>Multiply Rk,Ri,Rj
+            <ul>
+              <li>kui sisendsuurused on n-bitised, siis vastus võib olla kuni 2n-bitine</li>
+              <li>seega võib tulemuse salvestamiseks vaja minna kahte registrit</li>
+            </ul>
+          </li>
+          <li>Mõned käsustikud võimaldavad teha ka jagamistehet: Rk←[Ri]/[Rj]</li>
+          <li>Divide Rk,Ri,Rj
+            <ul>
+              <li>siin on vaja salvestada nii täisosa kui ka jääk</li>
+              <li>seega võib tulemuse salvestamiseks vaja minna kahte registrit</li>
+              <li>mõnikord jäetakse jääk ka arvestamata</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="nihe">Nihe</h2>
+        <p>Paljudes rakendustes on tarvis nihutada operandi bitte paremale või vasakule etteantud arvu kohtade võrra</p>
+        <ul>
+          <li>Loogiline nihe
+            <ul>
+              <li>LShiftL asukoht,arv</li>
+              <li>LShiftR asukoht,arv</li>
+            </ul>
+          </li>
+          <li>Aritmeetiline nihe
+            <ul>
+              <li>AShiftR asukoht,arv</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="pööre">Pööre</h2>
+        <ul>
+          <li>Nihke puhul lähevad osad bitid kaotsi</li>
+          <li>Pöörde korral saame kogu info siiski säilitada</li>
+          <li>Pööre ilma ülekannet (Carry) kasutamata
+            <ul>
+              <li>RotateL asukoht,arv</li>
+              <li>RotateR asukoht,arv</li>
+            </ul>
+          </li>
+          <li>Pööre ülekannet (Carry) kasutades
+            <ul>
+              <li>RotateLC asukoht,arv</li>
+              <li>RotateRC asukoht,arv</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="masinkood">Masinkood</h2>
+        <ul>
+          <li>Protsessoris käivitamiseks tuleb kõik käsud kodeerida
+            <ul>
+              <li>see ei ole enam assemblerkeel (Assembly language)</li>
+              <li>vaid binaarkood</li>
+              <li>seda binaarkoodi kutsutakse masinkoodiks</li>
+            </ul>
+          </li>
+        </ul>
       </div>
       <div class="banner rotated"></div>
     </div>
   </main>
   <footer>
     <div class="base-container">
-    <div class="footer-content">
-    <div class="github">
-        <a href="https://github.com/inugami-dev64/ARA_Veebileht">
-            <img width="100" src="https://kodu.ut.ee/~karl-mih/img/github.png" alt="github.png">
-        </a>
-    </div>
-    <div class="contributors">
-        <ul>
-            <li>Richard Leover (<a href="https://github.com/richardleoverr" target="blank">Github</a>)</li>
-            <li>Karl-Mihkel Ott (<a href="https://github.com/inugami-dev64" target="blank">Github</a>)</li>
+      <div class="footer-content">
+        <div class="github">
+          <a href="https://github.com/inugami-dev64/ARA_Veebileht"><img width="100" src="https://kodu.ut.ee/~karl-mih/img/github.png" alt="github.png"></a>
+        </div>
+        <div class="contributors">
+          <ul>
+            <li>Richard Leover (<a href="https://github.com/richardleoverr" target="blank">Github</a>)
+            </li>
+            <li>Karl-Mihkel Ott (<a href="https://github.com/inugami-dev64" target="blank">Github</a>)
+            </li>
             <li>Kaspar Tugevus</li>
-        </ul>
-    </div>
-</div>
+          </ul>
+        </div>
+      </div>
     </div>
   </footer>
-  
-  <script src="/~karl-mih/js/jquery-3.7.1.min.js"></script>
+  <script src="/~karl-mih/js/jquery-3.7.1.min.js"></script> 
   <script src="/~karl-mih/js/main.js"></script>
-
 </body>
 </html>

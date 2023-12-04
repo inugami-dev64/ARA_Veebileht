@@ -1,474 +1,359 @@
 <!DOCTYPE html>
 <html lang="et-ee" dir="ltr">
 <head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.6.0">
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<link rel="icon" type="image/x-icon" href="/~karl-mih/img/favicon.ico">
-<title>Lihtne sisend/väljund | Arvuti riistvara ja arhitektuur (LOFY.03.079)</title>
-
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/x-icon" href="/~karl-mih/img/favicon.ico">
+  <title>Lihtne sisend/väljund | Arvuti riistvara ja arhitektuur (LOFY.03.079)</title>
   <link rel="stylesheet" href="/~karl-mih/css/main.css">
-
-
 </head>
 <body>
   <header>
     <div class="base-container">
       <nav class="desktop">
-    <a href="/~karl-mih">Kodu</a>
-    <a href="/~karl-mih/riistvara">Riistvara</a>
-    <a href="/~karl-mih/arhitektuur">Arhitektuur</a>
-    <a href="/~karl-mih/teemad">Teemad</a>
-</nav>
-
-<nav class="mobile">
-    <div>
-        <svg id="hamburger-btn" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
-            <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path>
-        </svg>
-    </div>
-
-    <div class="mobile-overlay-container" id="mobile-overlay">
-        <div class="mobile-overlay">
+        <a href="/~karl-mih">Kodu</a> <a href="/~karl-mih/riistvara">Riistvara</a> <a href="/~karl-mih/arhitektuur">Arhitektuur</a> <a href="/~karl-mih/teemad">Teemad</a>
+      </nav>
+      <nav class="mobile">
+        <div>
+          <svg id="hamburger-btn" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="24px" height="24px">
+          <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path></svg>
+        </div>
+        <div class="mobile-overlay-container" id="mobile-overlay">
+          <div class="mobile-overlay">
             <div class="close">
-                <button id="overlay-close-btn">X</button>
+              <button id="overlay-close-btn">X</button>
             </div>
             <div class="mobile-links">
-                <a href="/~karl-mih">Kodu</a><br>
-                <a href="/~karl-mih/riistvara">Riistvara</a><br>
-                <a href="/~karl-mih/arhitektuur">Arhitektuur</a><br>
-                <a href="/~karl-mih/teemad">Teemad</a><br>
+              <a href="/~karl-mih">Kodu</a><br>
+              <a href="/~karl-mih/riistvara">Riistvara</a><br>
+              <a href="/~karl-mih/arhitektuur">Arhitektuur</a><br>
+              <a href="/~karl-mih/teemad">Teemad</a><br>
             </div>
+          </div>
         </div>
+      </nav>
     </div>
-</nav>
-    </div>
-    
   </header>
   <main>
     <div class="wrapper content-wrapper">
       <div class="banner"></div>
       <div class="base-container">
-        
-  <h1>Lihtne sisend/väljund</h1>
-
-  
-  
-  <time datetime="2023-11-29T14:11:44&#43;02:00">29. november 2023</time><br>
-  <p>Autor(id): 
-  
-  Richard Leover 
-  
-  </p>
-  
-  <div class="taxonomies">
-    <p>Teemad:
-      <a href="/~karl-mih/teemad/sisend-v%C3%A4ljund/">Sisend-Väljund</a>
-    </p>
-  </div>
-
-
-  <p>Sisend- ja väljundlaused (input / output) on ettenähtud (nagu nimigi ütleb) programmile andmete edastamiseks ja
-tulemuste väljatrükkimiseks (ekraanile). Selleks, et programm oleks interaktiivne, et kasutaja saaks arvutiga programmi
-läbi suhelda. Lisaks sellele on programmidel teinekord vaja suhelda ka failidega – andmeid lugeda või kirjutada.
-Piirdume esialgu sisendiga klaviatuurilt ja väljundiga ekraanile, mida tavatsetakse kutsuda standardsisendiks ja
-standardväljundiks. Nii sisend kui väljund tehakse Python-programmis sisefunktsioonide (built-in function) abil.</p>
-<h2 id="siini-ehitus">Siini ehitus</h2>
-<ul>
-<li>Seni vaatlesime üksikuid süsteemielemente</li>
-<li>Need on vaja ühendada selliselt, et infot saaks liigutada ühelt
-seadmelt teisele</li>
-<li>Seda ülesannet täidab siin (bus)</li>
-<li>Lisaks andmetele peab siin üle kandma ka aadressiinfo ja
-juhtimiskorraldused</li>
-</ul>
-<h2 id="seadmete-adresseerimine">Seadmete adresseerimine</h2>
-<ul>
-<li>Siinil on liinid
-<ul>
-<li>aadresside,</li>
-<li>andmete</li>
-<li>juhtsignaalide jaoks</li>
-</ul>
-</li>
-<li>Igal I/O seadmel on oma unikaalne aadress</li>
-<li>Kui protsessor saadab aadressisiinile konkreetse seadme
-aadressi, siis seade, kellele info mõeldud on, hakkab täitma
-juhtsignaalide poolt etteöeldavat käsku
-<ul>
-<li>Read</li>
-<li>Write</li>
-<li>Seejärel saadetakse vastavad andmed andmesiinile</li>
-</ul>
-</li>
-</ul>
-<h2 id="memory-mapped-io">Memory-mapped I/O</h2>
-<ul>
-<li>Memory-mapped I/O – nii mälu kui ka seadmed kasutavad
-sama aadressiruumi</li>
-<li>Kõik käsud, millega saab pöörduda mälu poole, sobivad
-siin ka seadmetele andmete saatmiseks või neist andmete
-lugemiseks.</li>
-<li>Load R1,DATAIN</li>
-<li>Store R1,DATAOUT</li>
-<li>Enamik arvutisüsteeme kasutabki
-Memory-mapped I/O‘d</li>
-</ul>
-<h2 id="eraldi-aadressiväli-sisend-väljundseadmete-jaoks">Eraldi aadressiväli sisend-väljundseadmete jaoks</h2>
-<ul>
-<li>Teistel on spetsiaalsed I/O käsud ja eraldi 16-bitine
-aadressiväli I/O seadmete jaoks</li>
-<li>NB! Eraldi aadressiväli ei tähenda eraldi traate aadresside
-jaoks!!!</li>
-<li>Spetsiaalne signaal siinil näitab, et tegemist on I/O
-operatsiooniga
-<ul>
-<li>Mälu ignoreerib selliseid käske</li>
-<li>I/O seade uurib aadressivälja madalamaid bitte saamaks teada,
-kas käsk on mõeldud talle</li>
-</ul>
-</li>
-</ul>
-<h2 id="sisendväljund-operatsioonid">Sisend/väljund operatsioonid</h2>
-<ul>
-<li>Sisend/väljund operatsioonide tegemisel on mureks, et
-sisend/väljund seadmed ei suuda töötada sama kiiresti kui
-protsessor</li>
-<li>Seega on vaja andmete saatmine nende seadmete vahel
-sünkroniseerida
-<ul>
-<li>Protsessor saadab väljundseadmele info ja ootab seadmelt vastust</li>
-<li>Sisendseade tõstab lipu üles ja ütleb sellega protsessorile: mul on
-sinu jaoks andmeid</li>
-</ul>
-</li>
-</ul>
-<h2 id="program-controlled-io">Program controlled I/O</h2>
-<ul>
-<li>Eelmine programm illustreeris programmi poolt kontrollitavat
-sisend/väljundit
-(program controlled I/O)
-<ul>
-<li>protsessor kontrollib pidevalt staatuslippe tagamaks sünkroniseeritud
-andmevahetuse sisend- ja väljundseadmega</li>
-<li>Processor polls the device</li>
-</ul>
-</li>
-<li>Sellise programmi korral toimetab protsessor suurema osa ajast
-ootamistsüklites</li>
-<li>Tohutu ressursi raiskamine L</li>
-<li>Mõistlik kasutada
-<ul>
-<li>katkestusi või</li>
-<li>Otsemälupöördumisi (Direct Memory Access)</li>
-</ul>
-</li>
-</ul>
-<h2 id="irq">IRQ</h2>
-<ul>
-<li>Katkestuse soovi (Interrupt ReQuest) korral saadab seade
-protsessorile spetsiaalse signaali millal iganes ta on valmis
-suhtlema</li>
-<li>Protsessor ei pea nüüd enam tegelema pideva seadmete
-registrite küsitlemisega ja saab oma aega kasutada teiste
-tööde jaoks</li>
-</ul>
-<h2 id="katkestused">Katkestused</h2>
-<ul>
-<li>
-<p>Seade saadab protsessorile riistvaralise signaali /tarkvaralise
-käsu (katkestus, interrupt), millega annab teada oma
-valmisolekust andmevahetuseks</p>
-</li>
-<li>
-<p>Katkestuse teenindamise protseduur
-(Interrupt-service routine)</p>
-</li>
-<li>
-<p>Protsessor saab nüüd ootamise asemel tegeleda kasulike
-asjadega, ideaalvariandis saame ootamisperioodidest
-täielikult lahti</p>
-</li>
-<li>
-<p>Enne katkestuse täitmist tuleb salvestada kogu info, mis
-katkestuse täitmise käigus muutuda võib</p>
-</li>
-<li>
-<p>Enne katkestusest naasmist tuleb kogu info uuesti taastada</p>
-<ul>
-<li>nii saab algne programm jätkata samast kohast kus enne töö pooleli jäi</li>
-<li>ainus kaotus on ajaline viivis</li>
-</ul>
-</li>
-<li>
-<p>Salvestatakse</p>
-<ul>
-<li>programmiloenduri sisu</li>
-<li>seisundilipud</li>
-<li>registrid, mida mõlemad (algne programm ja interrupt-service routine)
-kasutavad</li>
-</ul>
-</li>
-<li>
-<p>Info salvestamine ja taastamine on raisatud aeg programmide töökiiruse
-mõttes</p>
-</li>
-<li>
-<p>Samuti pikeneb nii aeg, mil katkestuse nõue reaalselt täidetud saab
-(interrupt latency)</p>
-</li>
-<li>
-<p>Mõnedel juhtudel pole pikk viivis katkestusesoovi saabumisest reaalse
-täitmiseni aktsepteeritav</p>
-</li>
-<li>
-<p>Seetõttu salvestavad tänapäeva protsessorid ainult nii palju infot kui on
-hädavajalik katkestusele eelnenud programmikohast jätkamiseks</p>
-</li>
-<li>
-<p>Näiteks nii, et</p>
-<ul>
-<li>PC ja staatusregister salvestatakse protsessori riistvara poolt</li>
-<li>kõik ülejäänud info juba katkestuse protseduuri alguses
-katkestuse protseduuri enda poolt</li>
-</ul>
-</li>
-<li>
-<p>Üks lahendus on kasutada erineva reaktsiooniajaga katkestusi</p>
-<ul>
-<li>kiirete puhul EI SALVESTATA registrite sisu</li>
-<li>aeglaste puhul SALVESTATAKSE</li>
-<li>konkreetne seade saab valida, kumba parasjagu tarvitada</li>
-</ul>
-</li>
-<li>
-<p>Teine alternatiiv: topelt registrid protsessoris</p>
-<ul>
-<li>Shadow registers</li>
-<li>nüüd pole salvestada üldse tarvis</li>
-</ul>
-</li>
-<li>
-<p>Katkestused võimaldavad üle anda juhtimise ühelt programmilt
-teisele välise info laekumise alusel</p>
-</li>
-<li>
-<p>real-time processing – protsessori toimetamised on ajastatud
-vastavalt välistele sündmustele</p>
-</li>
-<li>
-<p>Lisaks sellele, et seade paneb liinile püsti katkestuse soovi,
-peab protsessor seadet informeerima katkestusesoovi
-rahuldamisest</p>
-<ul>
-<li>interrupt-acknowledge signaal</li>
-<li>andmevahetuse alustamise käsu käivitamine katkestuse
-teenindamise protseduuris võib anda seadmele sama info</li>
-</ul>
-</li>
-<li>
-<p>Erinevus alamprogrammi ja katkestuse protseduuri vahel:
-katkestuse protseduur kutsutakse välja suvalisel hetkel
-(käigusoleva programmi ajaarvamise mõttes)</p>
-<ul>
-<li>käigusolev programm ja katkestuse väljakutsunud programm võivad
-olla lausa eri kasutajate omad</li>
-</ul>
-</li>
-</ul>
-<h2 id="katkestuste-lubamine-keelamine">Katkestuste lubamine-keelamine</h2>
-<ul>
-<li>Katkestuse lubamine suvalisel ajahetkel võib olla vastuolus
-programmeerija soovituga</li>
-<li>Seetõttu peab olema mehhanism katkestuste haldamiseks
-<ul>
-<li>Interrupt-enable</li>
-<li>Interrupt-disable</li>
-</ul>
-</li>
-<li>Soovitud katkestus tuleb täitmisse võtta üks ja ainult üks kord,
-s.t aktiivne katkestuse-soovi signaal ei tohi põhjustada arvuti
-lõputusse tsüklisse sattumist</li>
-<li>Järgnevalt vaatame kolme võimalust</li>
-</ul>
-<h2 id="katkestuste-lubamine-keelamine-võimalus-1">Katkestuste lubamine-keelamine võimalus 1</h2>
-<ul>
-<li>Protsessori riistvara ignoreerib katkestusesoovi signaali
-seni kuni katkestuse teenindamise protseduuri esimene
-käsk saab täidetud</li>
-<li>Nüüd saab programmeerija alustada (soovi korral)
-katkestuse teenindamise protseduuri käsuga interruptdisable</li>
-<li>Nii välistame uued katkestused kuni käesoleva täitmise
-lõpuni</li>
-<li>Enne tagasipöördumist katkestuse teenindamise
-programmist antakse käsk interrupt-enable</li>
-</ul>
-<h2 id="katkestuste-lubamine-keelamine-võimalus-2">Katkestuste lubamine-keelamine võimalus 2</h2>
-<ul>
-<li>Protsessor võib automaatselt blokeerida katkestused peale
-katkestuse teenindamise protseduuri algust</li>
-<li>Peale PC (program counter) ja PS (processor status
-register) sisu salvestamist pinus seatakse interrupt-enable
-bitt PS registris nulliks (passiivne) ja rohkem katkestusi ei
-aktsepteerita</li>
-<li>Katkestusest naasmisel kopeeritakse PC ja PS sisu tagasi
-<ul>
-<li>sealhulgas ka interrupt-enable bitt PS registris üheks (aktiivseks)</li>
-<li>nüüd on jälle kõik katkestused lubatud</li>
-</ul>
-</li>
-</ul>
-<h2 id="katkestuste-lubamine-keelamine-võimalus-3">Katkestuste lubamine-keelamine võimalus 3</h2>
-<ul>
-<li>Katkestuse soovi liinil kasutatakse frondilt käivituvaid
-trigereid, s.t katkestuse soovi arvestatakse nüüd ainult üks
-kord, sõltumata sellest kui pikalt katkestuse soovi signaal
-aktiivne on</li>
-</ul>
-<h2 id="kokkuvõte-katkestuse-täitmise-stsenaariumist">Kokkuvõte katkestuse täitmise stsenaariumist</h2>
-<ol>
-<li>Seade avaldab soovi katkestuseks</li>
-<li>Protsessor katkestab jooksva programmi täitmise</li>
-<li>Uued katkestused blokeeritakse kontrollbiti passiivseks
-seadmisega PS registris</li>
-<li>Seadmele öeldakse, et tema katkestusesoov on
-aktsepteeritud</li>
-<li>Seade võtab katkestusesoovi maha</li>
-<li>Soovitud katkestuseprotseduur täidetakse</li>
-<li>Lubatakse uued katkestused ja protsessor naaseb
-katkestatud programmi täitmise juurde</li>
-</ol>
-<h2 id="katkestused-paljude-seadmega-süsteemides">Katkestused paljude seadmega süsteemides</h2>
-<ul>
-<li>Kuidas protsessor tuvastab katkestusesoovija?</li>
-<li>Kui katkestuse protseduurid on eri seadmete jaoks erinevad, kust
-protsessor teab milliselt aadressilt katkestuse protseduuri alustada?</li>
-<li>Mis juhtub siis, kui seade A soovib katkestust ajal kui protsessor juba
-täidab seadme B katkestusesoovi?
-<ul>
-<li>Kas esimese katkestuse täitmise ajal tuleks uut katkestust
-hakata kohe teenindama?</li>
-<li>Või oodata esimese täitmist ja alles siis hakata teenindama
-uut?</li>
-</ul>
-</li>
-<li>Mis juhtub siis, kui katkestusesoovid laekuvad üheaegselt?</li>
-</ul>
-<h2 id="katkestuse-vektor">Katkestuse vektor</h2>
-<ul>
-<li>Katkestust sooviv seade võib ennast ka otseselt protsessorile tutvustada,
-saates protsessorile siini vahendusel spetsiaalse koodi.</li>
-<li>Selleks koodiks võib olla näiteks katkestuse teenindamise protseduuri
-aadress</li>
-<li>… või osa sellest (4-8 bitti). Ülejäänu lisab protsessor ise.</li>
-<li>Kui sellesse kohta panna tegelikule katkestuse- programmile viitav
-hargnemise aadress, siis anname programmeerijale täiendavalt veidi
-lisavõimalusi koodi kirjutamisel.</li>
-<li>Oluline on, et protsessor oleks valmis seda katkestuse vektori infot vastu
-võtma</li>
-</ul>
-<h2 id="interrupt-nesting">Interrupt nesting</h2>
-<ul>
-<li>Eelnevalt soovitasime, et ühe katkestuse täitmisel peame
-teiste katkestuste täitmisele võtmise blokeerima</li>
-<li>Alati pole see võimalik
-<ul>
-<li>näide reaalaja kellast</li>
-</ul>
-</li>
-<li>Vajalik paika panna prioriteedid
-<ul>
-<li>katkestuse soov kõrgema prioriteediga seadmelt tuleks
-aktsepteerida isegi siis, kui parasjagu mõne madalama
-prioriteediga seadme katkestust täidetakse</li>
-</ul>
-</li>
-</ul>
-<h2 id="prioriteedid">Prioriteedid</h2>
-<ul>
-<li>
-<p>Protsessori prioriteediks on tema poolt parasjagu
-täidetava programmi prioriteet</p>
-</li>
-<li>
-<p>Kui katkestust soovitakse kõrgema prioriteediga seadme
-poolt, siis katkestus võetakse täitmiseks</p>
-</li>
-<li>
-<p>Katkestuse täitmise ajaks saab protsessor nüüd katkestust
-soovinud seadme prioriteeditaseme</p>
-</li>
-<li>
-<p>Kui katkestust soovitakse madalama prioriteediga seadme
-poolt, siis katkestus ei võeta täitmiseks</p>
-</li>
-<li>
-<p>Prioriteedid kodeeritakse protsessori staatusregistri paari
-bitti</p>
-</li>
-<li>
-<p>Protsessori staatusregistrit saavad muuta käsud, mida
-antakse supervisor moodis</p>
-</li>
-<li>
-<p>Protsessor on selles moodis ainult operatsioonisüsteemi
-käskude käivitamisel</p>
-</li>
-<li>
-<p>Kasutajamoodil neid õigusi ei ole</p>
-</li>
-<li>
-<p>Rakendusprogrammi täitma asudes lülitub protsessor
-kasutajamoodi</p>
-<ul>
-<li>seega ei saa rakendusprogramm juhuslikult ega tahtlikult prioriteete
-muuta</li>
-<li>privilegeeritud käsu käivitamise katse kutsub välja spetsiaalse
-katkestuse priviledge exception</li>
-</ul>
-</li>
-</ul>
-<h2 id="erandid-exceptions">Erandid (Exceptions)</h2>
-<ul>
-<li>Recovery from errors
-<ul>
-<li>Näide: mida teha, kui programm käsib nulliga jagada?</li>
-</ul>
-</li>
-<li>Debugging
-<ul>
-<li>trace</li>
-<li>breakpoint</li>
-</ul>
-</li>
-<li>Priviledge exception</li>
-</ul>
-
-
+        <h1>Lihtne sisend/väljund</h1><time datetime="2023-11-29T14:11:44+02:00">29. november 2023</time><br>
+        <p>Autor(id): Richard Leover</p>
+        <div class="taxonomies">
+          <p>Teemad: <a href="/~karl-mih/teemad/sisend-v%C3%A4ljund/">Sisend-Väljund</a></p>
+        </div>
+        <p>Sisend- ja väljundlaused (input / output) on ettenähtud (nagu nimigi ütleb) programmile andmete edastamiseks ja tulemuste väljatrükkimiseks (ekraanile). Selleks, et programm oleks interaktiivne, et kasutaja saaks arvutiga programmi läbi suhelda. Lisaks sellele on programmidel teinekord vaja suhelda ka failidega – andmeid lugeda või kirjutada. Piirdume esialgu sisendiga klaviatuurilt ja väljundiga ekraanile, mida tavatsetakse kutsuda standardsisendiks ja standardväljundiks. Nii sisend kui väljund tehakse Python-programmis sisefunktsioonide (built-in function) abil.</p>
+        <h2 id="siini-ehitus">Siini ehitus</h2>
+        <ul>
+          <li>Seni vaatlesime üksikuid süsteemielemente</li>
+          <li>Need on vaja ühendada selliselt, et infot saaks liigutada ühelt seadmelt teisele</li>
+          <li>Seda ülesannet täidab siin (bus)</li>
+          <li>Lisaks andmetele peab siin üle kandma ka aadressiinfo ja juhtimiskorraldused</li>
+        </ul>
+        <h2 id="seadmete-adresseerimine">Seadmete adresseerimine</h2>
+        <ul>
+          <li>Siinil on liinid
+            <ul>
+              <li>aadresside,</li>
+              <li>andmete</li>
+              <li>juhtsignaalide jaoks</li>
+            </ul>
+          </li>
+          <li>Igal I/O seadmel on oma unikaalne aadress</li>
+          <li>Kui protsessor saadab aadressisiinile konkreetse seadme aadressi, siis seade, kellele info mõeldud on, hakkab täitma juhtsignaalide poolt etteöeldavat käsku
+            <ul>
+              <li>Read</li>
+              <li>Write</li>
+              <li>Seejärel saadetakse vastavad andmed andmesiinile</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="memory-mapped-io">Memory-mapped I/O</h2>
+        <ul>
+          <li>Memory-mapped I/O – nii mälu kui ka seadmed kasutavad sama aadressiruumi</li>
+          <li>Kõik käsud, millega saab pöörduda mälu poole, sobivad siin ka seadmetele andmete saatmiseks või neist andmete lugemiseks.</li>
+          <li>Load R1,DATAIN</li>
+          <li>Store R1,DATAOUT</li>
+          <li>Enamik arvutisüsteeme kasutabki Memory-mapped I/O‘d</li>
+        </ul>
+        <h2 id="eraldi-aadressiväli-sisend-väljundseadmete-jaoks">Eraldi aadressiväli sisend-väljundseadmete jaoks</h2>
+        <ul>
+          <li>Teistel on spetsiaalsed I/O käsud ja eraldi 16-bitine aadressiväli I/O seadmete jaoks</li>
+          <li>NB! Eraldi aadressiväli ei tähenda eraldi traate aadresside jaoks!!!</li>
+          <li>Spetsiaalne signaal siinil näitab, et tegemist on I/O operatsiooniga
+            <ul>
+              <li>Mälu ignoreerib selliseid käske</li>
+              <li>I/O seade uurib aadressivälja madalamaid bitte saamaks teada, kas käsk on mõeldud talle</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="sisendväljund-operatsioonid">Sisend/väljund operatsioonid</h2>
+        <ul>
+          <li>Sisend/väljund operatsioonide tegemisel on mureks, et sisend/väljund seadmed ei suuda töötada sama kiiresti kui protsessor</li>
+          <li>Seega on vaja andmete saatmine nende seadmete vahel sünkroniseerida
+            <ul>
+              <li>Protsessor saadab väljundseadmele info ja ootab seadmelt vastust</li>
+              <li>Sisendseade tõstab lipu üles ja ütleb sellega protsessorile: mul on sinu jaoks andmeid</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="program-controlled-io">Program controlled I/O</h2>
+        <ul>
+          <li>Eelmine programm illustreeris programmi poolt kontrollitavat sisend/väljundit (program controlled I/O)
+            <ul>
+              <li>protsessor kontrollib pidevalt staatuslippe tagamaks sünkroniseeritud andmevahetuse sisend- ja väljundseadmega</li>
+              <li>Processor polls the device</li>
+            </ul>
+          </li>
+          <li>Sellise programmi korral toimetab protsessor suurema osa ajast ootamistsüklites</li>
+          <li>Tohutu ressursi raiskamine L</li>
+          <li>Mõistlik kasutada
+            <ul>
+              <li>katkestusi või</li>
+              <li>Otsemälupöördumisi (Direct Memory Access)</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="irq">IRQ</h2>
+        <ul>
+          <li>Katkestuse soovi (Interrupt ReQuest) korral saadab seade protsessorile spetsiaalse signaali millal iganes ta on valmis suhtlema</li>
+          <li>Protsessor ei pea nüüd enam tegelema pideva seadmete registrite küsitlemisega ja saab oma aega kasutada teiste tööde jaoks</li>
+        </ul>
+        <h2 id="katkestused">Katkestused</h2>
+        <ul>
+          <li>
+            <p>Seade saadab protsessorile riistvaralise signaali /tarkvaralise käsu (katkestus, interrupt), millega annab teada oma valmisolekust andmevahetuseks</p>
+          </li>
+          <li>
+            <p>Katkestuse teenindamise protseduur (Interrupt-service routine)</p>
+          </li>
+          <li>
+            <p>Protsessor saab nüüd ootamise asemel tegeleda kasulike asjadega, ideaalvariandis saame ootamisperioodidest täielikult lahti</p>
+          </li>
+          <li>
+            <p>Enne katkestuse täitmist tuleb salvestada kogu info, mis katkestuse täitmise käigus muutuda võib</p>
+          </li>
+          <li>
+            <p>Enne katkestusest naasmist tuleb kogu info uuesti taastada</p>
+            <ul>
+              <li>nii saab algne programm jätkata samast kohast kus enne töö pooleli jäi</li>
+              <li>ainus kaotus on ajaline viivis</li>
+            </ul>
+          </li>
+          <li>
+            <p>Salvestatakse</p>
+            <ul>
+              <li>programmiloenduri sisu</li>
+              <li>seisundilipud</li>
+              <li>registrid, mida mõlemad (algne programm ja interrupt-service routine) kasutavad</li>
+            </ul>
+          </li>
+          <li>
+            <p>Info salvestamine ja taastamine on raisatud aeg programmide töökiiruse mõttes</p>
+          </li>
+          <li>
+            <p>Samuti pikeneb nii aeg, mil katkestuse nõue reaalselt täidetud saab (interrupt latency)</p>
+          </li>
+          <li>
+            <p>Mõnedel juhtudel pole pikk viivis katkestusesoovi saabumisest reaalse täitmiseni aktsepteeritav</p>
+          </li>
+          <li>
+            <p>Seetõttu salvestavad tänapäeva protsessorid ainult nii palju infot kui on hädavajalik katkestusele eelnenud programmikohast jätkamiseks</p>
+          </li>
+          <li>
+            <p>Näiteks nii, et</p>
+            <ul>
+              <li>PC ja staatusregister salvestatakse protsessori riistvara poolt</li>
+              <li>kõik ülejäänud info juba katkestuse protseduuri alguses katkestuse protseduuri enda poolt</li>
+            </ul>
+          </li>
+          <li>
+            <p>Üks lahendus on kasutada erineva reaktsiooniajaga katkestusi</p>
+            <ul>
+              <li>kiirete puhul EI SALVESTATA registrite sisu</li>
+              <li>aeglaste puhul SALVESTATAKSE</li>
+              <li>konkreetne seade saab valida, kumba parasjagu tarvitada</li>
+            </ul>
+          </li>
+          <li>
+            <p>Teine alternatiiv: topelt registrid protsessoris</p>
+            <ul>
+              <li>Shadow registers</li>
+              <li>nüüd pole salvestada üldse tarvis</li>
+            </ul>
+          </li>
+          <li>
+            <p>Katkestused võimaldavad üle anda juhtimise ühelt programmilt teisele välise info laekumise alusel</p>
+          </li>
+          <li>
+            <p>real-time processing – protsessori toimetamised on ajastatud vastavalt välistele sündmustele</p>
+          </li>
+          <li>
+            <p>Lisaks sellele, et seade paneb liinile püsti katkestuse soovi, peab protsessor seadet informeerima katkestusesoovi rahuldamisest</p>
+            <ul>
+              <li>interrupt-acknowledge signaal</li>
+              <li>andmevahetuse alustamise käsu käivitamine katkestuse teenindamise protseduuris võib anda seadmele sama info</li>
+            </ul>
+          </li>
+          <li>
+            <p>Erinevus alamprogrammi ja katkestuse protseduuri vahel: katkestuse protseduur kutsutakse välja suvalisel hetkel (käigusoleva programmi ajaarvamise mõttes)</p>
+            <ul>
+              <li>käigusolev programm ja katkestuse väljakutsunud programm võivad olla lausa eri kasutajate omad</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="katkestuste-lubamine-keelamine">Katkestuste lubamine-keelamine</h2>
+        <ul>
+          <li>Katkestuse lubamine suvalisel ajahetkel võib olla vastuolus programmeerija soovituga</li>
+          <li>Seetõttu peab olema mehhanism katkestuste haldamiseks
+            <ul>
+              <li>Interrupt-enable</li>
+              <li>Interrupt-disable</li>
+            </ul>
+          </li>
+          <li>Soovitud katkestus tuleb täitmisse võtta üks ja ainult üks kord, s.t aktiivne katkestuse-soovi signaal ei tohi põhjustada arvuti lõputusse tsüklisse sattumist</li>
+          <li>Järgnevalt vaatame kolme võimalust</li>
+        </ul>
+        <h2 id="katkestuste-lubamine-keelamine-võimalus-1">Katkestuste lubamine-keelamine võimalus 1</h2>
+        <ul>
+          <li>Protsessori riistvara ignoreerib katkestusesoovi signaali seni kuni katkestuse teenindamise protseduuri esimene käsk saab täidetud</li>
+          <li>Nüüd saab programmeerija alustada (soovi korral) katkestuse teenindamise protseduuri käsuga interruptdisable</li>
+          <li>Nii välistame uued katkestused kuni käesoleva täitmise lõpuni</li>
+          <li>Enne tagasipöördumist katkestuse teenindamise programmist antakse käsk interrupt-enable</li>
+        </ul>
+        <h2 id="katkestuste-lubamine-keelamine-võimalus-2">Katkestuste lubamine-keelamine võimalus 2</h2>
+        <ul>
+          <li>Protsessor võib automaatselt blokeerida katkestused peale katkestuse teenindamise protseduuri algust</li>
+          <li>Peale PC (program counter) ja PS (processor status register) sisu salvestamist pinus seatakse interrupt-enable bitt PS registris nulliks (passiivne) ja rohkem katkestusi ei aktsepteerita</li>
+          <li>Katkestusest naasmisel kopeeritakse PC ja PS sisu tagasi
+            <ul>
+              <li>sealhulgas ka interrupt-enable bitt PS registris üheks (aktiivseks)</li>
+              <li>nüüd on jälle kõik katkestused lubatud</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="katkestuste-lubamine-keelamine-võimalus-3">Katkestuste lubamine-keelamine võimalus 3</h2>
+        <ul>
+          <li>Katkestuse soovi liinil kasutatakse frondilt käivituvaid trigereid, s.t katkestuse soovi arvestatakse nüüd ainult üks kord, sõltumata sellest kui pikalt katkestuse soovi signaal aktiivne on</li>
+        </ul>
+        <h2 id="kokkuvõte-katkestuse-täitmise-stsenaariumist">Kokkuvõte katkestuse täitmise stsenaariumist</h2>
+        <ol>
+          <li>Seade avaldab soovi katkestuseks</li>
+          <li>Protsessor katkestab jooksva programmi täitmise</li>
+          <li>Uued katkestused blokeeritakse kontrollbiti passiivseks seadmisega PS registris</li>
+          <li>Seadmele öeldakse, et tema katkestusesoov on aktsepteeritud</li>
+          <li>Seade võtab katkestusesoovi maha</li>
+          <li>Soovitud katkestuseprotseduur täidetakse</li>
+          <li>Lubatakse uued katkestused ja protsessor naaseb katkestatud programmi täitmise juurde</li>
+        </ol>
+        <h2 id="katkestused-paljude-seadmega-süsteemides">Katkestused paljude seadmega süsteemides</h2>
+        <ul>
+          <li>Kuidas protsessor tuvastab katkestusesoovija?</li>
+          <li>Kui katkestuse protseduurid on eri seadmete jaoks erinevad, kust protsessor teab milliselt aadressilt katkestuse protseduuri alustada?</li>
+          <li>Mis juhtub siis, kui seade A soovib katkestust ajal kui protsessor juba täidab seadme B katkestusesoovi?
+            <ul>
+              <li>Kas esimese katkestuse täitmise ajal tuleks uut katkestust hakata kohe teenindama?</li>
+              <li>Või oodata esimese täitmist ja alles siis hakata teenindama uut?</li>
+            </ul>
+          </li>
+          <li>Mis juhtub siis, kui katkestusesoovid laekuvad üheaegselt?</li>
+        </ul>
+        <h2 id="katkestuse-vektor">Katkestuse vektor</h2>
+        <ul>
+          <li>Katkestust sooviv seade võib ennast ka otseselt protsessorile tutvustada, saates protsessorile siini vahendusel spetsiaalse koodi.</li>
+          <li>Selleks koodiks võib olla näiteks katkestuse teenindamise protseduuri aadress</li>
+          <li>… või osa sellest (4-8 bitti). Ülejäänu lisab protsessor ise.</li>
+          <li>Kui sellesse kohta panna tegelikule katkestuse- programmile viitav hargnemise aadress, siis anname programmeerijale täiendavalt veidi lisavõimalusi koodi kirjutamisel.</li>
+          <li>Oluline on, et protsessor oleks valmis seda katkestuse vektori infot vastu võtma</li>
+        </ul>
+        <h2 id="interrupt-nesting">Interrupt nesting</h2>
+        <ul>
+          <li>Eelnevalt soovitasime, et ühe katkestuse täitmisel peame teiste katkestuste täitmisele võtmise blokeerima</li>
+          <li>Alati pole see võimalik
+            <ul>
+              <li>näide reaalaja kellast</li>
+            </ul>
+          </li>
+          <li>Vajalik paika panna prioriteedid
+            <ul>
+              <li>katkestuse soov kõrgema prioriteediga seadmelt tuleks aktsepteerida isegi siis, kui parasjagu mõne madalama prioriteediga seadme katkestust täidetakse</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="prioriteedid">Prioriteedid</h2>
+        <ul>
+          <li>
+            <p>Protsessori prioriteediks on tema poolt parasjagu täidetava programmi prioriteet</p>
+          </li>
+          <li>
+            <p>Kui katkestust soovitakse kõrgema prioriteediga seadme poolt, siis katkestus võetakse täitmiseks</p>
+          </li>
+          <li>
+            <p>Katkestuse täitmise ajaks saab protsessor nüüd katkestust soovinud seadme prioriteeditaseme</p>
+          </li>
+          <li>
+            <p>Kui katkestust soovitakse madalama prioriteediga seadme poolt, siis katkestus ei võeta täitmiseks</p>
+          </li>
+          <li>
+            <p>Prioriteedid kodeeritakse protsessori staatusregistri paari bitti</p>
+          </li>
+          <li>
+            <p>Protsessori staatusregistrit saavad muuta käsud, mida antakse supervisor moodis</p>
+          </li>
+          <li>
+            <p>Protsessor on selles moodis ainult operatsioonisüsteemi käskude käivitamisel</p>
+          </li>
+          <li>
+            <p>Kasutajamoodil neid õigusi ei ole</p>
+          </li>
+          <li>
+            <p>Rakendusprogrammi täitma asudes lülitub protsessor kasutajamoodi</p>
+            <ul>
+              <li>seega ei saa rakendusprogramm juhuslikult ega tahtlikult prioriteete muuta</li>
+              <li>privilegeeritud käsu käivitamise katse kutsub välja spetsiaalse katkestuse priviledge exception</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="erandid-exceptions">Erandid (Exceptions)</h2>
+        <ul>
+          <li>Recovery from errors
+            <ul>
+              <li>Näide: mida teha, kui programm käsib nulliga jagada?</li>
+            </ul>
+          </li>
+          <li>Debugging
+            <ul>
+              <li>trace</li>
+              <li>breakpoint</li>
+            </ul>
+          </li>
+          <li>Priviledge exception</li>
+        </ul>
       </div>
       <div class="banner rotated"></div>
     </div>
   </main>
   <footer>
     <div class="base-container">
-    <div class="footer-content">
-    <div class="github">
-        <a href="https://github.com/inugami-dev64/ARA_Veebileht">
-            <img width="100" src="https://kodu.ut.ee/~karl-mih/img/github.png" alt="github.png">
-        </a>
-    </div>
-    <div class="contributors">
-        <ul>
-            <li>Richard Leover (<a href="https://github.com/richardleoverr" target="blank">Github</a>)</li>
-            <li>Karl-Mihkel Ott (<a href="https://github.com/inugami-dev64" target="blank">Github</a>)</li>
+      <div class="footer-content">
+        <div class="github">
+          <a href="https://github.com/inugami-dev64/ARA_Veebileht"><img width="100" src="https://kodu.ut.ee/~karl-mih/img/github.png" alt="github.png"></a>
+        </div>
+        <div class="contributors">
+          <ul>
+            <li>Richard Leover (<a href="https://github.com/richardleoverr" target="blank">Github</a>)
+            </li>
+            <li>Karl-Mihkel Ott (<a href="https://github.com/inugami-dev64" target="blank">Github</a>)
+            </li>
             <li>Kaspar Tugevus</li>
-        </ul>
-    </div>
-</div>
+          </ul>
+        </div>
+      </div>
     </div>
   </footer>
-  
-  <script src="/~karl-mih/js/jquery-3.7.1.min.js"></script>
+  <script src="/~karl-mih/js/jquery-3.7.1.min.js"></script> 
   <script src="/~karl-mih/js/main.js"></script>
-
 </body>
 </html>

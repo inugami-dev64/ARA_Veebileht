@@ -1,306 +1,276 @@
 <!DOCTYPE html>
 <html lang="et-ee" dir="ltr">
 <head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.6.0">
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<link rel="icon" type="image/x-icon" href="/~karl-mih/img/favicon.ico">
-<title>Mälu arhitektuuri vaates | Arvuti riistvara ja arhitektuur (LOFY.03.079)</title>
-
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/x-icon" href="/~karl-mih/img/favicon.ico">
+  <title>Mälu arhitektuuri vaates | Arvuti riistvara ja arhitektuur (LOFY.03.079)</title>
   <link rel="stylesheet" href="/~karl-mih/css/main.css">
-
-
 </head>
 <body>
   <header>
     <div class="base-container">
       <nav class="desktop">
-    <a href="/~karl-mih">Kodu</a>
-    <a href="/~karl-mih/riistvara">Riistvara</a>
-    <a href="/~karl-mih/arhitektuur">Arhitektuur</a>
-    <a href="/~karl-mih/teemad">Teemad</a>
-</nav>
-
-<nav class="mobile">
-    <div>
-        <svg id="hamburger-btn" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
-            <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path>
-        </svg>
-    </div>
-
-    <div class="mobile-overlay-container" id="mobile-overlay">
-        <div class="mobile-overlay">
+        <a href="/~karl-mih">Kodu</a> <a href="/~karl-mih/riistvara">Riistvara</a> <a href="/~karl-mih/arhitektuur">Arhitektuur</a> <a href="/~karl-mih/teemad">Teemad</a>
+      </nav>
+      <nav class="mobile">
+        <div>
+          <svg id="hamburger-btn" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="24px" height="24px">
+          <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path></svg>
+        </div>
+        <div class="mobile-overlay-container" id="mobile-overlay">
+          <div class="mobile-overlay">
             <div class="close">
-                <button id="overlay-close-btn">X</button>
+              <button id="overlay-close-btn">X</button>
             </div>
             <div class="mobile-links">
-                <a href="/~karl-mih">Kodu</a><br>
-                <a href="/~karl-mih/riistvara">Riistvara</a><br>
-                <a href="/~karl-mih/arhitektuur">Arhitektuur</a><br>
-                <a href="/~karl-mih/teemad">Teemad</a><br>
+              <a href="/~karl-mih">Kodu</a><br>
+              <a href="/~karl-mih/riistvara">Riistvara</a><br>
+              <a href="/~karl-mih/arhitektuur">Arhitektuur</a><br>
+              <a href="/~karl-mih/teemad">Teemad</a><br>
             </div>
+          </div>
         </div>
+      </nav>
     </div>
-</nav>
-    </div>
-    
   </header>
   <main>
     <div class="wrapper content-wrapper">
       <div class="banner"></div>
       <div class="base-container">
-        
-  <h1>Mälu arhitektuuri vaates</h1>
-
-  
-  
-  <time datetime="2023-11-29T14:11:44&#43;02:00">29. november 2023</time><br>
-  <p>Autor(id): 
-  
-  Richard Leover 
-  
-  </p>
-  
-  <div class="taxonomies">
-    <p>Teemad:
-      <a href="/~karl-mih/teemad/m%C3%A4lu/">Mälu</a>
-    </p>
-  </div>
-
-
-  <p>Arvuti mälu on funktsionaalüksus (mäluseade) või keskkond, kuhu saab andmeid paigutada, kus neid saab hoida ja kust neid saab kasutamiseks võtta.[1] Peamiselt on arvutis kasutusel mitut liiki pooljuhtmälud, mille algüksused – mäluelemendid – põhinevad transistorlülititel. Mäluelementidesse salvestatakse andmed lüliti kahe olekuna (voolu juhtiv/mittejuhtiv), mis esitavad kahendsüsteemis biti väärtust 1 või 0. Andmete talletamiseks rakendatakse veel ka magnetsalvestuse tehnikat.</p>
-<h2 id="mälust-üldiselt">Mälust üldiselt</h2>
-<ul>
-<li>Ideaalne mälu on
-<ul>
-<li>kiire,</li>
-<li>suur</li>
-<li>maksab vähe</li>
-</ul>
-</li>
-<li>Need soovid on kahjuks vastandlikud…</li>
-<li>Mälu maksimaalse suuruse määrab ära adresseeritav ala
-<ul>
-<li>16-bitised aadressid võimaldavad kasutada216 = 65 536 mälupesa</li>
-<li>32-bitised aadressid võimaldavad kasutada 232 = 4 294 967 296 mälupesa jne</li>
-</ul>
-</li>
-<li>Infot salvestatakse ja loetakse enamasti sõnade kaupa</li>
-<li>Bittide arv, mida saab ühe käsuga mälust lugeda või mällu kirjutada on kõige tüüpilisemaks sõna pikkuse definitsiooniks</li>
-<li>Mälu aadress võidakse ette anda
-<ul>
-<li>iga sõna jaoks</li>
-<li>või ainult esimese sõna jaoks plokis</li>
-</ul>
-</li>
-<li>Mäluga suhtlust võivad juhtida
-<ul>
-<li>taktsignaalid</li>
-<li>või spetsiaalsed siini juhtsignaalid</li>
-</ul>
-</li>
-<li>Mälu pöördumisaeg (memory access time)
-<ul>
-<li>Ajavahemik Read/Write ja Memory Function Completed signaalide vahel</li>
-</ul>
-</li>
-<li>Mälutsükli kestus (memory cycle time)
-<ul>
-<li>Ajavahemik kahe järjestikuse Read/Write signaali vahel</li>
-</ul>
-</li>
-<li>Suvapöördusega mälu (RAM – random access memory)
-<ul>
-<li>kõigis mälupesades sisalduv info saadakse kätte ühesuguse kiirusega</li>
-</ul>
-</li>
-<li>Jadapöördusseadmete puhul on andmetele juurdepääsu aeg sõltuvuses konkreetse andmete asukohast/aadressist</li>
-</ul>
-<h2 id="vahemälu-ja-virtuaalmälu">Vahemälu ja virtuaalmälu</h2>
-<ul>
-<li>Protsessor suudab reeglina infot kiiremini töödelda kui seda võimaldab tavaline mälutsükli kestus</li>
-<li>Üheks võimaluseks mälutsükli kestust lühendada on vahemälu (cache memory) kasutamine
-<ul>
-<li>väike aga kiire mälu, mis on paigutatud protsessori ja põhimälu vahele</li>
-<li>selles hoitakse programmi jaoks aktiivset infot (nii käske kui ka andmeid)</li>
-</ul>
-</li>
-<li>Mälu näiva mahu suurendamist võimaldab virtuaalmälu tehnoloogia
-<ul>
-<li>põhimälus hoitakse ainult aktiivset osa virtuaalsest aadressiruumist</li>
-<li>Ülejäänu paikneb aeglasemal andmekandjal, tavaliselt kõvakettal</li>
-<li>Programmi töö käigus aktiivse piirkonna asukoht muutub ja vastavalt tuuakse ka kõvakettalt infot põhimälusse (ja visatakse sealt midagi hetkel vähem olulist minema)</li>
-</ul>
-</li>
-</ul>
-<h2 id="pooljuhtmaterjalist-suvapöördusmälud-ram">Pooljuhtmaterjalist suvapöördusmälud (RAM)</h2>
-<ul>
-<li>RAM (Random Access Memory)
-<ul>
-<li>võeti kasutusele eelmise sajandi kuuekümnendate aastate lõpus</li>
-</ul>
-</li>
-<li>Mälukiibi ehitus
-<ul>
-<li>mälurakud paigutatakse enamasti massiividena, kus iga element suudab salvestada ühe biti infot</li>
-</ul>
-</li>
-</ul>
-<h2 id="sram">SRAM</h2>
-<ul>
-<li>SRAM (Static Random Access Memory)</li>
-<li>Need mälud suudavad säilitada infot seni kuni nad saavad voolu</li>
-<li>Voolu väljalülitamisel info kaob</li>
-</ul>
-<h2 id="asünkroonne-dram">Asünkroonne DRAM</h2>
-<ul>
-<li>Staatilised mälud on kiired, aga kallid
-<ul>
-<li>igas rakus palju transistore</li>
-</ul>
-</li>
-<li>DRAM (Dynamic Random Access Memory)</li>
-<li>Info salvestatakse kondensaatori laenguna</li>
-<li>DRAM’id on
-<ul>
-<li>oluliselt odavamad</li>
-<li>info nendes kustub teatava aja möödudes</li>
-<li>vajavad värskendamist</li>
-</ul>
-</li>
-<li>Laeng säilib kondensaatoril mõned kümned millisekundid</li>
-</ul>
-<h2 id="ühe-transistoriga-dram-rakk">Ühe transistoriga DRAM rakk</h2>
-<ul>
-<li>Info salvestamiseks lülitatakse transistor sisse ja rakendatakse pinge biti liinile</li>
-<li>Nii salvestub kondensaatoris kindel hulk laengut</li>
-<li>Transistori väljalülitamisel hakkab kondensaator tühjenema</li>
-</ul>
-<h2 id="lugemine">Lugemine</h2>
-<ul>
-<li>Info lugemisel lülitatakse transistor sisse</li>
-<li>Biti liiniga ühendatud võimendi saab aru, kas kondensaator on laetud üle läveväärtuse või mitte
-<ul>
-<li>kui on, siis ühendatakse biti liin pingeallikaga ja laetakse kondensaator uuesti täis</li>
-<li>mälurakus on salvestatud loogiline 1</li>
-<li>kui ei ole, siis ühendatakse biti liin maagaja laetakse kondensaator täiesti tühjaks</li>
-<li>mälurakus on salvestatud loogiline 0</li>
-</ul>
-</li>
-<li>Nagu näeme, värskendab mälu lugemine automaatselt mälus sisalduva info</li>
-</ul>
-<h2 id="asünkroonne-dram-1">Asünkroonne DRAM</h2>
-<ul>
-<li>Seni vaadeldud DRAM rakkude juhtsignaalid olid asünkroonsed
-<ul>
-<li>spetsiaalne mälu juhtloogika ahel genereeris vajalikud juhtsignaalid</li>
-<li>asynchronous DRAM</li>
-</ul>
-</li>
-</ul>
-<h2 id="fast-page-mode">Fast page mode</h2>
-<ul>
-<li>Eelmisel slaidil kujutatud DRAM mooduli puhul aktiveeriti terve rida, aga reaalselt loeti ainult 8 bitti andmeid</li>
-<li>Lisades tulpade liinide otsa trigerid, saame salvestada kogu antud rea sisu ja pärast, ilma rida uuesti aktiveerimata, selle info edastada</li>
-<li>Üheks rakenduseks oleks plokkide kaupa (järjestikuste) andmete edastamine
-<ul>
-<li>järjestikused tulpade aktiveerimised järjestikuste CAS signaalide juhtimisel</li>
-<li>fast page mode</li>
-<li>see on oluliselt kiirem kui juhusliku mälupesa lugemine</li>
-</ul>
-</li>
-<li>Kus kasutatakse?
-<ul>
-<li>regulaarse mustriga mälu-lugemised (näiteks graafika terminalides)</li>
-<li>andmete lugemisel vahemällu</li>
-</ul>
-</li>
-</ul>
-<h2 id="sünkroonne-dram">Sünkroonne DRAM</h2>
-<ul>
-<li>Synchronous Dynamic Random Access Memory (SDRAM)</li>
-<li>Selle mäluga suhtlus toimub sünkroonselt taktsignaaliga</li>
-<li>Ehitus väga sarnane asünkroonse DRAM’i ehitusega</li>
-<li>Värskendusahelad
-<ul>
-<li>sageli juba DRAM kiibi sees</li>
-<li>sel juhul kasutaja ei tajugi mäluraku dünaamilist ehitust</li>
-</ul>
-</li>
-</ul>
-<h2 id="latentsusaeg-ja-läbilaskevõime">Latentsusaeg ja läbilaskevõime</h2>
-<p>Latentsusaeg</p>
-<ul>
-<li>Latency</li>
-<li>Aeg, mis kulub ühe sõna ülekandmiseks mälust või mällu</li>
-<li>Andmete plokkide kaupa ülekandmisel on see aeg, mis kulub esimese sõna kättesaamiseks
-Läbilaskevõime</li>
-<li>Bandwidth</li>
-<li>Bittide või baitide arv, mida on võimalik ajaühikus üle kanda (plokkide kaupa andmeid liigutades)</li>
-<li>seda numbrit mõjutavad nii mälu kui ka siini kiirus</li>
-</ul>
-<h2 id="ddr-sdram">DDR SDRAM</h2>
-<ul>
-<li>Double Data Rate Synchronous Dynamic Random Access Memory (DDR SDRAM)</li>
-<li>Tavalise SDRAM’i toimingud tehakse üks kord takti jooksul (näiteks taktsignaali tõusval frondil)</li>
-<li>DDR toiminguid tehakse kaks korda takti jooksul, taktsignaali mõlemal frondil</li>
-<li>Latentsusaeg sellest ei lühene</li>
-<li>Küll aga kasvab läbilaskevõime</li>
-<li>DDR, DDR2, DDR3, DDR4, DDR5</li>
-</ul>
-<h2 id="värskendamisele-kuluv-aeg">Värskendamisele kuluv aeg</h2>
-<ul>
-<li>Kõigi dünaamiliste mälude sisu on vaja aeg-ajalt värskendada</li>
-<li>Kui palju selleks aega kulub?</li>
-<li>Näide
-<ul>
-<li>16384 rida</li>
-<li>4 tsüklit rea andmete värskendamiseks/lugemiseks</li>
-<li>taktsagedus 166 MHz</li>
-<li>16384 ´ 4 / (166 ´ 106) = 395 ´ 10-6 = 0,395 ms</li>
-<li>Kui värskendame iga 64 ms järel, siis
-täiendav ajakulu:
-0,395 / 64 = 0,6% mäluga suhtlemise ajast</li>
-</ul>
-</li>
-</ul>
-<h2 id="püsimälu">Püsimälu</h2>
-<ul>
-<li>Vajadus sellise mälu järgi, mis säilitaks infot ka voolu väljalülitamisel</li>
-<li>ROM (read only memory)</li>
-<li>Vajadus sellise mälu järgi, mis säilitaks infot ka voolu väljalülitamisel</li>
-<li>ROM (read only memory)</li>
-<li>PROM (programmable read only memory)</li>
-<li>EPROM (erasable programmable read only memory)</li>
-<li>EEPROM (electrically erasable programmable read only memory)</li>
-<li>välkmälu (flash memory)</li>
-</ul>
-
-
+        <h1>Mälu arhitektuuri vaates</h1><time datetime="2023-11-29T14:11:44+02:00">29. november 2023</time><br>
+        <p>Autor(id): Richard Leover</p>
+        <div class="taxonomies">
+          <p>Teemad: <a href="/~karl-mih/teemad/m%C3%A4lu/">Mälu</a></p>
+        </div>
+        <p>Arvuti mälu on funktsionaalüksus (mäluseade) või keskkond, kuhu saab andmeid paigutada, kus neid saab hoida ja kust neid saab kasutamiseks võtta.[1] Peamiselt on arvutis kasutusel mitut liiki pooljuhtmälud, mille algüksused – mäluelemendid – põhinevad transistorlülititel. Mäluelementidesse salvestatakse andmed lüliti kahe olekuna (voolu juhtiv/mittejuhtiv), mis esitavad kahendsüsteemis biti väärtust 1 või 0. Andmete talletamiseks rakendatakse veel ka magnetsalvestuse tehnikat.</p>
+        <h2 id="mälust-üldiselt">Mälust üldiselt</h2>
+        <ul>
+          <li>Ideaalne mälu on
+            <ul>
+              <li>kiire,</li>
+              <li>suur</li>
+              <li>maksab vähe</li>
+            </ul>
+          </li>
+          <li>Need soovid on kahjuks vastandlikud…</li>
+          <li>Mälu maksimaalse suuruse määrab ära adresseeritav ala
+            <ul>
+              <li>16-bitised aadressid võimaldavad kasutada216 = 65 536 mälupesa</li>
+              <li>32-bitised aadressid võimaldavad kasutada 232 = 4 294 967 296 mälupesa jne</li>
+            </ul>
+          </li>
+          <li>Infot salvestatakse ja loetakse enamasti sõnade kaupa</li>
+          <li>Bittide arv, mida saab ühe käsuga mälust lugeda või mällu kirjutada on kõige tüüpilisemaks sõna pikkuse definitsiooniks</li>
+          <li>Mälu aadress võidakse ette anda
+            <ul>
+              <li>iga sõna jaoks</li>
+              <li>või ainult esimese sõna jaoks plokis</li>
+            </ul>
+          </li>
+          <li>Mäluga suhtlust võivad juhtida
+            <ul>
+              <li>taktsignaalid</li>
+              <li>või spetsiaalsed siini juhtsignaalid</li>
+            </ul>
+          </li>
+          <li>Mälu pöördumisaeg (memory access time)
+            <ul>
+              <li>Ajavahemik Read/Write ja Memory Function Completed signaalide vahel</li>
+            </ul>
+          </li>
+          <li>Mälutsükli kestus (memory cycle time)
+            <ul>
+              <li>Ajavahemik kahe järjestikuse Read/Write signaali vahel</li>
+            </ul>
+          </li>
+          <li>Suvapöördusega mälu (RAM – random access memory)
+            <ul>
+              <li>kõigis mälupesades sisalduv info saadakse kätte ühesuguse kiirusega</li>
+            </ul>
+          </li>
+          <li>Jadapöördusseadmete puhul on andmetele juurdepääsu aeg sõltuvuses konkreetse andmete asukohast/aadressist</li>
+        </ul>
+        <h2 id="vahemälu-ja-virtuaalmälu">Vahemälu ja virtuaalmälu</h2>
+        <ul>
+          <li>Protsessor suudab reeglina infot kiiremini töödelda kui seda võimaldab tavaline mälutsükli kestus</li>
+          <li>Üheks võimaluseks mälutsükli kestust lühendada on vahemälu (cache memory) kasutamine
+            <ul>
+              <li>väike aga kiire mälu, mis on paigutatud protsessori ja põhimälu vahele</li>
+              <li>selles hoitakse programmi jaoks aktiivset infot (nii käske kui ka andmeid)</li>
+            </ul>
+          </li>
+          <li>Mälu näiva mahu suurendamist võimaldab virtuaalmälu tehnoloogia
+            <ul>
+              <li>põhimälus hoitakse ainult aktiivset osa virtuaalsest aadressiruumist</li>
+              <li>Ülejäänu paikneb aeglasemal andmekandjal, tavaliselt kõvakettal</li>
+              <li>Programmi töö käigus aktiivse piirkonna asukoht muutub ja vastavalt tuuakse ka kõvakettalt infot põhimälusse (ja visatakse sealt midagi hetkel vähem olulist minema)</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="pooljuhtmaterjalist-suvapöördusmälud-ram">Pooljuhtmaterjalist suvapöördusmälud (RAM)</h2>
+        <ul>
+          <li>RAM (Random Access Memory)
+            <ul>
+              <li>võeti kasutusele eelmise sajandi kuuekümnendate aastate lõpus</li>
+            </ul>
+          </li>
+          <li>Mälukiibi ehitus
+            <ul>
+              <li>mälurakud paigutatakse enamasti massiividena, kus iga element suudab salvestada ühe biti infot</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="sram">SRAM</h2>
+        <ul>
+          <li>SRAM (Static Random Access Memory)</li>
+          <li>Need mälud suudavad säilitada infot seni kuni nad saavad voolu</li>
+          <li>Voolu väljalülitamisel info kaob</li>
+        </ul>
+        <h2 id="asünkroonne-dram">Asünkroonne DRAM</h2>
+        <ul>
+          <li>Staatilised mälud on kiired, aga kallid
+            <ul>
+              <li>igas rakus palju transistore</li>
+            </ul>
+          </li>
+          <li>DRAM (Dynamic Random Access Memory)</li>
+          <li>Info salvestatakse kondensaatori laenguna</li>
+          <li>DRAM’id on
+            <ul>
+              <li>oluliselt odavamad</li>
+              <li>info nendes kustub teatava aja möödudes</li>
+              <li>vajavad värskendamist</li>
+            </ul>
+          </li>
+          <li>Laeng säilib kondensaatoril mõned kümned millisekundid</li>
+        </ul>
+        <h2 id="ühe-transistoriga-dram-rakk">Ühe transistoriga DRAM rakk</h2>
+        <ul>
+          <li>Info salvestamiseks lülitatakse transistor sisse ja rakendatakse pinge biti liinile</li>
+          <li>Nii salvestub kondensaatoris kindel hulk laengut</li>
+          <li>Transistori väljalülitamisel hakkab kondensaator tühjenema</li>
+        </ul>
+        <h2 id="lugemine">Lugemine</h2>
+        <ul>
+          <li>Info lugemisel lülitatakse transistor sisse</li>
+          <li>Biti liiniga ühendatud võimendi saab aru, kas kondensaator on laetud üle läveväärtuse või mitte
+            <ul>
+              <li>kui on, siis ühendatakse biti liin pingeallikaga ja laetakse kondensaator uuesti täis</li>
+              <li>mälurakus on salvestatud loogiline 1</li>
+              <li>kui ei ole, siis ühendatakse biti liin maagaja laetakse kondensaator täiesti tühjaks</li>
+              <li>mälurakus on salvestatud loogiline 0</li>
+            </ul>
+          </li>
+          <li>Nagu näeme, värskendab mälu lugemine automaatselt mälus sisalduva info</li>
+        </ul>
+        <h2 id="asünkroonne-dram-1">Asünkroonne DRAM</h2>
+        <ul>
+          <li>Seni vaadeldud DRAM rakkude juhtsignaalid olid asünkroonsed
+            <ul>
+              <li>spetsiaalne mälu juhtloogika ahel genereeris vajalikud juhtsignaalid</li>
+              <li>asynchronous DRAM</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="fast-page-mode">Fast page mode</h2>
+        <ul>
+          <li>Eelmisel slaidil kujutatud DRAM mooduli puhul aktiveeriti terve rida, aga reaalselt loeti ainult 8 bitti andmeid</li>
+          <li>Lisades tulpade liinide otsa trigerid, saame salvestada kogu antud rea sisu ja pärast, ilma rida uuesti aktiveerimata, selle info edastada</li>
+          <li>Üheks rakenduseks oleks plokkide kaupa (järjestikuste) andmete edastamine
+            <ul>
+              <li>järjestikused tulpade aktiveerimised järjestikuste CAS signaalide juhtimisel</li>
+              <li>fast page mode</li>
+              <li>see on oluliselt kiirem kui juhusliku mälupesa lugemine</li>
+            </ul>
+          </li>
+          <li>Kus kasutatakse?
+            <ul>
+              <li>regulaarse mustriga mälu-lugemised (näiteks graafika terminalides)</li>
+              <li>andmete lugemisel vahemällu</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="sünkroonne-dram">Sünkroonne DRAM</h2>
+        <ul>
+          <li>Synchronous Dynamic Random Access Memory (SDRAM)</li>
+          <li>Selle mäluga suhtlus toimub sünkroonselt taktsignaaliga</li>
+          <li>Ehitus väga sarnane asünkroonse DRAM’i ehitusega</li>
+          <li>Värskendusahelad
+            <ul>
+              <li>sageli juba DRAM kiibi sees</li>
+              <li>sel juhul kasutaja ei tajugi mäluraku dünaamilist ehitust</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="latentsusaeg-ja-läbilaskevõime">Latentsusaeg ja läbilaskevõime</h2>
+        <p>Latentsusaeg</p>
+        <ul>
+          <li>Latency</li>
+          <li>Aeg, mis kulub ühe sõna ülekandmiseks mälust või mällu</li>
+          <li>Andmete plokkide kaupa ülekandmisel on see aeg, mis kulub esimese sõna kättesaamiseks Läbilaskevõime</li>
+          <li>Bandwidth</li>
+          <li>Bittide või baitide arv, mida on võimalik ajaühikus üle kanda (plokkide kaupa andmeid liigutades)</li>
+          <li>seda numbrit mõjutavad nii mälu kui ka siini kiirus</li>
+        </ul>
+        <h2 id="ddr-sdram">DDR SDRAM</h2>
+        <ul>
+          <li>Double Data Rate Synchronous Dynamic Random Access Memory (DDR SDRAM)</li>
+          <li>Tavalise SDRAM’i toimingud tehakse üks kord takti jooksul (näiteks taktsignaali tõusval frondil)</li>
+          <li>DDR toiminguid tehakse kaks korda takti jooksul, taktsignaali mõlemal frondil</li>
+          <li>Latentsusaeg sellest ei lühene</li>
+          <li>Küll aga kasvab läbilaskevõime</li>
+          <li>DDR, DDR2, DDR3, DDR4, DDR5</li>
+        </ul>
+        <h2 id="värskendamisele-kuluv-aeg">Värskendamisele kuluv aeg</h2>
+        <ul>
+          <li>Kõigi dünaamiliste mälude sisu on vaja aeg-ajalt värskendada</li>
+          <li>Kui palju selleks aega kulub?</li>
+          <li>Näide
+            <ul>
+              <li>16384 rida</li>
+              <li>4 tsüklit rea andmete värskendamiseks/lugemiseks</li>
+              <li>taktsagedus 166 MHz</li>
+              <li>16384 ´ 4 / (166 ´ 106) = 395 ´ 10-6 = 0,395 ms</li>
+              <li>Kui värskendame iga 64 ms järel, siis täiendav ajakulu: 0,395 / 64 = 0,6% mäluga suhtlemise ajast</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="püsimälu">Püsimälu</h2>
+        <ul>
+          <li>Vajadus sellise mälu järgi, mis säilitaks infot ka voolu väljalülitamisel</li>
+          <li>ROM (read only memory)</li>
+          <li>Vajadus sellise mälu järgi, mis säilitaks infot ka voolu väljalülitamisel</li>
+          <li>ROM (read only memory)</li>
+          <li>PROM (programmable read only memory)</li>
+          <li>EPROM (erasable programmable read only memory)</li>
+          <li>EEPROM (electrically erasable programmable read only memory)</li>
+          <li>välkmälu (flash memory)</li>
+        </ul>
       </div>
       <div class="banner rotated"></div>
     </div>
   </main>
   <footer>
     <div class="base-container">
-    <div class="footer-content">
-    <div class="github">
-        <a href="https://github.com/inugami-dev64/ARA_Veebileht">
-            <img width="100" src="https://kodu.ut.ee/~karl-mih/img/github.png" alt="github.png">
-        </a>
-    </div>
-    <div class="contributors">
-        <ul>
-            <li>Richard Leover (<a href="https://github.com/richardleoverr" target="blank">Github</a>)</li>
-            <li>Karl-Mihkel Ott (<a href="https://github.com/inugami-dev64" target="blank">Github</a>)</li>
+      <div class="footer-content">
+        <div class="github">
+          <a href="https://github.com/inugami-dev64/ARA_Veebileht"><img width="100" src="https://kodu.ut.ee/~karl-mih/img/github.png" alt="github.png"></a>
+        </div>
+        <div class="contributors">
+          <ul>
+            <li>Richard Leover (<a href="https://github.com/richardleoverr" target="blank">Github</a>)
+            </li>
+            <li>Karl-Mihkel Ott (<a href="https://github.com/inugami-dev64" target="blank">Github</a>)
+            </li>
             <li>Kaspar Tugevus</li>
-        </ul>
-    </div>
-</div>
+          </ul>
+        </div>
+      </div>
     </div>
   </footer>
-  
-  <script src="/~karl-mih/js/jquery-3.7.1.min.js"></script>
+  <script src="/~karl-mih/js/jquery-3.7.1.min.js"></script> 
   <script src="/~karl-mih/js/main.js"></script>
-
 </body>
 </html>

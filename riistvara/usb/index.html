@@ -1,356 +1,276 @@
 <!DOCTYPE html>
 <html lang="et-ee" dir="ltr">
 <head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.6.0">
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<link rel="icon" type="image/x-icon" href="/~karl-mih/img/favicon.ico">
-<title>USB | Arvuti riistvara ja arhitektuur (LOFY.03.079)</title>
-
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/x-icon" href="/~karl-mih/img/favicon.ico">
+  <title>USB | Arvuti riistvara ja arhitektuur (LOFY.03.079)</title>
   <link rel="stylesheet" href="/~karl-mih/css/main.css">
-
-
 </head>
 <body>
   <header>
     <div class="base-container">
       <nav class="desktop">
-    <a href="/~karl-mih">Kodu</a>
-    <a href="/~karl-mih/riistvara">Riistvara</a>
-    <a href="/~karl-mih/arhitektuur">Arhitektuur</a>
-    <a href="/~karl-mih/teemad">Teemad</a>
-</nav>
-
-<nav class="mobile">
-    <div>
-        <svg id="hamburger-btn" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
-            <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path>
-        </svg>
-    </div>
-
-    <div class="mobile-overlay-container" id="mobile-overlay">
-        <div class="mobile-overlay">
+        <a href="/~karl-mih">Kodu</a> <a href="/~karl-mih/riistvara">Riistvara</a> <a href="/~karl-mih/arhitektuur">Arhitektuur</a> <a href="/~karl-mih/teemad">Teemad</a>
+      </nav>
+      <nav class="mobile">
+        <div>
+          <svg id="hamburger-btn" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="24px" height="24px">
+          <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path></svg>
+        </div>
+        <div class="mobile-overlay-container" id="mobile-overlay">
+          <div class="mobile-overlay">
             <div class="close">
-                <button id="overlay-close-btn">X</button>
+              <button id="overlay-close-btn">X</button>
             </div>
             <div class="mobile-links">
-                <a href="/~karl-mih">Kodu</a><br>
-                <a href="/~karl-mih/riistvara">Riistvara</a><br>
-                <a href="/~karl-mih/arhitektuur">Arhitektuur</a><br>
-                <a href="/~karl-mih/teemad">Teemad</a><br>
+              <a href="/~karl-mih">Kodu</a><br>
+              <a href="/~karl-mih/riistvara">Riistvara</a><br>
+              <a href="/~karl-mih/arhitektuur">Arhitektuur</a><br>
+              <a href="/~karl-mih/teemad">Teemad</a><br>
             </div>
+          </div>
         </div>
+      </nav>
     </div>
-</nav>
-    </div>
-    
   </header>
   <main>
     <div class="wrapper content-wrapper">
       <div class="banner"></div>
       <div class="base-container">
-        
-  <h1>USB</h1>
-
-  
-  
-  <time datetime="2023-11-29T14:11:44&#43;02:00">29. november 2023</time><br>
-  <p>Autor(id): 
-  
-  Richard Leover 
-  
-  </p>
-  
-  <div class="taxonomies">
-    <p>Teemad:
-      <a href="/~karl-mih/teemad/sisend-v%C3%A4ljund/">Sisend-Väljund</a>
-    </p>
-  </div>
-
-
-  <p>Universaalne jadasiin ehk universaalne järjestiksiin ehk USB (Universal Serial Bus) on seadmete arvutiga ühendamise standard, mis hõlmab kaablite, konnektorite (pistikute ja pesade) füüsilist ehitust, suhtlusprotokolle ning toitevoolu parameetreid.</p>
-<p>USB-d kasutatakse arvuti lisaseadmete, näiteks hiire, klaviatuuri, veebikaamera või printeri ühendamiseks, samuti andmevahetuseks mäluseadmetega, näiteks välise kõvaketta või nutitelefoniga. Lisaks kasutatakse USB-ühendust vooluallikana, näiteks hiire, diktofoni või telefoni aku laadimiseks.</p>
-<h2 id="usb_if-usb-implementers-forum">USB_IF (USB Implementers Forum)</h2>
-<ul>
-<li>Mittetulunduslik organisatsioon asutatud USB standardi loojate</li>
-<li>poolt</li>
-<li>Ülesanneteks on toetada seadmete tootjaid dokumentatsiooni,</li>
-<li>koolituste, arendus ja testvahenditega ning koordineerida tulevasi</li>
-<li>USB arenguid</li>
-<li>Haldab ja jagab Vendor-ID’sid</li>
-<li>Liikmeks saavad astuda kõik soovijad</li>
-<li>Aastane liikmetasu on $4000</li>
-<li>Täna on liikmeid üle 100</li>
-</ul>
-<h2 id="usb-töörežiimid-ja-andmeedastuskiirused">USB töörežiimid ja andmeedastuskiirused</h2>
-<ul>
-<li>Low speed - 1.5 Mbps (alates USB 1.0)</li>
-<li>Full speed – 12 Mbps (alates USB 1.0)</li>
-<li>High-speed – 480 Mbps (alates USB 2.0)</li>
-<li>SuperSpeed (Gen1 x 1) – 5 Gbps (alates USB 3.0)</li>
-<li>SuperSpeedPlus (Gen2 x 1) – 10 Gbps (alates USB 3.1)</li>
-<li>SuperSpeedPlus (Gen1 x 2) – 10 Gbps (alates USB 3.2 ainult Type-C)</li>
-<li>SuperSpeedPlus x 2 (Gen2 x 2) – 20 Gbps (alates USB 3.2 ainult Type-C)</li>
-<li>USB4 20 (Gen3 x 1) – 20 Gbps (alates USB4 v1.0)</li>
-<li>USB4 40 (Gen3 x 2) – 40 Gbps (alates USB4 v1.0 ainult Type-C)</li>
-<li>USB4 80 (Gen4) symmetric – 80Gbps (alates USB4 v2.0 ainult Type-C)</li>
-<li>USB4 120 (Gen4) asymmetric – 120Gbps / 40Gbps (alates USB4 v2.0 ainult Type-C)</li>
-</ul>
-<p><strong>USB 1.0 (Universal Serial Bus Specification Revision 1.0)</strong></p>
-<ul>
-<li>Avaldatud jaanuaris 1996</li>
-<li>Loojateks Compaq, DEC, IBM, Intel, Microsoft, NEC ja NotrhernTelecom</li>
-<li>Operatsioonisüsteemidest toetas esimesena Windows 95 Service Release 2
-tugi oli piiratud ja bugine (nii esimesed seadmed kui OS tugi)</li>
-<li>Alates Windows 98’st (juuni 1998) on tugi korralik ja ka seadmetootjad olid
-„lastehaigustest“ üle saanud
-<strong>USB 1.1</strong></li>
-<li>Avaldatud septembris 1998</li>
-<li>Asendab USB 1.0 standardi</li>
-<li>Loojateks Compaq, HP, Intel, Philips, LucentTechnologies, Microsoft ja NEC</li>
-</ul>
-<p><strong>USB 2.0</strong></p>
-<ul>
-<li>Avaldatud aprillis 2000</li>
-<li>Lisandus high-speed režiim andmeedastuskiirusega 480Mbps</li>
-<li>Tänu suuremale kiirusele võeti kasutusele oluliselt suurema hulga erinevate
-lisaseadmete juures</li>
-<li>Windowsile lisasid USB 2.0 toe Windows XP SP1 ja Windows 2000 SP4</li>
-<li>Asendab USB 1.1 standardi ja on tagasiühilduv</li>
-<li>Loojateks Compaq, HP, Intel, Philips, Lucent Technologies, Microsoft, NEC, STEricsson
-ja Texas Instruments</li>
-<li>Kaks korda aastas annab USB-IF välja USB spetsifikatsiooni lisasid ECN (Engineering
-Change Notices)
-– Näiteks täiendused kaablite ja pistikute kohta, täiendused toite kohta jne.</li>
-<li>Lisad ei muuda põhispetsifikatsiooni</li>
-</ul>
-<p><strong>USB 2.1</strong></p>
-<ul>
-<li>Ei ole päris iseseisev USB standardi versioon</li>
-<li>USB 2.0 Link Power Management lisa ja USB 3.1 spetsifikatsioon
-defineerivad, kuna seade peab ennast tutvustama kui USB 2.1 seade</li>
-<li>Ehk siis
-<ul>
-<li>Low-, full- või high-speed seade, mis toetab BOS (Binary Object Store)
-deskriptorit on USB 2.1 seade</li>
-<li>SuperSpeed ja SuperSpeedPlus seade, mis toetab ka üht või mitut USB 2.0
-kiirust peab ennast tutvustama kui USB 2.1 seade, kui see parasjagu töötab USB
-2.0 kiirustel</li>
-</ul>
-</li>
-</ul>
-<p><strong>USB 3.0</strong></p>
-<ul>
-<li>Avaldatud novembris 2008</li>
-<li>Täiesti uus arhitektuur, kus kaks füüsilist siini toimivad korraga. Üks siini
-kaudu edastatakse USB 2.0 liiklust ja teine USB 3.0 liiklust</li>
-<li>SuperSpeed on võimeline edastama andmeid mõlemas suunas korraga,
-sest kasutusel on kummagi suuna jaoks oma juhtmepaar</li>
-<li>Seadmed võivad tarbida rohkem energiat ja kasutada nö. Agressiivsemalt
-energiasäästurežiime</li>
-<li>USB 3.0 on USB 2.0 tagasiühilduv</li>
-<li>Erinevalt USB 2.0 standardist, mis asendas USB 1.1 standardi, USB 3.0
-standard täiendab USB 2.0 standardit</li>
-<li>Loojateks HP, Intel, Microsoft, NEC, STEricsson, Texas Instruments</li>
-</ul>
-<p><strong>USB 3.1</strong></p>
-<ul>
-<li>Avaldatud juulis 2013</li>
-<li>Täiendab USB 3.0 standardit SuperSpeedPlus kiirusega (10 Gbps)</li>
-<li>Lisab uued energiasäästufunktsioonid</li>
-<li>Lisatäiendused, mis käivad nii SuperSpeed kui SuperSpeedPlus kohta</li>
-<li>Toodetel kasutatakse ka lisaks SuperSpeedPlus tähisele SuperSpeed USB 10Gbps</li>
-<li>Asendab USB 3.0 standardi (kuid mitte USB 2.0)
-<ul>
-<li>Ehk siis lisaks SuperSpeedPlus seadmetele peavad ka kõik uued seadmed, mis töötavad kuni
-SuperSpeed kiirusel vastama USB 3.2 standardile</li>
-</ul>
-</li>
-<li>USB 3.1 kaablid sisaldavad küll sama arvu ühendusi, aga nõuded kaablile on rangemad</li>
-<li>USB 3.1 defineerib ka uued terminid
-<ul>
-<li>Gen 1, mis on SuperSpeed ehk 5 Gbps</li>
-<li>Gen 2, mis on SuperSpeedPlus ehk 10 Gbps</li>
-<li>Enhanced SuperSpeed USB on koondnimetaja Gen 1 ja Gen 2 ehk siis USB 3.x kohta
-NB! Enhanced SuperSpeed != SuperSpeedPlus</li>
-</ul>
-</li>
-</ul>
-<p><strong>USB 3.2</strong></p>
-<ul>
-<li>Avaldatud septembris 2017</li>
-<li>Andmeedastuskiirus üle Type-C ühenduse ja kaabli 20 Gbps</li>
-<li>Kaks paralleelset SuperSpeedPlus kanalit</li>
-<li>Asendab USB 3.1 standardi (kuid mitte USB 2.0)</li>
-<li>Loojateks Apple, HP, Intel, Microsoft, Renesas, STMicroelectronics ja
-Texas Instruments</li>
-</ul>
-<p><strong>USB4 v1.0</strong></p>
-<ul>
-<li>Avaldatud augustis 2019</li>
-<li>Eesmärk kasutada paremini ära Type-C ühendust ja vähendada
-segadust.</li>
-<li>Andmeedastuskiirus üle Type-C ühenduse ja kaabli 40 Gbps</li>
-<li>Võimaldab ühenduste tunneldamise abil kombineerida erinevad
-andmesideprotokollid (näiteks USB3, DisplayPort, PCIe) ühte
-füüsilisse sidekanalisse</li>
-<li>Üle Type-C ühenduse asendab USB 3.2 standardi (kuid mitte USB 2.0)</li>
-<li>Loojateks Apple, HP, Intel, Microsoft, Renesas, STMicroelectronics ja
-Texas Instruments</li>
-</ul>
-<p><strong>USB4 v2.0</strong></p>
-<ul>
-<li>Avaldatud oktoobris 2022</li>
-<li>Andmeedastuskiirus üle Type-C
-ühenduse ja kaabli
-<ul>
-<li>80 Gbps sümmeetrilises moodis</li>
-<li>120 Gbps / 40 Gbps asümmeetrilises
-moodis</li>
-</ul>
-</li>
-<li>DisplayPort 2.1 ja PCI Express 4
-seotud täiendused</li>
-<li>Uued (varasemast selgemad)
-liitmike ning kaablite tähistused
-ja logod</li>
-</ul>
-<h2 id="usb-ühilduvus">USB ühilduvus</h2>
-<p><strong>USB ühilduvus – vol.1</strong></p>
-<ul>
-<li>USB 2.0 seade (device), väljaarvatud jaotur (hub), võib toetada low- full- ja high
-speed režiime</li>
-<li>High-speed seade võib toetada full-speed režiimi, kui on ühendatud USB 1.1 porti</li>
-<li>USB 2.0 jaotur peab toetama kõiki kolme USB 2.0 töörežiimi</li>
-<li>High-speed seadmed peavad olema markeeritud tähisega Hi-Speed USB</li>
-<li>High-speed seadet saab maksimaalse kiirusega kasutada USB 2.0, USB 3.x hosti
-või jaoturi küljes</li>
-<li>USB 2.0 ja USB 3.x hosti ja jaoturi küljes saab kasutada ka USB 1.1 seadmeid</li>
-<li>USB 2.0 ja USB 3.x hostid ja jaoturid toetavad kõiki madalamaid ühendskiiruseid</li>
-</ul>
-<p><strong>USB ühilduvus – vol.2</strong></p>
-<ul>
-<li>Kõik SuperSpeedPlus seadmed peavad toetama ka SuperSpeed
-kiirust</li>
-<li>Kõik seadmed, mis toetavad SuperSpeed kiirust peavad toetama ka
-vähemalt üht USB 2.0 kiirust</li>
-<li>USB 3.x seade ei pea täielikult toetama USB 2.0 kiiruseid, aga host
-peab olema võimeline seadet tuvastama ja kasutajat teavitama, et
-seade tuleks ühendada USB 3.x liidesesse</li>
-<li>Suurem energiatarve on lubatud ainult USB 3.x seadmetele. USB 2.0
-seadmel on lubatud USB 3.x võimekusega pesas tarbida jätkuvalt
-kuni 500 mA</li>
-</ul>
-<h2 id="usb-kaablipikkused">USB kaablipikkused</h2>
-<ul>
-<li>USB 2.0 (480 Mbps) – kuni 5 m (30m koos 5 jaoturiga)</li>
-<li>USB 3.0 (5 Gbps) – kuni 2m (10m koos 5 jaoturiga)</li>
-<li>USB 3.1 (10 Gbps) – kuni 1m (5m koos 5 jaoturiga)</li>
-<li>USB 3.2 (20 Gbps) – kuni 1m (5m koos 5 jaoturiga)</li>
-</ul>
-<h2 id="type-c">Type-C</h2>
-<p><strong>Type-C™ liitmik ja kaabel</strong></p>
-<ul>
-<li>Kuna senised A ja B liitmikud ei vasta enam tänapäeva seadmete ootustele töötati välja
-uus liitmike standard Type-C</li>
-<li>v1.0 august 2014, v1.1 aprill 2015, v1.2 märts 2016, v1.3 juuli 2017, v1.4 märts 2019, v2.0
-august 2019, v2.1 mai 2021, v2.2 oktoober 2022</li>
-<li>Standardidokumendi nimi on USBType-C Cable and Connector Specification</li>
-<li>Standard on täienduseks USB 2.0, USB 3.2 ja USB Power Delivery standarditele</li>
-<li>Eesmärgid
-<ul>
-<li>Kompaktne (ainult 3mm paksune)</li>
-<li>Sümmeetriline - võimalus ühendada pistik pessa mõlemat pidi</li>
-<li>Elektriliselt ühilduv seniste standarditega</li>
-<li>Üks liitmik kõikide seadmete ja kaablite jaoks</li>
-<li>Täiendatud toitevõimalused</li>
-<li>Väiksem EMI (Electromagnetic interference) ja RFI (Radio-Frequency interference) kiirgus</li>
-<li>Võimalus kasutada viikusid ka muudeks funktsioonideks (Alternate Modes)</li>
-</ul>
-</li>
-<li>Type-C standard defineerib kaks uut terminit
-<ul>
-<li>Source (läte) – port, millel on CC viik läbi takisti toitesse sillatud ja edastab voolu
-VBUS viigule.</li>
-<li>Sink (neel) –</li>
-</ul>
-</li>
-</ul>
-<p><strong>Type-C kablite tüübid</strong></p>
-<ul>
-<li>USB Full-Featured Type-C kaablid ja liitmikud – Need on kaablid ja liitmikud, mis
-toetavad USB 2.0 ja USB 3.x andmeühendusi ning sisaldavad CC ja SBU ühendusi.
-Sellised kaablid on elektrooniliselt markeeritud (Electronically Marked Cable - EMCA).</li>
-<li>USB 2.0 Type-C kaablid ja liitmikud – Need on sellised Type-C kaablid ja liitmikud, mis
-toetavad ainult USB 2.0 andmeühendusi ja sisaldavad ainult USB 2.0 viike.</li>
-<li>USB Type-C Power-Only kaablid ja liitmikud – Need on sellised Type-C kaablid ja
-liitmikud, mis sisaldavad ainult CC, VBUS ja GND ühendusi.</li>
-<li>Passiiv ja aktiivkaablid
-<ul>
-<li>Kaabel on passiivne kui see ei modifitseeri USB andmesignaale.</li>
-<li>Kaabel on aktiivne kui see modifitseerib USB andmesignaale (näiteks optiline- või pikk võimendiga
-kaabel).</li>
-<li>Aktiivseteks loetakse ka kõiki Type-C alternatiivrežiime kasutavaid üleminekuadaptereid.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Type-C Alternate Modes</strong></p>
-<ul>
-<li>Type-C ühenduse kaudu on võimalik lisaks USB signaalidele edastada ka muid
-ühendusi näiteks DisplayPort, Thunderbolt vms.</li>
-<li>Neid muid võimekusi lisaks USB’le nimetatakse alternatiivmoodideks ehk
-Alternate Modes.</li>
-<li>Kõik hostid ja seadmed (väljaarvatud laadijad), mille küljes on Type-C pesa peavad
-olema minimaalselt USB 2.0 suhtlusvõimelised</li>
-<li>Kui host või seade toetab alternatiivmoode, siis peab
-<ul>
-<li>See kasutama USB Power Delivery Structured Vendor Defined Messages sõnumeid
-alternatiivmoodide tuvastamiseks ja konfigureerimiseks.</li>
-<li>Kui seade lisaks USB funktsionaalsusi ei oma, siis peab see minimaalselt vastama USB
-Billboard Device Class spetsifikatsioonile, et ennast identifitseerida.</li>
-</ul>
-</li>
-<li>Alternatiivmoodid ei kandu üle USB jaoturite (Hubs), neid saab kasutada ainult
-otseühenduste korral.</li>
-<li>Seadmed, mis näevad välja nagu jaoturid, aga pakuvad ka alternatiivmoode
-nimetatakse alternatiivmoodide laienditeks või dokkideks.</li>
-</ul>
-<p><strong>Analog Audio Adapter Accessory Mode</strong></p>
-<ul>
-<li>Saab multipleksida neli analoog heli signaali USB Type-C ühenduse
-viikude külge.</li>
-<li>Neli analoog audio signaali on samad, mis traditsioonilise 3,5 mm
-pulkpistiku puhul.</li>
-<li>Standard lubab ka 500mA toite helisüsteemist tagasi.</li>
-<li>USB host, mis on AnalogAudio Adapter Accessory Mode võimeline,
-peab toetama ka USB Type-C Digital Audio (TCDA) standardit.</li>
-</ul>
-
-
+        <h1>USB</h1><time datetime="2023-11-29T14:11:44+02:00">29. november 2023</time><br>
+        <p>Autor(id): Richard Leover</p>
+        <div class="taxonomies">
+          <p>Teemad: <a href="/~karl-mih/teemad/sisend-v%C3%A4ljund/">Sisend-Väljund</a></p>
+        </div>
+        <p>Universaalne jadasiin ehk universaalne järjestiksiin ehk USB (Universal Serial Bus) on seadmete arvutiga ühendamise standard, mis hõlmab kaablite, konnektorite (pistikute ja pesade) füüsilist ehitust, suhtlusprotokolle ning toitevoolu parameetreid.</p>
+        <p>USB-d kasutatakse arvuti lisaseadmete, näiteks hiire, klaviatuuri, veebikaamera või printeri ühendamiseks, samuti andmevahetuseks mäluseadmetega, näiteks välise kõvaketta või nutitelefoniga. Lisaks kasutatakse USB-ühendust vooluallikana, näiteks hiire, diktofoni või telefoni aku laadimiseks.</p>
+        <h2 id="usb_if-usb-implementers-forum">USB_IF (USB Implementers Forum)</h2>
+        <ul>
+          <li>Mittetulunduslik organisatsioon asutatud USB standardi loojate</li>
+          <li>poolt</li>
+          <li>Ülesanneteks on toetada seadmete tootjaid dokumentatsiooni,</li>
+          <li>koolituste, arendus ja testvahenditega ning koordineerida tulevasi</li>
+          <li>USB arenguid</li>
+          <li>Haldab ja jagab Vendor-ID’sid</li>
+          <li>Liikmeks saavad astuda kõik soovijad</li>
+          <li>Aastane liikmetasu on $4000</li>
+          <li>Täna on liikmeid üle 100</li>
+        </ul>
+        <h2 id="usb-töörežiimid-ja-andmeedastuskiirused">USB töörežiimid ja andmeedastuskiirused</h2>
+        <ul>
+          <li>Low speed - 1.5 Mbps (alates USB 1.0)</li>
+          <li>Full speed – 12 Mbps (alates USB 1.0)</li>
+          <li>High-speed – 480 Mbps (alates USB 2.0)</li>
+          <li>SuperSpeed (Gen1 x 1) – 5 Gbps (alates USB 3.0)</li>
+          <li>SuperSpeedPlus (Gen2 x 1) – 10 Gbps (alates USB 3.1)</li>
+          <li>SuperSpeedPlus (Gen1 x 2) – 10 Gbps (alates USB 3.2 ainult Type-C)</li>
+          <li>SuperSpeedPlus x 2 (Gen2 x 2) – 20 Gbps (alates USB 3.2 ainult Type-C)</li>
+          <li>USB4 20 (Gen3 x 1) – 20 Gbps (alates USB4 v1.0)</li>
+          <li>USB4 40 (Gen3 x 2) – 40 Gbps (alates USB4 v1.0 ainult Type-C)</li>
+          <li>USB4 80 (Gen4) symmetric – 80Gbps (alates USB4 v2.0 ainult Type-C)</li>
+          <li>USB4 120 (Gen4) asymmetric – 120Gbps / 40Gbps (alates USB4 v2.0 ainult Type-C)</li>
+        </ul>
+        <p><strong>USB 1.0 (Universal Serial Bus Specification Revision 1.0)</strong></p>
+        <ul>
+          <li>Avaldatud jaanuaris 1996</li>
+          <li>Loojateks Compaq, DEC, IBM, Intel, Microsoft, NEC ja NotrhernTelecom</li>
+          <li>Operatsioonisüsteemidest toetas esimesena Windows 95 Service Release 2 tugi oli piiratud ja bugine (nii esimesed seadmed kui OS tugi)</li>
+          <li>Alates Windows 98’st (juuni 1998) on tugi korralik ja ka seadmetootjad olid „lastehaigustest“ üle saanud <strong>USB 1.1</strong></li>
+          <li>Avaldatud septembris 1998</li>
+          <li>Asendab USB 1.0 standardi</li>
+          <li>Loojateks Compaq, HP, Intel, Philips, LucentTechnologies, Microsoft ja NEC</li>
+        </ul>
+        <p><strong>USB 2.0</strong></p>
+        <ul>
+          <li>Avaldatud aprillis 2000</li>
+          <li>Lisandus high-speed režiim andmeedastuskiirusega 480Mbps</li>
+          <li>Tänu suuremale kiirusele võeti kasutusele oluliselt suurema hulga erinevate lisaseadmete juures</li>
+          <li>Windowsile lisasid USB 2.0 toe Windows XP SP1 ja Windows 2000 SP4</li>
+          <li>Asendab USB 1.1 standardi ja on tagasiühilduv</li>
+          <li>Loojateks Compaq, HP, Intel, Philips, Lucent Technologies, Microsoft, NEC, STEricsson ja Texas Instruments</li>
+          <li>Kaks korda aastas annab USB-IF välja USB spetsifikatsiooni lisasid ECN (Engineering Change Notices) – Näiteks täiendused kaablite ja pistikute kohta, täiendused toite kohta jne.</li>
+          <li>Lisad ei muuda põhispetsifikatsiooni</li>
+        </ul>
+        <p><strong>USB 2.1</strong></p>
+        <ul>
+          <li>Ei ole päris iseseisev USB standardi versioon</li>
+          <li>USB 2.0 Link Power Management lisa ja USB 3.1 spetsifikatsioon defineerivad, kuna seade peab ennast tutvustama kui USB 2.1 seade</li>
+          <li>Ehk siis
+            <ul>
+              <li>Low-, full- või high-speed seade, mis toetab BOS (Binary Object Store) deskriptorit on USB 2.1 seade</li>
+              <li>SuperSpeed ja SuperSpeedPlus seade, mis toetab ka üht või mitut USB 2.0 kiirust peab ennast tutvustama kui USB 2.1 seade, kui see parasjagu töötab USB 2.0 kiirustel</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>USB 3.0</strong></p>
+        <ul>
+          <li>Avaldatud novembris 2008</li>
+          <li>Täiesti uus arhitektuur, kus kaks füüsilist siini toimivad korraga. Üks siini kaudu edastatakse USB 2.0 liiklust ja teine USB 3.0 liiklust</li>
+          <li>SuperSpeed on võimeline edastama andmeid mõlemas suunas korraga, sest kasutusel on kummagi suuna jaoks oma juhtmepaar</li>
+          <li>Seadmed võivad tarbida rohkem energiat ja kasutada nö. Agressiivsemalt energiasäästurežiime</li>
+          <li>USB 3.0 on USB 2.0 tagasiühilduv</li>
+          <li>Erinevalt USB 2.0 standardist, mis asendas USB 1.1 standardi, USB 3.0 standard täiendab USB 2.0 standardit</li>
+          <li>Loojateks HP, Intel, Microsoft, NEC, STEricsson, Texas Instruments</li>
+        </ul>
+        <p><strong>USB 3.1</strong></p>
+        <ul>
+          <li>Avaldatud juulis 2013</li>
+          <li>Täiendab USB 3.0 standardit SuperSpeedPlus kiirusega (10 Gbps)</li>
+          <li>Lisab uued energiasäästufunktsioonid</li>
+          <li>Lisatäiendused, mis käivad nii SuperSpeed kui SuperSpeedPlus kohta</li>
+          <li>Toodetel kasutatakse ka lisaks SuperSpeedPlus tähisele SuperSpeed USB 10Gbps</li>
+          <li>Asendab USB 3.0 standardi (kuid mitte USB 2.0)
+            <ul>
+              <li>Ehk siis lisaks SuperSpeedPlus seadmetele peavad ka kõik uued seadmed, mis töötavad kuni SuperSpeed kiirusel vastama USB 3.2 standardile</li>
+            </ul>
+          </li>
+          <li>USB 3.1 kaablid sisaldavad küll sama arvu ühendusi, aga nõuded kaablile on rangemad</li>
+          <li>USB 3.1 defineerib ka uued terminid
+            <ul>
+              <li>Gen 1, mis on SuperSpeed ehk 5 Gbps</li>
+              <li>Gen 2, mis on SuperSpeedPlus ehk 10 Gbps</li>
+              <li>Enhanced SuperSpeed USB on koondnimetaja Gen 1 ja Gen 2 ehk siis USB 3.x kohta NB! Enhanced SuperSpeed != SuperSpeedPlus</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>USB 3.2</strong></p>
+        <ul>
+          <li>Avaldatud septembris 2017</li>
+          <li>Andmeedastuskiirus üle Type-C ühenduse ja kaabli 20 Gbps</li>
+          <li>Kaks paralleelset SuperSpeedPlus kanalit</li>
+          <li>Asendab USB 3.1 standardi (kuid mitte USB 2.0)</li>
+          <li>Loojateks Apple, HP, Intel, Microsoft, Renesas, STMicroelectronics ja Texas Instruments</li>
+        </ul>
+        <p><strong>USB4 v1.0</strong></p>
+        <ul>
+          <li>Avaldatud augustis 2019</li>
+          <li>Eesmärk kasutada paremini ära Type-C ühendust ja vähendada segadust.</li>
+          <li>Andmeedastuskiirus üle Type-C ühenduse ja kaabli 40 Gbps</li>
+          <li>Võimaldab ühenduste tunneldamise abil kombineerida erinevad andmesideprotokollid (näiteks USB3, DisplayPort, PCIe) ühte füüsilisse sidekanalisse</li>
+          <li>Üle Type-C ühenduse asendab USB 3.2 standardi (kuid mitte USB 2.0)</li>
+          <li>Loojateks Apple, HP, Intel, Microsoft, Renesas, STMicroelectronics ja Texas Instruments</li>
+        </ul>
+        <p><strong>USB4 v2.0</strong></p>
+        <ul>
+          <li>Avaldatud oktoobris 2022</li>
+          <li>Andmeedastuskiirus üle Type-C ühenduse ja kaabli
+            <ul>
+              <li>80 Gbps sümmeetrilises moodis</li>
+              <li>120 Gbps / 40 Gbps asümmeetrilises moodis</li>
+            </ul>
+          </li>
+          <li>DisplayPort 2.1 ja PCI Express 4 seotud täiendused</li>
+          <li>Uued (varasemast selgemad) liitmike ning kaablite tähistused ja logod</li>
+        </ul>
+        <h2 id="usb-ühilduvus">USB ühilduvus</h2>
+        <p><strong>USB ühilduvus – vol.1</strong></p>
+        <ul>
+          <li>USB 2.0 seade (device), väljaarvatud jaotur (hub), võib toetada low- full- ja high speed režiime</li>
+          <li>High-speed seade võib toetada full-speed režiimi, kui on ühendatud USB 1.1 porti</li>
+          <li>USB 2.0 jaotur peab toetama kõiki kolme USB 2.0 töörežiimi</li>
+          <li>High-speed seadmed peavad olema markeeritud tähisega Hi-Speed USB</li>
+          <li>High-speed seadet saab maksimaalse kiirusega kasutada USB 2.0, USB 3.x hosti või jaoturi küljes</li>
+          <li>USB 2.0 ja USB 3.x hosti ja jaoturi küljes saab kasutada ka USB 1.1 seadmeid</li>
+          <li>USB 2.0 ja USB 3.x hostid ja jaoturid toetavad kõiki madalamaid ühendskiiruseid</li>
+        </ul>
+        <p><strong>USB ühilduvus – vol.2</strong></p>
+        <ul>
+          <li>Kõik SuperSpeedPlus seadmed peavad toetama ka SuperSpeed kiirust</li>
+          <li>Kõik seadmed, mis toetavad SuperSpeed kiirust peavad toetama ka vähemalt üht USB 2.0 kiirust</li>
+          <li>USB 3.x seade ei pea täielikult toetama USB 2.0 kiiruseid, aga host peab olema võimeline seadet tuvastama ja kasutajat teavitama, et seade tuleks ühendada USB 3.x liidesesse</li>
+          <li>Suurem energiatarve on lubatud ainult USB 3.x seadmetele. USB 2.0 seadmel on lubatud USB 3.x võimekusega pesas tarbida jätkuvalt kuni 500 mA</li>
+        </ul>
+        <h2 id="usb-kaablipikkused">USB kaablipikkused</h2>
+        <ul>
+          <li>USB 2.0 (480 Mbps) – kuni 5 m (30m koos 5 jaoturiga)</li>
+          <li>USB 3.0 (5 Gbps) – kuni 2m (10m koos 5 jaoturiga)</li>
+          <li>USB 3.1 (10 Gbps) – kuni 1m (5m koos 5 jaoturiga)</li>
+          <li>USB 3.2 (20 Gbps) – kuni 1m (5m koos 5 jaoturiga)</li>
+        </ul>
+        <h2 id="type-c">Type-C</h2>
+        <p><strong>Type-C™ liitmik ja kaabel</strong></p>
+        <ul>
+          <li>Kuna senised A ja B liitmikud ei vasta enam tänapäeva seadmete ootustele töötati välja uus liitmike standard Type-C</li>
+          <li>v1.0 august 2014, v1.1 aprill 2015, v1.2 märts 2016, v1.3 juuli 2017, v1.4 märts 2019, v2.0 august 2019, v2.1 mai 2021, v2.2 oktoober 2022</li>
+          <li>Standardidokumendi nimi on USBType-C Cable and Connector Specification</li>
+          <li>Standard on täienduseks USB 2.0, USB 3.2 ja USB Power Delivery standarditele</li>
+          <li>Eesmärgid
+            <ul>
+              <li>Kompaktne (ainult 3mm paksune)</li>
+              <li>Sümmeetriline - võimalus ühendada pistik pessa mõlemat pidi</li>
+              <li>Elektriliselt ühilduv seniste standarditega</li>
+              <li>Üks liitmik kõikide seadmete ja kaablite jaoks</li>
+              <li>Täiendatud toitevõimalused</li>
+              <li>Väiksem EMI (Electromagnetic interference) ja RFI (Radio-Frequency interference) kiirgus</li>
+              <li>Võimalus kasutada viikusid ka muudeks funktsioonideks (Alternate Modes)</li>
+            </ul>
+          </li>
+          <li>Type-C standard defineerib kaks uut terminit
+            <ul>
+              <li>Source (läte) – port, millel on CC viik läbi takisti toitesse sillatud ja edastab voolu VBUS viigule.</li>
+              <li>Sink (neel) –</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>Type-C kablite tüübid</strong></p>
+        <ul>
+          <li>USB Full-Featured Type-C kaablid ja liitmikud – Need on kaablid ja liitmikud, mis toetavad USB 2.0 ja USB 3.x andmeühendusi ning sisaldavad CC ja SBU ühendusi. Sellised kaablid on elektrooniliselt markeeritud (Electronically Marked Cable - EMCA).</li>
+          <li>USB 2.0 Type-C kaablid ja liitmikud – Need on sellised Type-C kaablid ja liitmikud, mis toetavad ainult USB 2.0 andmeühendusi ja sisaldavad ainult USB 2.0 viike.</li>
+          <li>USB Type-C Power-Only kaablid ja liitmikud – Need on sellised Type-C kaablid ja liitmikud, mis sisaldavad ainult CC, VBUS ja GND ühendusi.</li>
+          <li>Passiiv ja aktiivkaablid
+            <ul>
+              <li>Kaabel on passiivne kui see ei modifitseeri USB andmesignaale.</li>
+              <li>Kaabel on aktiivne kui see modifitseerib USB andmesignaale (näiteks optiline- või pikk võimendiga kaabel).</li>
+              <li>Aktiivseteks loetakse ka kõiki Type-C alternatiivrežiime kasutavaid üleminekuadaptereid.</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>Type-C Alternate Modes</strong></p>
+        <ul>
+          <li>Type-C ühenduse kaudu on võimalik lisaks USB signaalidele edastada ka muid ühendusi näiteks DisplayPort, Thunderbolt vms.</li>
+          <li>Neid muid võimekusi lisaks USB’le nimetatakse alternatiivmoodideks ehk Alternate Modes.</li>
+          <li>Kõik hostid ja seadmed (väljaarvatud laadijad), mille küljes on Type-C pesa peavad olema minimaalselt USB 2.0 suhtlusvõimelised</li>
+          <li>Kui host või seade toetab alternatiivmoode, siis peab
+            <ul>
+              <li>See kasutama USB Power Delivery Structured Vendor Defined Messages sõnumeid alternatiivmoodide tuvastamiseks ja konfigureerimiseks.</li>
+              <li>Kui seade lisaks USB funktsionaalsusi ei oma, siis peab see minimaalselt vastama USB Billboard Device Class spetsifikatsioonile, et ennast identifitseerida.</li>
+            </ul>
+          </li>
+          <li>Alternatiivmoodid ei kandu üle USB jaoturite (Hubs), neid saab kasutada ainult otseühenduste korral.</li>
+          <li>Seadmed, mis näevad välja nagu jaoturid, aga pakuvad ka alternatiivmoode nimetatakse alternatiivmoodide laienditeks või dokkideks.</li>
+        </ul>
+        <p><strong>Analog Audio Adapter Accessory Mode</strong></p>
+        <ul>
+          <li>Saab multipleksida neli analoog heli signaali USB Type-C ühenduse viikude külge.</li>
+          <li>Neli analoog audio signaali on samad, mis traditsioonilise 3,5 mm pulkpistiku puhul.</li>
+          <li>Standard lubab ka 500mA toite helisüsteemist tagasi.</li>
+          <li>USB host, mis on AnalogAudio Adapter Accessory Mode võimeline, peab toetama ka USB Type-C Digital Audio (TCDA) standardit.</li>
+        </ul>
       </div>
       <div class="banner rotated"></div>
     </div>
   </main>
   <footer>
     <div class="base-container">
-    <div class="footer-content">
-    <div class="github">
-        <a href="https://github.com/inugami-dev64/ARA_Veebileht">
-            <img width="100" src="https://kodu.ut.ee/~karl-mih/img/github.png" alt="github.png">
-        </a>
-    </div>
-    <div class="contributors">
-        <ul>
-            <li>Richard Leover (<a href="https://github.com/richardleoverr" target="blank">Github</a>)</li>
-            <li>Karl-Mihkel Ott (<a href="https://github.com/inugami-dev64" target="blank">Github</a>)</li>
+      <div class="footer-content">
+        <div class="github">
+          <a href="https://github.com/inugami-dev64/ARA_Veebileht"><img width="100" src="https://kodu.ut.ee/~karl-mih/img/github.png" alt="github.png"></a>
+        </div>
+        <div class="contributors">
+          <ul>
+            <li>Richard Leover (<a href="https://github.com/richardleoverr" target="blank">Github</a>)
+            </li>
+            <li>Karl-Mihkel Ott (<a href="https://github.com/inugami-dev64" target="blank">Github</a>)
+            </li>
             <li>Kaspar Tugevus</li>
-        </ul>
-    </div>
-</div>
+          </ul>
+        </div>
+      </div>
     </div>
   </footer>
-  
-  <script src="/~karl-mih/js/jquery-3.7.1.min.js"></script>
+  <script src="/~karl-mih/js/jquery-3.7.1.min.js"></script> 
   <script src="/~karl-mih/js/main.js"></script>
-
 </body>
 </html>

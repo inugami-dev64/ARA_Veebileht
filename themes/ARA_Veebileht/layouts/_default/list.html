@@ -1,11 +1,11 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ if not .IsNode }}
-    <p>{{ .WordCount }} sõna, {{ .ReadingTime }} min lugemine</p>
-    {{ .Summary }}
-    {{ end }}
+{{ range .Pages }}
+<div>
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+  {{ if not .IsNode }}
+  <p>{{ .WordCount }} sõna, {{ .ReadingTime }} min lugemine</p>
+  {{ .Summary }}
   {{ end }}
+</div>
+{{ end }}
 {{ end }}

@@ -140,6 +140,7 @@ nav a {
 
 @media(min-width: 900px) {
   .home-wrapper {
+    min-height: 310px;
     background-image: url('/~karl-mih/img/computer.png');
     background-size: auto 100%;
     background-repeat: no-repeat;

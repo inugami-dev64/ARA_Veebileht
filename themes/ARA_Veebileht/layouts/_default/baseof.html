@@ -8,7 +8,7 @@
     <div class="base-container">
       {{ partial "nav.html" . }}
     </div>
-    {{ if .IsHome }}
+    {{ if or .IsHome .IsNode  }}
     <div class="wrapper home-wrapper">
       <div class="base-container">
         <div class="header-content">

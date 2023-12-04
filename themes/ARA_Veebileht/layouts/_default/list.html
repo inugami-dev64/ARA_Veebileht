@@ -3,6 +3,11 @@
 <div>
   <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
   {{ if not .IsNode }}
+  <p>Autor(id): 
+    {{ range .Param "authors"}}
+    {{ . }} 
+    {{ end }}
+  </p>
   <p>{{ .WordCount }} sõna, {{ .ReadingTime }} min lugemine</p>
   {{ .Summary }}
   {{ end }}

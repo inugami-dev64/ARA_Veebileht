@@ -1,9 +1,10 @@
-baseURL = 'https://kodu.ut.ee/~karl-mih'
+baseURL = 'https://kodu.ut.ee/~karl-mih/'
 languageCode = 'et-ee'
 title = 'Arvuti riistvara ja arhitektuur (LOFY.03.079)'
 theme = 'ARA_Veebileht'
 defaultContentLanguage = 'et'
 defaultContentLanguageInSubdir = true
+disableKinds = ["RSS", "sitemap"]
 summaryLength = 30
 
 [taxonomies]

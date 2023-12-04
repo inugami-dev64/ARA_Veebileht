@@ -1,6 +1,7 @@
 baseURL = 'https://kodu.ut.ee/~karl-mih'
 languageCode = 'et-ee'
 title = 'Arvuti riistvara ja arhitektuur'
+disableKinds = ["RSS", "sitemap"]
 
 [[menus.main]]
 name = 'Home'

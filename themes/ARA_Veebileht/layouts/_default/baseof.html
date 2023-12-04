@@ -9,7 +9,11 @@
       {{ partial "nav.html" . }}
     </div>
     {{ if or .IsHome .IsNode  }}
+    {{ if .IsHome }}
     <div class="wrapper home-wrapper">
+    {{ else }}
+    <div class="wrapper">
+    {{ end }}
       <div class="base-container">
         <div class="header-content">
           <h1>{{ .Title }}</h1>
@@ -33,5 +37,6 @@
     {{ partial "footer.html" . }}
     </div>
   </footer>
+  {{ partial "partials/head/js.html" . }}
 </body>
 </html>

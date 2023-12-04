@@ -2,6 +2,7 @@
 title = 'RISC protsessorid'
 date = 2023-11-29T14:11:44+02:00
 draft = false
+teemad = ['Protsessor']
 +++
 
 Kärbitud käsustikuga arvuti (ingl reduced instruction set computer, RISC) on mikroprotsessor, mis on välja töötatud nii, et see saavutab suurema töökiiruse läbi täidetavate käskude arvu minimeerimise. Käskude täitmise kiirust mõõdetakse selle järgi, et mitu miljonit operatsiooni sekundis suudab arvuti sooritada (MIPS – millions of instructions per second). Seda põhjusel, et iga lisanduv käsutüüp nõuab rohkem transistoreid ning suuremat ja keerulisemat protsessorit. Suurem hulk käsutüüpe ja käske tähendab paratamatult suuremat, keerukamat, aeglasemat ja ka kallimat mikroprotsessorit.

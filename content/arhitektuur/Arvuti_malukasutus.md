@@ -2,6 +2,7 @@
 title = 'Arvuti mälukasutus'
 date = 2023-11-29T14:11:44+02:00
 draft = false
+teemad = ['Mälu']
 +++
 
 Arvuti mälu vajavad nii programm ise kui tema poolt töödeldavad andmed – muutujad ja konstandid. Programmi masinkoodidele mälu eraldamise osas ei pea programmeerija üldjuhul muret tundma. Küll aga peab ta teadma, millal eraldatakse mälu andmetele ja kuidas seda toimingut vajadusel ise juhtida saab.

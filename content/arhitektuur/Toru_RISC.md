@@ -2,6 +2,7 @@
 title = 'Toru RISC'
 date = 2023-11-29T14:11:44+02:00
 draft = false
+teemad = ['Protsessor', 'Käsustik']
 +++
 
 Toru ehk konveier (inglise keeles pipeline) on kogum jadamisi ühendatud andmete töötlemise elemente, kus ühe elemendi väljund on järgmise elemendi sisendiks. Tihti tehakse sealjuures operatsioone samaaegselt.

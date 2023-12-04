@@ -1,7 +1,8 @@
 +++
-title = 'Cache ja Pipeline'
+title = 'Vahemälu'
 date = 2023-11-29T14:11:44+02:00
 draft = false
+teemad = ['Mälu']
 +++
 
 Cache ehk vahemälu on arvuti komponent, mis salvestab teatud osa andmeid, et need oleksid kiiremini kättesaadavad. See on mõeldud andmete kiireks taasesitamiseks, vähendades vajadust pöörduda aeglasema andmeallika poole. Vahemälu kasutatakse sageli protsessorites, kõvaketastel, brauserites ja operatsioonisüsteemides1.

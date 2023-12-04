@@ -2,6 +2,7 @@
 title = 'USB'
 date = 2023-11-29T14:11:44+02:00
 draft = false
+teemad = ['Sisend-Väljund']
 +++
 
 Universaalne jadasiin ehk universaalne järjestiksiin ehk USB (Universal Serial Bus) on seadmete arvutiga ühendamise standard, mis hõlmab kaablite, konnektorite (pistikute ja pesade) füüsilist ehitust, suhtlusprotokolle ning toitevoolu parameetreid.

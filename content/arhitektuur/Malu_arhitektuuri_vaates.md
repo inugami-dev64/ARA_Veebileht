@@ -2,6 +2,7 @@
 title = 'Mälu arhitektuuri vaates'
 date = 2023-11-29T14:11:44+02:00
 draft = false
+teemad = ['Mälu']
 +++
 
 Arvuti mälu on funktsionaalüksus (mäluseade) või keskkond, kuhu saab andmeid paigutada, kus neid saab hoida ja kust neid saab kasutamiseks võtta.[1] Peamiselt on arvutis kasutusel mitut liiki pooljuhtmälud, mille algüksused – mäluelemendid – põhinevad transistorlülititel. Mäluelementidesse salvestatakse andmed lüliti kahe olekuna (voolu juhtiv/mittejuhtiv), mis esitavad kahendsüsteemis biti väärtust 1 või 0. Andmete talletamiseks rakendatakse veel ka magnetsalvestuse tehnikat.

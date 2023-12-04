@@ -2,6 +2,7 @@
 title = 'Liidesesiinid'
 date = 2023-11-29T14:11:44+02:00
 draft = false
+teemad = ['Sisend-Väljund']
 +++
 
 Liidesesiinid

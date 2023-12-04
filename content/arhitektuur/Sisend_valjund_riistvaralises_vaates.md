@@ -2,6 +2,7 @@
 title = 'Sisend-väljund riistvaralises vaates'
 date = 2023-11-29T14:11:44+02:00
 draft = false
+teemad = ['Sisend-Väljund']
 +++
 
 Riistvaraline sisend-väljund viitab arvuti riistvara komponentidele, mis võimaldavad andmete liikumist arvuti ja välismaailma vahel. See hõlmab kõike, mis on seotud andmete sisestamise ja väljastamisega arvutisüsteemis.

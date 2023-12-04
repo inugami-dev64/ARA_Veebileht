@@ -2,6 +2,7 @@
 title = 'Käsustiku arhitektuur'
 date = 2023-11-29T14:11:44+02:00
 draft = false
+teemad = ['Mälu', 'Protsessor', 'Käsustik']
 +++
 
 Arvuti arhitektuur määrab arvuti loogikalise struktuuri ja tööviisi, sealhulgas riistvara ja tarkvara komponentide omavahelised seosed.

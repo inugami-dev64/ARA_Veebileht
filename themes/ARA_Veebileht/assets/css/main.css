@@ -11,6 +11,10 @@ body {
   width: 100%;
 }
 
+main {
+  padding-bottom: 20px;
+}
+
 .base-container {
   margin: 0 auto;
   width: 80vw;
@@ -50,7 +54,8 @@ footer {
 .showcase-container .decorations {
   white-space: nowrap;
   width: 100%;
-  height: 18vh;
+  height: 200px;
+  max-height: fit-content;
   padding: 1em;
 }
 

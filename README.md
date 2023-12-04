@@ -12,3 +12,8 @@ raames.
 
 * Karl-Mihkel Ott
 * Richard Leover
+
+## Märkus Javascripti kohta
+
+Antud projektis kasutatakse [jQuery't](https://jquery.com/), mille lähtekood on antud repositooriumis 
+minifitseeritud kujul. Lähtekood pärineb jQuery veebilehelt ning kuulub vastavatele autoritele.
